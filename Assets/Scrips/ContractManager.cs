@@ -26,9 +26,13 @@ public class ContractManager : MonoBehaviour
         }
     }
     public Contract contractBasis;
+    public GameObject[] uiContractElements;
     public int currentContract = 0;
+    public int currectPosition = 0;
+    public int currectPositionInProgress = 0;
     public List<Contract> existingContracts = new List<Contract>();
     public List<Contract> currentContracts = new List<Contract>();
+
 
     [ContextMenu("Create Contract")]
     //Function creates contracts
