@@ -11,12 +11,21 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 50.0f;
 
+    private new Rigidbody rigidbody;
+
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         Vector3 rotationCoord = new Vector3(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed);
+
         if (isHorizonControlRotate)
             transform.Rotate(rotationCoord);
 
-        transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
+        if (Input.GetAxis("Vertical") != 0)
+            rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
     }
 }
