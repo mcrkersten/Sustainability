@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody),typeof(AudioSource))]
 public class CharacterCollsion : MonoBehaviour
 {
     float hp = 5;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("obstacle"))
         {
             TakeDamageFrom(collision.gameObject);
-            //you can add some particle, or effect on here
+            audioSource.PlayOneShot(AudioClipLibrary.GetInstance().GetAudioFromLibrary("Collsion"));
             Destroy(collision.gameObject);
         }
     }
@@ -24,6 +31,14 @@ public class CharacterCollsion : MonoBehaviour
 
     private void Update()
     {
-        if (hp <= 0) Destroy(gameObject);
+        if (hp <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        //TODO: death and Game Over UI
     }
 }

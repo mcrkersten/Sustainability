@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class CharacterMovement : MonoBehaviour
 {
-
     public bool isHorizonControlRotate = true;
     public float rotationSpeed = 50.0f;
     public float movementSpeed = 50.0f;
@@ -17,6 +17,11 @@ public class CharacterMovement : MonoBehaviour
     private float rotationDest;
     private float rotationStart;
     private float lerpTime = 0;
+
+    private IEnumerator stopSoundSmooth;
+    private bool isSmoothing = false;
+
+    private AudioSource audioSource;
 
     enum RotateStateCode
     {
@@ -35,8 +40,43 @@ public class CharacterMovement : MonoBehaviour
             {
                 ChangeRotateStateTo(value);
             }
-            rotateState = value;
+            
         }
+    }
+
+    enum BoostSoundStateCode
+    {
+        Stoped,Launching,Looping
+    }
+    private BoostSoundStateCode boostSoundState;
+    private BoostSoundStateCode BoostSoundState
+    {
+        get
+        {
+            return boostSoundState;
+        }
+        set
+        {
+            if(value != boostSoundState)
+            {
+                ChangeBoostStateTo(value);
+
+            }
+        }
+    }
+
+    void ChangeBoostStateTo(BoostSoundStateCode destState)
+    {
+        AudioClip stateSound = null;
+        switch(destState)
+        {
+            case BoostSoundStateCode.Launching: stateSound = AudioClipLibrary.GetInstance().GetAudioFromLibrary("Engine Startup"); break;
+            case BoostSoundStateCode.Looping: case BoostSoundStateCode.Stoped:   stateSound = AudioClipLibrary.GetInstance().GetAudioFromLibrary("Engine loop"); break;
+        }
+
+        audioSource.clip = stateSound;
+
+        boostSoundState = destState;
     }
 
     void ChangeRotateStateTo(RotateStateCode destState)
@@ -49,7 +89,7 @@ public class CharacterMovement : MonoBehaviour
             case RotateStateCode.Right:  rotationDest = limitOfRotationRightCrood;   break;
             case RotateStateCode.middle: rotationDest = 0; break;
         }
-
+        rotateState = destState;
         lerpTime = 0;
     }
 
@@ -57,6 +97,8 @@ public class CharacterMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         meshObject = transform.Find("ShipMesh").gameObject;
+        audioSource = GetComponent<AudioSource>();
+        stopSoundSmooth = StopSoundSmooth();
     }
 
     void Update()
@@ -81,6 +123,7 @@ public class CharacterMovement : MonoBehaviour
             transform.Rotate(rotationCoord);
 
             ProcessRotateState();
+            ProcessBoostSoundState();
         }
 
         if (Input.GetAxis("Vertical") != 0)
@@ -95,5 +138,50 @@ public class CharacterMovement : MonoBehaviour
             meshObject.transform.localEulerAngles = new Vector3(0, 0, rotateAngle);
             lerpTime += Time.deltaTime;
         }
+    }
+
+    void ProcessBoostSoundState()
+    {
+        float VerticalAxis = Input.GetAxis("Vertical");
+        if (BoostSoundState == BoostSoundStateCode.Launching)
+        {
+            if (!audioSource.isPlaying)
+            {
+                BoostSoundState = BoostSoundStateCode.Looping;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+        else if (BoostSoundState == BoostSoundStateCode.Looping)
+        {
+            if (VerticalAxis == 0)
+                BoostSoundState = BoostSoundStateCode.Stoped;
+        }
+        else if (BoostSoundState == BoostSoundStateCode.Stoped)
+        {
+            if (audioSource.isPlaying && !isSmoothing) 
+                StartCoroutine(StopSoundSmooth());
+            else if (VerticalAxis != 0)
+            {
+                BoostSoundState = BoostSoundStateCode.Launching;
+                audioSource.loop = false;
+                audioSource.Play();
+            }
+        }
+    }
+
+    IEnumerator StopSoundSmooth()
+    { 
+        isSmoothing = true;
+        while (audioSource.volume > 0.0f && boostSoundState == BoostSoundStateCode.Stoped)
+        {
+            audioSource.volume -= 0.01f;
+            yield return new WaitForFixedUpdate();
+        }
+
+        isSmoothing = false;
+        audioSource.volume = 1.0f;
+        audioSource.Stop();
+        yield break;
     }
 }
