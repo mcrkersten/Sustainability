@@ -93,7 +93,6 @@ public class CharacterMovement : MonoBehaviour
         {
             float rotateAngle = Mathf.LerpAngle(rotationStart, rotationDest, lerpTime);
             meshObject.transform.localEulerAngles = new Vector3(0, 0, rotateAngle);
-            Debug.Log("dest" + rotationDest + " current" + rotateAngle + " state" + rotateState);
             lerpTime += Time.deltaTime;
         }
     }
