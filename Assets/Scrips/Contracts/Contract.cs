@@ -13,7 +13,8 @@ public class Contract : ScriptableObject
     public int contractReward;
     public GameObject availablePrefab;
     public GameObject progressPrefab;
-    public GameObject self;
+    public GameObject selfInAvailableContractScreen;
+    public GameObject selfInActiveContractScreen;
     private ContractCardAvailable availableUI;
     private ContractCardProgress progressUI;
     public GameObject ui;
@@ -21,8 +22,9 @@ public class Contract : ScriptableObject
     public void SetInAvailible()
     {
         GameObject i = Instantiate(availablePrefab, ContractManager.Instance.uiContractElements[0].transform);
-        self = i;
-        i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currectPosition++) * 75), 0));
+        i.transform.position = new Vector3(i.transform.position.x, 600, i.transform.position.z);
+        selfInAvailableContractScreen = i;
+        i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currectPosition++ -1) * 87), 0));
         availableUI = i.GetComponent<ContractCardAvailable>();
         availableUI.c = this;
         availableUI.rewardAmount.text = contractReward.ToString();
@@ -33,9 +35,11 @@ public class Contract : ScriptableObject
 
     public void SetInProgress()
     {
+        
         GameObject i = Instantiate(progressPrefab, ContractManager.Instance.uiContractElements[1].transform);
-        self = i;
-        i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currectPositionInProgress++) * 75), 0));
+        i.transform.position = new Vector3(i.transform.position.x, 600, i.transform.position.z);
+        selfInAvailableContractScreen = i;
+        i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currectPositionInProgress++ -1) * 87), 0));
         progressUI = i.GetComponent<ContractCardProgress>();
         progressUI.c = this;
         progressUI.rewardAmount.text = contractReward.ToString();
@@ -46,9 +50,30 @@ public class Contract : ScriptableObject
         //Remove contract form available contracts
         ContractManager.Instance.currectPosition--;
         ContractManager.Instance.existingContracts.Remove(this);
+
         Destroy(availableUI.gameObject);
 
         //Set contract in to "inrpogress" in the Contract manager 
         ContractManager.Instance.currentContracts.Add(progressUI.c);
+        SetInProgressScreenOnly(i);
+    }
+
+    private void SetInProgressScreenOnly(GameObject s)
+    {
+        GameObject i = Instantiate(progressPrefab, ContractManager.Instance.uiContractElements[2].transform);
+        selfInActiveContractScreen = i;
+        i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currentPositionInActiveContracts++) * 87), 0));
+        progressUI = i.GetComponent<ContractCardProgress>();
+        progressUI.c = this;
+        progressUI.rewardAmount.text = contractReward.ToString();
+        progressUI.contractor.text = contractor;
+        progressUI.peopleToCollect.text = personsToCollect.ToString();
+    }
+
+    public void OnDestroy()
+    {
+        Destroy(selfInActiveContractScreen);
+        Destroy(selfInAvailableContractScreen);
+        Destroy(this);
     }
 }
