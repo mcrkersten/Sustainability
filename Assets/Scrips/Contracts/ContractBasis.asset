@@ -20,6 +20,7 @@ MonoBehaviour:
   contractReward: 100
   availablePrefab: {fileID: 3954281714008875747, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
     type: 3}
+  self: {fileID: 0}
   progressPrefab: {fileID: 3967937860553153150, guid: 5cfd37d66729b1e4fb141bb4f7d4db61,
     type: 3}
   ui: {fileID: 0}
