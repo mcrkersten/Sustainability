@@ -22,3 +22,4 @@ sysinfo.txt
 *.ide-shm
 *.ide
 *.ide-wal
+.vs/Sustainability/v15/Server/sqlite3/db.lock
