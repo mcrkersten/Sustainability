@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Available
+  - Progress
+  - City
   - obstacle
   layers:
   - Default
