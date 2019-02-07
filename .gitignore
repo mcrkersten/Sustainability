@@ -19,9 +19,9 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-
-
-*.lock
-*.ide
 *.ide-shm
+*.ide
 *.ide-wal
+.vs/Sustainability/v15/Server/sqlite3/db.lock
+
+\.vs/
