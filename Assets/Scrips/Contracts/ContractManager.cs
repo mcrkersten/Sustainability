@@ -30,6 +30,7 @@ public class ContractManager : MonoBehaviour
     public int currentContract = 0;
     public int currectPosition = 0;
     public int currectPositionInProgress = 0;
+    public int currentPositionInActiveContracts = 0;
     public List<Contract> existingContracts = new List<Contract>();
     public List<Contract> currentContracts = new List<Contract>();
 
