@@ -12,8 +12,8 @@ public class Contract : ScriptableObject
     public int colectedPersons;
     public int contractReward;
     public GameObject availablePrefab;
-    public GameObject self;
     public GameObject progressPrefab;
+    public GameObject self;
     private ContractCardAvailable availableUI;
     private ContractCardProgress progressUI;
     public GameObject ui;
@@ -33,7 +33,7 @@ public class Contract : ScriptableObject
 
     public void SetInProgress()
     {
-        GameObject i = Instantiate(availablePrefab, ContractManager.Instance.uiContractElements[1].transform);
+        GameObject i = Instantiate(progressPrefab, ContractManager.Instance.uiContractElements[1].transform);
         self = i;
         i.transform.Translate(new Vector3(0, -((ContractManager.Instance.currectPositionInProgress++) * 75), 0));
         progressUI = i.GetComponent<ContractCardProgress>();
