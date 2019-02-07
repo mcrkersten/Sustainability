@@ -7,7 +7,6 @@ TagManager:
   - Available
   - Progress
   - City
-  - obstacle
   layers:
   - Default
   - TransparentFX

@@ -19,9 +19,3 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-
-
-*.lock
-*.ide
-*.ide-shm
-*.ide-wal
