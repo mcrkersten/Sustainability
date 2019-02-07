@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    public bool canDrop;
     private static Ship instance = null;
     public static Ship Instance
     {
@@ -26,7 +27,7 @@ public class Ship : MonoBehaviour
         }
     }
     public List<Contract> currentContracts = new List<Contract>();
-    private int currentPersonsOnShip;
+    public int currentPersonsOnShip;
     public int maxPersonsOnShip;
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +35,7 @@ public class Ship : MonoBehaviour
         //If gameObject has a personClass on it.
         if(other.gameObject.GetComponent<Person>() != null)
         {
+            canDrop = true;
             Person p = other.gameObject.GetComponent<Person>();
             foreach (Contract c in currentContracts)
             {
@@ -43,8 +45,10 @@ public class Ship : MonoBehaviour
                     c.colectedPersons++;
                     currentPersonsOnShip++;
 
+                    ContractManager.Instance.portUI.portrets[currentPersonsOnShip -1].sprite = p.portret;
+                    ContractManager.Instance.portretManager++;
                     //Contract is done if all persons are collected
-                    if(c.personsToCollect == c.colectedPersons)
+                    if (c.personsToCollect == c.colectedPersons)
                     {
                         c.done = true;
                     }
@@ -52,5 +56,10 @@ public class Ship : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canDrop = false;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContractManager : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class ContractManager : MonoBehaviour
             return instance;
         }
     }
+
+    public int portretManager = 0;
+    public Sprite[] portrets;
+    public Portrets portUI;
+    public RefugeeSpawner refSpawner;
     public Contract contractBasis;
     public GameObject[] uiContractElements;
     public int currentContract = 0;
@@ -48,5 +54,37 @@ public class ContractManager : MonoBehaviour
         tempContract.personsToCollect = Random.Range(1, 4);
         tempContract.contractReward = tempContract.personsToCollect * 100;
         tempContract.SetInAvailible();
+    }
+
+    public void Update()
+    {
+        List<Contract> temp = new List<Contract>();
+        foreach(Contract c in currentContracts)
+        {
+            if(c == null)
+            {
+                temp.Add(c);
+            }
+        }
+        foreach(Contract c in temp)
+        {
+            currentContracts.Remove(c);
+        }
+    }
+
+    public void InitNewContracts()
+    {
+        if(existingContracts.Count > 1)
+        {
+            foreach(Contract c in existingContracts)
+            {
+                Destroy(c);
+            }
+            existingContracts.Clear();
+        }
+        for(int i = 0; i < 4; i++)
+        {
+            CreateContact();
+        }
     }
 }

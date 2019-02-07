@@ -7,7 +7,14 @@ public class EnterContractMenu : MonoBehaviour
     public GameObject uiButton;
     public GameObject contractsUi;
     public GameObject activeContracts;
+    public GameObject deliverContract;
+
     private bool canOpen;
+
+    private void Start()
+    {
+        ContractManager.Instance.InitNewContracts();
+    }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.C))
@@ -20,13 +27,16 @@ public class EnterContractMenu : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("City")) {
             canOpen = true;
+
             uiButton.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("City")) {
+            ContractManager.Instance.InitNewContracts();
             uiButton.SetActive(false);
+            contractsUi.SetActive(false);
             canOpen = false;
         }
     }
@@ -39,6 +49,14 @@ public class EnterContractMenu : MonoBehaviour
                 uiButton.SetActive(false);
                 contractsUi.SetActive(true);
                 activeContracts.SetActive(false);
+                if (Ship.Instance.canDrop)
+                {
+                    deliverContract.SetActive(true);
+                }
+                else
+                {
+                    deliverContract.SetActive(false);
+                }
             }
             else
             {
@@ -49,6 +67,7 @@ public class EnterContractMenu : MonoBehaviour
         }
         else
         {
+            UpdateUIPositions();    
             if (activeContracts.activeSelf)
             {
                 activeContracts.SetActive(false);
@@ -74,6 +93,7 @@ public class EnterContractMenu : MonoBehaviour
             foreach (Contract a in ContractManager.Instance.currentContracts)
             {
                 a.selfInAvailableContractScreen.transform.position = new Vector3(a.selfInAvailableContractScreen.transform.position.x, 700, a.selfInAvailableContractScreen.transform.position.z);
+                a.progressUI.collectedPeople.text = a.colectedPersons.ToString();
                 a.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
             }
         }
@@ -84,6 +104,7 @@ public class EnterContractMenu : MonoBehaviour
             {
                 a.selfInActiveContractScreen.transform.position = new Vector3(a.selfInActiveContractScreen.transform.position.x, 700, a.selfInActiveContractScreen.transform.position.z);
                 a.selfInActiveContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
+                a.selfProgressUI.collectedPeople.text = a.colectedPersons.ToString();
             }
         }
     }
