@@ -15,7 +15,7 @@ public class CharacterCollsion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             TakeDamageFrom(collision.gameObject);
             audioSource.PlayOneShot(AudioClipLibrary.GetInstance().GetAudioFromLibrary("Collsion"));

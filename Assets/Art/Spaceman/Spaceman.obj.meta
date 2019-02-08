@@ -5,12 +5,15 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Spaceman
     100002: //RootNode
+    100004: Spaceman_root
     400000: Spaceman
     400002: //RootNode
+    400004: Spaceman_root
     2100000: SpacemanMat
     2300000: Spaceman
     3300000: Spaceman
     4300000: Spaceman
+    11100000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -89,10 +92,10 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

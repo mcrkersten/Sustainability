@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public bool canDrop;
+    private bool once = false;
     private static Ship instance = null;
     public static Ship Instance
     {
@@ -33,8 +34,9 @@ public class Ship : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //If gameObject has a personClass on it.
-        if(other.gameObject.GetComponent<Person>() != null)
+        if(other.gameObject.GetComponent<Person>() != null && !once)
         {
+            once = true;
             canDrop = true;
             Person p = other.gameObject.GetComponent<Person>();
             foreach (Contract c in currentContracts)
@@ -43,16 +45,16 @@ public class Ship : MonoBehaviour
                 {
                     //Person is a part of the contract.
                     c.colectedPersons++;
+                    ContractManager.Instance.portUI.portrets[currentPersonsOnShip].sprite = p.portret;
                     currentPersonsOnShip++;
-
-                    ContractManager.Instance.portUI.portrets[currentPersonsOnShip -1].sprite = p.portret;
                     ContractManager.Instance.portretManager++;
                     //Contract is done if all persons are collected
                     if (c.personsToCollect == c.colectedPersons)
                     {
                         c.done = true;
                     }
-                    Destroy(p.gameObject);                  
+                    ContractManager.Instance.passangers.Add(p);
+                    p.gameObject.SetActive(false);
                 }
             }
         }
@@ -61,5 +63,6 @@ public class Ship : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canDrop = false;
+        once = false;
     }
 }

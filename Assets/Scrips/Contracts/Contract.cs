@@ -29,7 +29,7 @@ public class Contract : ScriptableObject
     {
         //Get random tile to spawn refugees on
         int random = Random.Range(0, ContractManager.Instance.refSpawner.tiles.Count);
-        contractPosition = ContractManager.Instance.refSpawner.tiles[0];
+        contractPosition = ContractManager.Instance.refSpawner.tiles[Random.Range(0,ContractManager.Instance.refSpawner.tiles.Count)];
 
         GameObject i = Instantiate(availablePrefab, ContractManager.Instance.uiContractElements[0].transform);
         i.transform.position = new Vector3(i.transform.position.x, 600, i.transform.position.z);
@@ -90,14 +90,24 @@ public class Contract : ScriptableObject
         float size = 24;
         float randomXpos = Random.Range(-size, size);
         float randomZpos = Random.Range(-size, size);
-        r.transform.localPosition = new Vector3(randomXpos,2, randomZpos);
+        r.transform.localPosition = new Vector3(randomXpos,-.5f, randomZpos);
+        r.transform.eulerAngles = new Vector3(0, Random.Range(0, 360), 0);
         r.GetComponent<Person>().contract = this;
         r.GetComponent<Person>().portret = ContractManager.Instance.portrets[0];
     }
 
+    public void CreateRefugeesOnPosition(GameObject pos, Person p) {
+        float size = 24;
+        float randomXpos = Random.Range(-size, size);
+        float randomZpos = Random.Range(-size, size);
+        p.gameObject.transform.parent = null;
+        p.gameObject.transform.localPosition = new Vector3(pos.transform.position.x + 1, -.5f, pos.transform.position.z + 1);
+        p.gameObject.transform.eulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+        p.gameObject.SetActive(true);
+    }
+
     public void OnDestroy()
     {
-
         ContractManager.Instance.portretManager = 0;
         Ship.Instance.currentPersonsOnShip = 0;
         Destroy(selfInActiveContractScreen);

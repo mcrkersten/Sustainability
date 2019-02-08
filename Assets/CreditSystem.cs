@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreditSystem : MonoBehaviour
 {
@@ -26,4 +27,9 @@ public class CreditSystem : MonoBehaviour
         }
     }
     public int credits;
+    public Text creditAmount;
+
+    public void Update() {
+        creditAmount.text = credits.ToString();
+    }
 }

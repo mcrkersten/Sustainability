@@ -4,12 +4,64 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface10
+    100004: polySurface11
+    100006: polySurface12
+    100008: polySurface14
+    100010: polySurface7
+    100012: polySurface8
+    100014: polySurface9
+    100016: transform1
+    100018: transform2
+    100020: transform3
+    100022: transform4
+    100024: transform5
+    100026: transform6
+    100028: polySurface13
+    100030: polySurface15
+    100032: polySurfaceShape3
+    100034: transform7
+    100036: transform8
+    100038: transform9
     400000: //RootNode
+    400002: polySurface10
+    400004: polySurface11
+    400006: polySurface12
+    400008: polySurface14
+    400010: polySurface7
+    400012: polySurface8
+    400014: polySurface9
+    400016: transform1
+    400018: transform2
+    400020: transform3
+    400022: transform4
+    400024: transform5
+    400026: transform6
+    400028: polySurface13
+    400030: polySurface15
+    400032: polySurfaceShape3
+    400034: transform7
+    400036: transform8
+    400038: transform9
     2100000: lambert1
+    2100002: lambert3
     2300000: //RootNode
+    2300002: polySurface14
+    2300004: polySurface15
     3300000: //RootNode
+    3300002: polySurface14
+    3300004: polySurface15
     4300000: Terrain_bumpy
-  externalObjects: {}
+    4300002: polySurface5
+    4300004: polySurface7
+    4300006: polySurface14
+    4300008: polySurface15
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: e2182d4bd625bca40a79d4605502cb43, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

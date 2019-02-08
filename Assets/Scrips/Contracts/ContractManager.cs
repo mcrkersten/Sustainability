@@ -39,6 +39,7 @@ public class ContractManager : MonoBehaviour
     public int currentPositionInActiveContracts = 0;
     public List<Contract> existingContracts = new List<Contract>();
     public List<Contract> currentContracts = new List<Contract>();
+    public List<Person> passangers = new List<Person>();
 
 
     [ContextMenu("Create Contract")]
@@ -85,6 +86,16 @@ public class ContractManager : MonoBehaviour
         for(int i = 0; i < 4; i++)
         {
             CreateContact();
+        }
+    }
+
+    public void KickRefugee(int number) {
+        if(passangers[number] != null) {
+            passangers[number].contract.CreateRefugeesOnPosition(Ship.Instance.gameObject, passangers[number]);
+            portUI.portrets[number].sprite = portrets[3];
+            passangers[number].contract.colectedPersons--;
+            passangers.Remove(passangers[number]);
+            Ship.Instance.currentPersonsOnShip--;
         }
     }
 }

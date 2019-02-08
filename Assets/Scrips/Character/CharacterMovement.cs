@@ -101,7 +101,7 @@ public class CharacterMovement : MonoBehaviour
         stopSoundSmooth = StopSoundSmooth();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
 
@@ -126,7 +126,9 @@ public class CharacterMovement : MonoBehaviour
             ProcessBoostSoundState();
         }
 
-        if (Input.GetAxis("Vertical") != 0)
+        if(Input.GetAxis("Vertical") != 0 && Input.GetKey(KeyCode.LeftShift))
+            rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * (movementSpeed * 5));
+        else if (Input.GetAxis("Vertical") != 0)
             rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
     }
 
