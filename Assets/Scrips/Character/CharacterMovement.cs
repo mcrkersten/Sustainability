@@ -182,7 +182,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         isSmoothing = false;
-        audioSource.volume = 1.0f;
+        audioSource.volume = .2f;
         audioSource.Stop();
         yield break;
     }

@@ -44,7 +44,7 @@ public class Contract : ScriptableObject
     }
 
     public void SetInProgress()
-    {   if(ContractManager.Instance.currentContracts.Count < 4)
+    {   if(ContractManager.Instance.currentContracts.Count < 1)
         {
             GameObject i = Instantiate(progressPrefab, ContractManager.Instance.uiContractElements[1].transform);
             i.transform.position = new Vector3(i.transform.position.x, 600, i.transform.position.z);
@@ -112,6 +112,7 @@ public class Contract : ScriptableObject
         Ship.Instance.currentPersonsOnShip = 0;
         Destroy(selfInActiveContractScreen);
         Destroy(selfInAvailableContractScreen);
+        ContractManager.Instance.currectPositionInProgress--;
         Destroy(this);
     }
 
