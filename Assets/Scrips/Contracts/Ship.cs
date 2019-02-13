@@ -31,13 +31,12 @@ public class Ship : MonoBehaviour
     public int currentPersonsOnShip;
     public int maxPersonsOnShip;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //If gameObject has a personClass on it.
         if(other.gameObject.GetComponent<Person>() != null && !once)
         {
             once = true;
-            canDrop = true;
             Person p = other.gameObject.GetComponent<Person>();
             foreach (Contract c in currentContracts)
             {
@@ -51,6 +50,7 @@ public class Ship : MonoBehaviour
                     //Contract is done if all persons are collected
                     if (c.personsToCollect == c.colectedPersons)
                     {
+                        canDrop = true;
                         c.done = true;
                     }
                     ContractManager.Instance.passangers.Add(p);
@@ -62,7 +62,6 @@ public class Ship : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        canDrop = false;
         once = false;
     }
 }

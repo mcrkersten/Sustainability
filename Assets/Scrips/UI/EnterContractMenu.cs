@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnterContractMenu : MonoBehaviour
 {
-    public GameObject uiButton;
+    public GameObject uipressC;
     public GameObject contractsUi;
     public GameObject activeContracts;
     public GameObject deliverContract;
@@ -24,18 +24,23 @@ public class EnterContractMenu : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         if (other.gameObject.CompareTag("City")) {
             canOpen = true;
-
-            uiButton.SetActive(true);
+            if (!contractsUi.activeSelf) {
+                uipressC.SetActive(true);
+            }
+            else {
+                uipressC.SetActive(false);
+            }
+            
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("City")) {
             ContractManager.Instance.InitNewContracts();
-            uiButton.SetActive(false);
+            uipressC.SetActive(false);
             contractsUi.SetActive(false);
             canOpen = false;
         }
@@ -43,10 +48,11 @@ public class EnterContractMenu : MonoBehaviour
 
     public void OpenContracts() {
         if (canOpen) {
-            if (uiButton.activeSelf)
+
+            if (uipressC.activeSelf)
             {
                 UpdateUIPositions();
-                uiButton.SetActive(false);
+                uipressC.SetActive(false);
                 contractsUi.SetActive(true);
                 activeContracts.SetActive(false);
                 if (Ship.Instance.canDrop)
@@ -60,7 +66,7 @@ public class EnterContractMenu : MonoBehaviour
             }
             else
             {
-                uiButton.SetActive(true);
+                uipressC.SetActive(true);
                 contractsUi.SetActive(false);
                 activeContracts.SetActive(false);
             }
