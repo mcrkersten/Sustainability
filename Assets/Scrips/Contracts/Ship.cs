@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
@@ -27,14 +28,30 @@ public class Ship : MonoBehaviour
             return instance;
         }
     }
+
     public List<Contract> currentContracts = new List<Contract>();
     public int currentPersonsOnShip;
+
+    //upgradables
     public int maxPersonsOnShip;
+    public float currentFuel;
+    public float maxFuel;
+    public Slider uiSlider;
+    public Slider storeUiSlider;
+
+    public delegate void EnterCity();
+    public static event EnterCity OnEnterCity;
+
+    public delegate void ExitCity();
+    public static event ExitCity OnExitCity;
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.CompareTag("City")) {
+            OnEnterCity?.Invoke();
+        }
         //If gameObject has a personClass on it.
-        if(other.gameObject.GetComponent<Person>() != null && !once)
+        if (other.gameObject.GetComponent<Person>() != null && !once)
         {
             once = true;
             Person p = other.gameObject.GetComponent<Person>();
@@ -62,6 +79,28 @@ public class Ship : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.CompareTag("City")) {
+            OnExitCity?.Invoke();
+        }
         once = false;
+    }
+
+    private void Start() {
+        InitListners();
+        uiSlider.maxValue = maxFuel;
+        storeUiSlider.maxValue = maxFuel;
+    }
+
+    private void InitListners() {
+        ButtonManager.OnRefuelShip += Refuel;
+    }
+
+    private void Update() {
+        uiSlider.value = currentFuel;
+        storeUiSlider.value = currentFuel;
+    }
+
+    private void Refuel() {
+        currentFuel = maxFuel;
     }
 }

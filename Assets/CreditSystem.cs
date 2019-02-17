@@ -26,10 +26,16 @@ public class CreditSystem : MonoBehaviour
             return instance;
         }
     }
+
     public int credits;
-    public Text creditAmount;
+
+    public int fuelCost;
+
+    public Text inFlightUiCreditAmount;
+    public Text inStoreCreditUiAmount;
 
     public void Update() {
-        creditAmount.text = credits.ToString();
+        inFlightUiCreditAmount.text = credits.ToString();
+        inStoreCreditUiAmount.text = credits.ToString();
     }
 }

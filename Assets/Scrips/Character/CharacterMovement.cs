@@ -10,9 +10,11 @@ public class CharacterMovement : MonoBehaviour
     public float movementSpeed = 50.0f;
     public float limitOfRotationRightCrood;
     public float limitOfRotationLeftCrood;
+    public float fuelBurnRate;
 
     private new Rigidbody rigidbody;
     private GameObject meshObject;
+    private Ship ship;
 
     private float rotationDest;
     private float rotationStart;
@@ -95,6 +97,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
+        ship = Ship.Instance;
         rigidbody = GetComponent<Rigidbody>();
         meshObject = transform.Find("ShipMesh").gameObject;
         audioSource = GetComponent<AudioSource>();
@@ -126,10 +129,16 @@ public class CharacterMovement : MonoBehaviour
             ProcessBoostSoundState();
         }
 
-        if(Input.GetAxis("Vertical") != 0 && Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetAxis("Vertical") != 0 && Input.GetKey(KeyCode.LeftShift) && ship.currentFuel > 0) {
             rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * (movementSpeed * 5));
-        else if (Input.GetAxis("Vertical") != 0)
+
+            ship.currentFuel -= (fuelBurnRate * 2) * Time.deltaTime;
+        }
+            
+        else if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
             rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
+            ship.currentFuel -= fuelBurnRate * Time.deltaTime;
+        }
     }
 
     void ProcessRotateState()

@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7543244149666397079}
   - component: {fileID: 7543244149666397076}
+  - component: {fileID: 6443153658597927462}
   - component: {fileID: 7543244149666397077}
   - component: {fileID: 7543244149666397078}
-  - component: {fileID: 6443153658597927462}
-  - component: {fileID: 1251199643287651394}
   - component: {fileID: 1204433067881007575}
   m_Layer: 0
   m_Name: Ship
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7543244149666397073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 247.81468, y: 17.33, z: 336.45383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7798255051385483195}
   - {fileID: 7543244150749788563}
@@ -54,35 +53,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7543244149666397077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543244149666397073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c3f30e0e0ca06419609fe4dc151f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7543244149666397078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543244149666397073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdc47c68c4bcbd4d9d81cc7754224ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHorizonControlRotate: 1
-  rotationSpeed: 50
-  movementSpeed: 400
-  limitOfRotationRightCrood: 60
-  limitOfRotationLeftCrood: -60
 --- !u!82 &6443153658597927462
 AudioSource:
   m_ObjectHideFlags: 0
@@ -95,7 +65,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -103,8 +73,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 50
-  MaxDistance: 500
+  MinDistance: 1
+  MaxDistance: 3.0207825
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -139,7 +109,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -179,7 +149,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1251199643287651394
+--- !u!114 &7543244149666397077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,13 +158,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 7543244149666397073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a0860d1211fb44493bc00b4afe58df, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c3f30e0e0ca06419609fe4dc151f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButton: {fileID: 0}
-  contractsUi: {fileID: 0}
-  activeContracts: {fileID: 0}
-  deliverContract: {fileID: 0}
+--- !u!114 &7543244149666397078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543244149666397073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdc47c68c4bcbd4d9d81cc7754224ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHorizonControlRotate: 1
+  rotationSpeed: 50
+  movementSpeed: 400
+  limitOfRotationRightCrood: 60
+  limitOfRotationLeftCrood: -60
+  fuelBurnRate: 1
 --- !u!114 &1204433067881007575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +195,9 @@ MonoBehaviour:
   currentContracts: []
   currentPersonsOnShip: 0
   maxPersonsOnShip: 3
+  currentFuel: 100
+  maxFuel: 100
+  UiSlider: {fileID: 0}
 --- !u!1 &7543244150131874078
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7543244150749788573}
   m_LocalRotation: {x: 0.2877784, y: 0, z: 0, w: 0.95769703}
-  m_LocalPosition: {x: 0, y: 7.766139, z: -11.975525}
+  m_LocalPosition: {x: 0, y: 5.0100927, z: -7.8036704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7543244150131874079}
@@ -349,7 +336,7 @@ MonoBehaviour:
     FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 6000
     Dutch: 0
   m_ComponentOwner: {fileID: 7543244150131874079}
 --- !u!64 &2766347561034222431
@@ -415,6 +402,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7543244149666397079}
     m_Modifications:
+    - target: {fileID: 100010, guid: 0eb2e13a54bbea84596175e090aae6e7, type: 3}
+      propertyPath: m_Name
+      value: ShipMesh
+      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 0eb2e13a54bbea84596175e090aae6e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -470,10 +461,6 @@ PrefabInstance:
     - target: {fileID: 400010, guid: 0eb2e13a54bbea84596175e090aae6e7, type: 3}
       propertyPath: m_LocalScale.z
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 0eb2e13a54bbea84596175e090aae6e7, type: 3}
-      propertyPath: m_Name
-      value: ShipMesh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb2e13a54bbea84596175e090aae6e7, type: 3}
