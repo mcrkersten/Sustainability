@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject uipressC;
-    public GameObject contractsUi;
-    public GameObject storeUi;
+    public GameObject openStorePromt;
+
     public GameObject activeContracts;
     public GameObject deliverContract;
+    private List<GameObject> openMenu = new List<GameObject>();
 
     public delegate void RefuelShip();
     public static event RefuelShip OnRefuelShip;
-
-    private bool canOpen;
 
     private void Start()
     {
@@ -26,109 +24,46 @@ public class ButtonManager : MonoBehaviour
         Ship.OnExitCity += ExitCity;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            OpenContracts();
-        }
-    }
-
     private void EnterCity() {
-        canOpen = true;
-        if (!contractsUi.activeSelf) {
-            uipressC.SetActive(true);
-        }
-        else {
-            uipressC.SetActive(false);
-        }
+        openStorePromt.SetActive(true);
     }
 
     private void ExitCity() {
         ContractManager.Instance.InitNewContracts();
-        uipressC.SetActive(false);
-        contractsUi.SetActive(false);
-        canOpen = false;
+        openStorePromt.SetActive(false);
+        foreach (GameObject x in openMenu) {
+            x.SetActive(false);
+        }
+        openMenu.Clear();
     }
 
-    public void OpenContracts() {
-        if (canOpen) {
-            if (uipressC.activeSelf)
-            {
-                UpdateUIPositions();
-                uipressC.SetActive(false);
-                contractsUi.SetActive(true);
-                activeContracts.SetActive(false);
-                if (Ship.Instance.canDrop)
-                {
-                    deliverContract.SetActive(true);
-                }
-                else
-                {
-                    deliverContract.SetActive(false);
-                }
-            }
-            else
-            {
-                uipressC.SetActive(true);
-                contractsUi.SetActive(false);
-                activeContracts.SetActive(false);
-            }
-        }
-        else
-        {
-            UpdateUIPositions();    
-            if (activeContracts.activeSelf)
-            {
-                activeContracts.SetActive(false);
-            }
-            else
-            {
-                activeContracts.SetActive(true);
-            }
+    public void ExitMenu(GameObject gameObjectToExit) {
+        gameObjectToExit.SetActive(false);
+        if (openMenu.Contains(gameObjectToExit)) {
+            openMenu.Remove(gameObjectToExit);
         }
     }
 
-    public void ExitContracts() {
-        contractsUi.SetActive(false);
+    public void OpenMenu(GameObject gameObjectToOpen) {
+        gameObjectToOpen.SetActive(true);
+        openMenu.Add(gameObjectToOpen);
+        UpdateUIPositionsBigMenu();
     }
 
-    public void OpenStore() {
-        if (canOpen) {
-            if (uipressC.activeSelf) {
-                uipressC.SetActive(false);
-                activeContracts.SetActive(false);
-                storeUi.SetActive(true);
-            }
-        }
-    }
-
-    private void UpdateUIPositions()
+    private void UpdateUIPositionsBigMenu()
     {
         int i = 0;
-        if (canOpen)
+        foreach (Contract g in ContractManager.Instance.existingContracts)
         {
-            foreach (Contract g in ContractManager.Instance.existingContracts)
-            {
-                g.selfInAvailableContractScreen.transform.position = new Vector3(g.selfInAvailableContractScreen.transform.position.x, 700, g.selfInAvailableContractScreen.transform.position.z);
-                g.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
-            }
-            i = 0;
-            foreach (Contract a in ContractManager.Instance.currentContracts)
-            {
-                a.selfInAvailableContractScreen.transform.position = new Vector3(a.selfInAvailableContractScreen.transform.position.x, 700, a.selfInAvailableContractScreen.transform.position.z);
-                a.progressUI.collectedPeople.text = a.colectedPersons.ToString();
-                a.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
-            }
+            g.selfInAvailableContractScreen.transform.position = new Vector3(g.selfInAvailableContractScreen.transform.position.x, 700, g.selfInAvailableContractScreen.transform.position.z);
+            g.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
         }
-        else
+        i = 0;
+        foreach (Contract a in ContractManager.Instance.currentContracts)
         {
-            i = 0;
-            foreach (Contract a in ContractManager.Instance.currentContracts)
-            {
-                a.selfInActiveContractScreen.transform.position = new Vector3(a.selfInActiveContractScreen.transform.position.x, 700, a.selfInActiveContractScreen.transform.position.z);
-                a.selfInActiveContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
-                a.selfProgressUI.collectedPeople.text = a.colectedPersons.ToString();
-            }
+            a.selfInAvailableContractScreen.transform.position = new Vector3(a.selfInAvailableContractScreen.transform.position.x, 700, a.selfInAvailableContractScreen.transform.position.z);
+            a.progressUI.collectedPeople.text = a.colectedPersons.ToString();
+            a.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
         }
     }
 
@@ -136,6 +71,15 @@ public class ButtonManager : MonoBehaviour
         if (CreditSystem.Instance.credits > CreditSystem.Instance.fuelCost) {
             CreditSystem.Instance.credits -= CreditSystem.Instance.fuelCost;
             OnRefuelShip?.Invoke();
+        }
+    }
+
+    public void UpdateUIPositionsSmallMenu() {
+        int i = 0;
+        foreach (Contract a in ContractManager.Instance.currentContracts) {
+            a.selfInActiveContractScreen.transform.position = new Vector3(a.selfInActiveContractScreen.transform.position.x, 700, a.selfInActiveContractScreen.transform.position.z);
+            a.selfInActiveContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
+            a.selfProgressUI.collectedPeople.text = a.colectedPersons.ToString();
         }
     }
 }

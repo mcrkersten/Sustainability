@@ -45,7 +45,7 @@ public class Ship : MonoBehaviour
     public delegate void ExitCity();
     public static event ExitCity OnExitCity;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("City")) {
             OnEnterCity?.Invoke();
