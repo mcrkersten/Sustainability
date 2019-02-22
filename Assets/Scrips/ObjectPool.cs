@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    public Material skybox;
     public int quadSize;
-    public GameObject lightX;
-    public GameObject lightZ;
     public PointList verticals = new PointList();
     public PointList horizontals = new PointList();
     private Ship ship;
@@ -15,14 +14,21 @@ public class ObjectPool : MonoBehaviour
 
     public float distX;
     public float distZ;
+    public float distRotation;
+    Vector3 rotation;
 
     private void Start() {
         ship = Ship.Instance;
     }
 
     private void Update() {
-        lightZ.transform.localEulerAngles = new Vector3(0, 0, ship.gameObject.transform.position.x);
-        lightX.transform.localEulerAngles = new Vector3(ship.gameObject.transform.position.z, 0, 0);
+        skybox.SetVector("_RotationAxis", new Vector4(-1, 0, 0, 1));
+        skybox.SetFloat("_Rotation", ship.gameObject.transform.position.z / 7);
+
+
+        //skybox.SetVector("_RotationAxis", new Vector4(0, 0, 1, 1));
+        //skybox.SetFloat("_Rotation", ship.gameObject.transform.position.x / 7);
+        
 
         distX = Mathf.Abs(this.gameObject.transform.position.x - ship.gameObject.transform.position.x);
         distZ = Mathf.Abs(this.gameObject.transform.position.z - ship.gameObject.transform.position.z);
