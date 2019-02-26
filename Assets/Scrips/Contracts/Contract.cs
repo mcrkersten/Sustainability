@@ -35,7 +35,7 @@ public class Contract : ScriptableObject
 
     public ContractCardProgress selfProgressUI;
 
-    public GameObject ui;
+   // public GameObject ui;
 
     public void Awake() {
         contractManager = ContractManager.Instance;
@@ -57,8 +57,13 @@ public class Contract : ScriptableObject
         availableUI.c = this;
         availableUI.rewardAmount.text = contractReward.ToString();
         availableUI.contractor.text = contractor;
-        availableUI.peopleToCollect.text = personsToCollect.ToString();
-
+        if(personsToCollect > 1) {
+            availableUI.peopleToCollect.text = personsToCollect.ToString() + " people";
+        }
+        else {
+            availableUI.peopleToCollect.text = personsToCollect.ToString() + " person";
+        }
+        
         //Makes button in UI link to SetInProgress function
         availableUI.button.onClick.AddListener(delegate { SetInProgress(); });
     }
@@ -76,7 +81,13 @@ public class Contract : ScriptableObject
             progressUI.c = this;
             progressUI.rewardAmount.text = contractReward.ToString();
             progressUI.contractor.text = contractor;
-            progressUI.peopleToCollect.text = personsToCollect.ToString();
+
+            if (personsToCollect > 1) {
+                progressUI.peopleToCollect.text = personsToCollect.ToString() + " people";
+            }
+            else {
+                progressUI.peopleToCollect.text = personsToCollect.ToString() + " person";
+            }
 
             Ship.Instance.currentContracts.Add(this);
 

@@ -8,8 +8,8 @@ public class BackgroundMusicManager : MonoBehaviour
 
     public List<NamedAudioClip> BackgroundMusics;
 
-    private bool isPlaying = false;
-    private string CurrentMusicName = "";
+    //private bool isPlaying = false;
+    //private string CurrentMusicName = "";
     private AudioSource audioSource;
 
     void Awake()

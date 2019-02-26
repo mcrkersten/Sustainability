@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ContractCardProgress : MonoBehaviour
 {
     public Contract c;
-    public Text rewardAmount;
-    public Text contractor;
-    public Text peopleToCollect;
-    public Text collectedPeople;
+    public TextMeshProUGUI rewardAmount;
+    public TextMeshProUGUI contractor;
+    public TextMeshProUGUI peopleToCollect;
+    public TextMeshProUGUI collectedPeople;
 }

@@ -1,17 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    private CanvasColors c;
+    public Color ownedColor;
     public GameObject openStorePromt;
-
     public GameObject activeContracts;
     public GameObject deliverContract;
     private List<GameObject> openMenu = new List<GameObject>();
+    private int itemSelected;
+    private int storeNumber;
+    private Store store;
+    public PreviewModel previewModel;
+    public GameObject[] storeFrames;
+    private int reFuelPrice;
 
     public delegate void RefuelShip();
     public static event RefuelShip OnRefuelShip;
+
+    public delegate void BuyItemEvent(GameObject item);
+    public static event BuyItemEvent OnItemBuy;
 
     private void Start()
     {
@@ -24,8 +35,60 @@ public class ButtonManager : MonoBehaviour
         Ship.OnExitCity += ExitCity;
     }
 
-    private void EnterCity() {
+    private void EnterCity(Store s) {
+        store = s;
+
+        
         openStorePromt.SetActive(true);
+        c = this.gameObject.GetComponent<CanvasColors>();
+        
+        storeNumber = store.storeNumber;
+        c.clerk.sprite = store.clerk;
+        c.clerkGlow.sprite = store.clerkGlow;
+        c.storeSymbol.sprite = store.storeSymbol;
+        c.storeSlogan.text = store.storeSlogan;
+        c.storeName.text = store.storeName;
+        c.unitFuelPrice.text = "Per Unit: " + store.fuelCostPerUnit.ToString() + ",-";
+
+        for (int i = 0; i < c.textColor.Length; i++) {
+            c.textColor[i].color = store.storeColor;
+        }
+        for (int i = 0; i < c.imageColor.Length; i++) {
+            c.imageColor[i].color = store.storeColor;
+        }
+        UpdateStore();
+    }
+
+    private void UpdateStore() {
+        previewModel = PreviewModel.Instance;
+        float cost = Ship.Instance.maxFuel - Ship.Instance.currentFuel;
+        reFuelPrice = Mathf.RoundToInt((store.fuelCostPerUnit * cost));
+        c.fuelCost.text = "Total: " + reFuelPrice.ToString()+",-";
+        for (int i = 0; i < storeFrames.Length; i++) {
+            storeFrames[i].SetActive(false);
+        }
+
+        for (int i = 0; i < previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
+            storeFrames[i].SetActive(true);
+            if (previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
+                storeFrames[i].GetComponent<Image>().color = ownedColor;
+                storeFrames[i].GetComponent<Button>().enabled = false;
+            }
+            else {
+                storeFrames[i].GetComponent<Button>().enabled = true;
+            }
+        }
+
+        int z = 0;
+        foreach (int x in previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].price) {
+            if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[z]) {
+                c.storePrices[z].text = x.ToString() + ",-";
+            }
+            else {
+                c.storePrices[z].text = "Owned";
+            }
+            z++;
+        }
     }
 
     private void ExitCity() {
@@ -69,8 +132,9 @@ public class ButtonManager : MonoBehaviour
 
     public void FuelShip() {
         if (CreditSystem.Instance.credits > CreditSystem.Instance.fuelCost) {
-            CreditSystem.Instance.credits -= CreditSystem.Instance.fuelCost;
+            CreditSystem.Instance.credits -= reFuelPrice;
             OnRefuelShip?.Invoke();
+            UpdateStore();
         }
     }
 
@@ -81,5 +145,34 @@ public class ButtonManager : MonoBehaviour
             a.selfInActiveContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
             a.selfProgressUI.collectedPeople.text = a.colectedPersons.ToString();
         }
+    }
+
+    public void SelectStoreItem(int itemNumber) {
+        itemSelected = itemNumber;
+        //if selevted object is on, disable it, else turn it on.
+        if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].activeSelf) {
+            storeFrames[itemSelected].GetComponent<Image>().color = new Color(255, 0, 0);
+            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(true);
+        }
+        else {
+            storeFrames[itemSelected].GetComponent<Image>().color = store.storeColor;
+            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(false);
+        }
+
+        //disable all other objects.
+        for (int i = 0; i < PreviewModel.Instance.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
+            if (i != itemSelected && !previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
+                storeFrames[i].GetComponent<Image>().color = store.storeColor;
+                previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[i].SetActive(false);
+            }
+        }
+    }
+
+    public void BuyItem() {
+        if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected]) {
+            OnItemBuy(previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected]);
+            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+        }
+        UpdateStore();
     }
 }

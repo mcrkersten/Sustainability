@@ -31,24 +31,32 @@ public class Ship : MonoBehaviour
 
     public List<Contract> currentContracts = new List<Contract>();
     public int currentPersonsOnShip;
+    public GameObject shipMesh;
 
     //upgradables
     public int maxPersonsOnShip;
     public float currentFuel;
+    public float baseFuel;
     public float maxFuel;
     public Slider uiSlider;
     public Slider storeUiSlider;
+    public int currentShip;
 
-    public delegate void EnterCity();
+    public delegate void EnterCity(Store store);
     public static event EnterCity OnEnterCity;
 
     public delegate void ExitCity();
     public static event ExitCity OnExitCity;
 
+    [Header("Upgadables")]
+    public List<GameObject> upgrades = new List<GameObject>();
+    public List<FuelUpgrade> fuel = new List<FuelUpgrade>();
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("City")) {
-            OnEnterCity?.Invoke();
+            OnEnterCity?.Invoke(other.GetComponent<Store>());
         }
         //If gameObject has a personClass on it.
         if (other.gameObject.GetComponent<Person>() != null && !once)
@@ -77,6 +85,15 @@ public class Ship : MonoBehaviour
         }
     }
 
+    private void UpdateMaxFuel() {
+        maxFuel = baseFuel;
+        foreach(FuelUpgrade f in fuel) {
+            maxFuel += f.fuelUpgrade;
+        }
+        uiSlider.maxValue = maxFuel;
+        storeUiSlider.maxValue = maxFuel;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("City")) {
@@ -87,12 +104,15 @@ public class Ship : MonoBehaviour
 
     private void Start() {
         InitListners();
+        maxFuel = baseFuel;
+
         uiSlider.maxValue = maxFuel;
         storeUiSlider.maxValue = maxFuel;
     }
 
     private void InitListners() {
         ButtonManager.OnRefuelShip += Refuel;
+        ButtonManager.OnItemBuy += StoreBuy;
     }
 
     private void Update() {
@@ -102,5 +122,17 @@ public class Ship : MonoBehaviour
 
     private void Refuel() {
         currentFuel = maxFuel;
+    }
+
+    private void StoreBuy(GameObject newObject) {
+        GameObject temp = Instantiate(newObject, shipMesh.transform);
+        temp.layer = 0;
+        upgrades.Add(temp);
+
+        //If the item has a fuelUpgrade
+        if(temp.GetComponent<FuelUpgrade>() != null) {
+            fuel.Add(temp.GetComponent<FuelUpgrade>());
+            UpdateMaxFuel();
+        }
     }
 }

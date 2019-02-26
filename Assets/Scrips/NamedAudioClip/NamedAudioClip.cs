@@ -13,6 +13,9 @@ public class NamedAudioClip
         {
             return audioClip;
         }
+        set {
+            audioClip = Audio;
+        }
     }
 
     [SerializeField]
@@ -22,6 +25,9 @@ public class NamedAudioClip
         get
         {
             return name;
+        }
+        set {
+            name = Name;
         }
     }
 
