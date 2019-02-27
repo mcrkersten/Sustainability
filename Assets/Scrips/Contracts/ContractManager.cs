@@ -103,4 +103,18 @@ public class ContractManager : MonoBehaviour
             Ship.Instance.currentPersonsOnShip--;
         }
     }
+
+    public void UpdateUIPositionsBigMenu() {
+        int i = 0;
+        foreach (Contract g in existingContracts) {
+            g.selfInAvailableContractScreen.transform.position = new Vector3(g.selfInAvailableContractScreen.transform.position.x, 650, g.selfInAvailableContractScreen.transform.position.z);
+            g.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
+        }
+        i = 0;
+        foreach (Contract a in currentContracts) {
+            a.selfInAvailableContractScreen.transform.position = new Vector3(a.selfInAvailableContractScreen.transform.position.x, 650, a.selfInAvailableContractScreen.transform.position.z);
+            a.progressUI.collectedPeople.text = a.colectedPersons.ToString();
+            a.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
+        }
+    }
 }

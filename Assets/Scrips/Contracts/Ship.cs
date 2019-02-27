@@ -31,7 +31,9 @@ public class Ship : MonoBehaviour
 
     public List<Contract> currentContracts = new List<Contract>();
     public int currentPersonsOnShip;
-    public GameObject shipMesh;
+    public GameObject currentShipMesh;
+    public CharacterMovement characterMovement;
+    public GameObject[] shipMeshes;
 
     //upgradables
     public int maxPersonsOnShip;
@@ -124,15 +126,30 @@ public class Ship : MonoBehaviour
         currentFuel = maxFuel;
     }
 
-    private void StoreBuy(GameObject newObject) {
-        GameObject temp = Instantiate(newObject, shipMesh.transform);
-        temp.layer = 0;
-        upgrades.Add(temp);
+    private void StoreBuy(GameObject newObject, bool isShipStore) {
+        if (!isShipStore) {
+            GameObject temp = Instantiate(newObject, currentShipMesh.transform);
+            temp.layer = 0;
+            upgrades.Add(temp);
 
-        //If the item has a fuelUpgrade
-        if(temp.GetComponent<FuelUpgrade>() != null) {
-            fuel.Add(temp.GetComponent<FuelUpgrade>());
-            UpdateMaxFuel();
+            //If the item has a fuelUpgrade
+            if (temp.GetComponent<FuelUpgrade>() != null) {
+                fuel.Add(temp.GetComponent<FuelUpgrade>());
+                UpdateMaxFuel();
+            }
+        }
+        else {
+            currentShipMesh = Instantiate(newObject, this.transform);
+            currentShipMesh.transform.localPosition = new Vector3(0, -.5f, 0);
+            characterMovement.meshObject = currentShipMesh;
+            currentShip = currentShipMesh.GetComponent<ShipParts>().shipType;
+            currentShipMesh.layer = 0;
+            foreach (Transform trans in currentShipMesh.GetComponentsInChildren<Transform>(true)) {
+                trans.gameObject.layer = 0;
+            }
+            currentShipMesh.SetActive(true);
+            currentShipMesh.transform.localScale = new Vector3(20, 20, 20);
+            fuel.Clear();
         }
     }
 }

@@ -20,15 +20,16 @@ public class PreviewModel : MonoBehaviour
             return instance;
         }
     }
-
+    public List<GameObject> shipPreviews = new List<GameObject>();
     public GameObject[] ship;
-    public GameObject instantiatedShip;
+    //public GameObject instantiatedShip;
     public GameObject parent;
-    //public GameObject ship2;
-    //public GameObject ship3;
 
     private void Start() {
-        instantiatedShip = Instantiate(ship[Ship.Instance.currentShip], parent.transform);
+        for(int i = 0; i < ship.Length; i++) {
+            shipPreviews.Add(Instantiate(ship[i], parent.transform));
+            shipPreviews[i].SetActive(false);
+        }
     }
 }
 

@@ -49,7 +49,7 @@ public class Contract : ScriptableObject
 
         //Instantiate UI prefab, selfInAvailableContractScreen
         selfInAvailableContractScreen = Instantiate(availableContractPrefab, contractManager.uiContractElements[0].transform);
-        selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 600, selfInAvailableContractScreen.transform.position.z);
+        selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 1000, selfInAvailableContractScreen.transform.position.z);
         selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((contractManager.currectPosition++ -1) * 87), 0));
         availableUI = selfInAvailableContractScreen.GetComponent<ContractCardAvailable>();
 
@@ -63,17 +63,16 @@ public class Contract : ScriptableObject
         else {
             availableUI.peopleToCollect.text = personsToCollect.ToString() + " person";
         }
-        
+        ContractManager.Instance.UpdateUIPositionsBigMenu();
         //Makes button in UI link to SetInProgress function
         availableUI.button.onClick.AddListener(delegate { SetInProgress(); });
     }
-
 
     public void SetInProgress()
     {   if(contractManager.currentContracts.Count < maxContracts)
         {
             selfInAvailableContractScreen = Instantiate(progressContractPrefab, contractManager.uiContractElements[1].transform);
-            selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 600, selfInAvailableContractScreen.transform.position.z);
+            selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 1000, selfInAvailableContractScreen.transform.position.z);
             selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((contractManager.currectPositionInProgress++ - 1) * 87), 0));
             progressUI = selfInAvailableContractScreen.GetComponent<ContractCardProgress>();
 
@@ -104,6 +103,7 @@ public class Contract : ScriptableObject
             contractManager.currentContracts.Add(progressUI.c);
             SetInProgressScreenOnly(selfInAvailableContractScreen);
         }
+        ContractManager.Instance.UpdateUIPositionsBigMenu();
     }
 
     private void SetInProgressScreenOnly(GameObject s)
@@ -117,7 +117,6 @@ public class Contract : ScriptableObject
         selfProgressUI.contractor.text = contractor;
         selfProgressUI.peopleToCollect.text = personsToCollect.ToString();
     }
-
 
     private void CreateRefugees()
     {

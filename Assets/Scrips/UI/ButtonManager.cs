@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject activeContracts;
     public GameObject deliverContract;
     private List<GameObject> openMenu = new List<GameObject>();
-    private int itemSelected;
+    private int itemSelected = 0;
     private int storeNumber;
     private Store store;
     public PreviewModel previewModel;
@@ -21,13 +21,14 @@ public class ButtonManager : MonoBehaviour
     public delegate void RefuelShip();
     public static event RefuelShip OnRefuelShip;
 
-    public delegate void BuyItemEvent(GameObject item);
+    public delegate void BuyItemEvent(GameObject item, bool isShipStore);
     public static event BuyItemEvent OnItemBuy;
 
     private void Start()
     {
         InitListners();
         ContractManager.Instance.InitNewContracts();
+        
     }
 
     private void InitListners() {
@@ -36,9 +37,8 @@ public class ButtonManager : MonoBehaviour
     }
 
     private void EnterCity(Store s) {
-        store = s;
-
-        
+        Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
+        store = s; 
         openStorePromt.SetActive(true);
         c = this.gameObject.GetComponent<CanvasColors>();
         
@@ -68,9 +68,9 @@ public class ButtonManager : MonoBehaviour
             storeFrames[i].SetActive(false);
         }
 
-        for (int i = 0; i < previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
+        for (int i = 0; i < previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
             storeFrames[i].SetActive(true);
-            if (previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
+            if (previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
                 storeFrames[i].GetComponent<Image>().color = ownedColor;
                 storeFrames[i].GetComponent<Button>().enabled = false;
             }
@@ -80,8 +80,8 @@ public class ButtonManager : MonoBehaviour
         }
 
         int z = 0;
-        foreach (int x in previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].price) {
-            if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[z]) {
+        foreach (int x in previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].price) {
+            if (!previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[z]) {
                 c.storePrices[z].text = x.ToString() + ",-";
             }
             else {
@@ -110,24 +110,7 @@ public class ButtonManager : MonoBehaviour
     public void OpenMenu(GameObject gameObjectToOpen) {
         gameObjectToOpen.SetActive(true);
         openMenu.Add(gameObjectToOpen);
-        UpdateUIPositionsBigMenu();
-    }
-
-    private void UpdateUIPositionsBigMenu()
-    {
-        int i = 0;
-        foreach (Contract g in ContractManager.Instance.existingContracts)
-        {
-            g.selfInAvailableContractScreen.transform.position = new Vector3(g.selfInAvailableContractScreen.transform.position.x, 700, g.selfInAvailableContractScreen.transform.position.z);
-            g.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
-        }
-        i = 0;
-        foreach (Contract a in ContractManager.Instance.currentContracts)
-        {
-            a.selfInAvailableContractScreen.transform.position = new Vector3(a.selfInAvailableContractScreen.transform.position.x, 700, a.selfInAvailableContractScreen.transform.position.z);
-            a.progressUI.collectedPeople.text = a.colectedPersons.ToString();
-            a.selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((i++) * 90), 0));
-        }
+        ContractManager.Instance.UpdateUIPositionsBigMenu();
     }
 
     public void FuelShip() {
@@ -149,29 +132,44 @@ public class ButtonManager : MonoBehaviour
 
     public void SelectStoreItem(int itemNumber) {
         itemSelected = itemNumber;
-        //if selevted object is on, disable it, else turn it on.
-        if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].activeSelf) {
-            storeFrames[itemSelected].GetComponent<Image>().color = new Color(255, 0, 0);
-            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(true);
+        if (store.isShipStore) {
+            foreach(GameObject x in Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews) {
+                x.SetActive(false);
+            }
+            Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
         }
         else {
-            storeFrames[itemSelected].GetComponent<Image>().color = store.storeColor;
-            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(false);
-        }
+            //if selevted object is on, disable it, else turn it on.
+            if (!previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].activeSelf) {
+                storeFrames[itemSelected].GetComponent<Image>().color = new Color(255, 0, 0);
+                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(true);
+            }
+            else {
+                storeFrames[itemSelected].GetComponent<Image>().color = store.storeColor;
+                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].SetActive(false);
+            }
 
-        //disable all other objects.
-        for (int i = 0; i < PreviewModel.Instance.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
-            if (i != itemSelected && !previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
-                storeFrames[i].GetComponent<Image>().color = store.storeColor;
-                previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[i].SetActive(false);
+            //disable all other objects.
+            for (int i = 0; i < PreviewModel.Instance.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts.Count; i++) {
+                if (i != itemSelected && !previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[i]) {
+                    storeFrames[i].GetComponent<Image>().color = store.storeColor;
+                    previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[i].SetActive(false);
+                }
             }
         }
     }
 
     public void BuyItem() {
-        if (!previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected]) {
-            OnItemBuy(previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected]);
-            previewModel.instantiatedShip.GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+        if (!previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected]) {
+            if (store.isShipStore) {
+                Ship.Instance.currentShipMesh.SetActive(false);
+                OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], true);
+                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+            }
+            else {
+                OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], false);
+                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+            }
         }
         UpdateStore();
     }

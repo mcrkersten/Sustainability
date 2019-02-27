@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipParts : MonoBehaviour
 {
     public StoreList stores;
+    public int shipType;
 }
 
 [System.Serializable]

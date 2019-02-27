@@ -469,6 +469,9 @@ MonoBehaviour:
       - {fileID: 5910686410880188556}
       price: c70000008f010000
       bought: 0000
-    - buyableParts: []
-      price: 
-      bought: 
+    - buyableParts:
+      - {fileID: 5910686410880188558}
+      - {fileID: 219, guid: 39677a5f9e49b33409c898e03013d6e0, type: 3}
+      price: c800000084010000
+      bought: 0000
+  shipType: 0

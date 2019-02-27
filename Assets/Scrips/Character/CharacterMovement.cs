@@ -13,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
     public float fuelBurnRate;
 
     private new Rigidbody rigidbody;
-    private GameObject meshObject;
+    public GameObject meshObject;
     private Ship ship;
 
     private float rotationDest;
@@ -99,7 +99,6 @@ public class CharacterMovement : MonoBehaviour
     {
         ship = Ship.Instance;
         rigidbody = GetComponent<Rigidbody>();
-        meshObject = transform.Find("ShipMesh").gameObject;
         audioSource = GetComponent<AudioSource>();
         stopSoundSmooth = StopSoundSmooth();
     }

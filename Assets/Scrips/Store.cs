@@ -9,4 +9,5 @@ public class Store : MonoBehaviour
     public string storeName, storeSlogan;
     public int storeNumber;
     public int fuelCostPerUnit;
+    public bool isShipStore;
 }
