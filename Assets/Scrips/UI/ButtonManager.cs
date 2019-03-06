@@ -10,6 +10,11 @@ public class ButtonManager : MonoBehaviour
     public GameObject openStorePromt;
     public GameObject activeContracts;
     public GameObject deliverContract;
+
+    public GameObject tablet;
+    public GameObject speechBubble;
+    public GameObject storePage;
+
     private List<GameObject> openMenu = new List<GameObject>();
     private int itemSelected = 0;
     private int storeNumber;
@@ -88,6 +93,22 @@ public class ButtonManager : MonoBehaviour
                 c.storePrices[z].text = "Owned";
             }
             z++;
+        }
+    }
+
+    public void OpenStorePage()
+    {
+        if (!store.visited)
+        {
+            tablet.SetActive(false);
+            storePage.SetActive(true);
+            speechBubble.SetActive(true);
+        }
+        else
+        {
+            tablet.SetActive(true);
+            storePage.SetActive(true);
+            speechBubble.SetActive(false);
         }
     }
 

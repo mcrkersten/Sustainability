@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class CanvasColors : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class CanvasColors : MonoBehaviour
     public Image clerk, clerkGlow, storeSymbol;
     public Text storeName, storeSlogan, fuelCost, unitFuelPrice;
     public Text[] storePrices;
+    public TextMeshProUGUI speechText, shopKeeperName;
+
 }
 
 
