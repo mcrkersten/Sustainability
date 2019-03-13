@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2e27d103-9c13-48fd-aa6c-5d32e7c0d2a8}">
+        <property name="assetPath">
+            <value>Day - Moonpad.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>165</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f6b52416-6e68-44b5-a191-db644ff0ecd0}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -11,14 +11,21 @@ public class ButtonManager : MonoBehaviour
     public GameObject activeContracts;
     public GameObject deliverContract;
 
+    [Header("StorePromts")]
     public GameObject tablet;
     public GameObject speechBubble;
     public GameObject storePage;
+
+    [Header("MissionPromt")]
+    public GameObject speechBubbleMission;
+    public GameObject missionPage;
 
     private List<GameObject> openMenu = new List<GameObject>();
     private int itemSelected = 0;
     private int storeNumber;
     private Store store;
+
+    [Header(" ")]
     public PreviewModel previewModel;
     public GameObject[] storeFrames;
     private int reFuelPrice;

@@ -53,6 +53,8 @@ public class ContractManager : MonoBehaviour
     {
         Contract tempContract = Instantiate(contractBasis);
         tempContract.name = "Contract: " + currentContract;
+
+        //For NonMainMissions.
         existingContracts.Add(tempContract);
 
         //Set Pramaters

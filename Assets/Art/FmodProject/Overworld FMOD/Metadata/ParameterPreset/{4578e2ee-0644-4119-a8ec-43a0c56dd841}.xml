@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{4578e2ee-0644-4119-a8ec-43a0c56dd841}">
+        <property name="name">
+            <value>level of night</value>
+        </property>
+        <relationship name="folder">
+            <destination>{d0f89d78-36c4-4a47-bdde-808662e33e6b}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{8ca20e89-f375-4588-bcfe-ea64ba4ff4d5}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{8ca20e89-f375-4588-bcfe-ea64ba4ff4d5}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

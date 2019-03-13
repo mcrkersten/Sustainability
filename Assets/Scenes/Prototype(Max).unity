@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 37f224fdf6e41f94ebac4e2ebcb19257, type: 2}
   m_Sun: {fileID: 2040267089}
-  m_IndirectSpecularColor: {r: 0.16375244, g: 0.054562032, b: 0.19448474, a: 1}
+  m_IndirectSpecularColor: {r: 0.16270456, g: 0.0543653, b: 0.19327605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,17 +155,17 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 9.041623
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 76.03356
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.18561287
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.982623
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -205,12 +205,12 @@ PrefabInstance:
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: far clip plane
-      value: 5000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
+  starterMission: 0
   clerk: {fileID: 21300000, guid: f9eb86bc492e26a4e9af97da336bcf11, type: 3}
   clerkGlow: {fileID: 21300000, guid: 3c299a95dfe7754428dce7f166392b95, type: 3}
   storeSymbol: {fileID: 21300000, guid: f9f66a9c1686f88449fbd5e602763e5a, type: 3}
@@ -1443,6 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
+  starterMission: 0
   clerk: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
   clerkGlow: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
   storeSymbol: {fileID: 21300000, guid: 918a5ccd9fcef1442a585954d6bae408, type: 3}

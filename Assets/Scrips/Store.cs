@@ -6,6 +6,7 @@ public class Store : MonoBehaviour
 {
     [HideInInspector]
     public bool visited;
+    public bool starterMission;
 
     [Header("Shopkeeper Images")]
     public Sprite clerk;
