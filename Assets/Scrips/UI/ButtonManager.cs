@@ -52,6 +52,7 @@ public class ButtonManager : MonoBehaviour
 
     private void EnterCity(Store s) {
         Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
+        Ship.Instance.currentStore = s;
         store = s; 
         openStorePromt.SetActive(true);
         c = this.gameObject.GetComponent<CanvasColors>();
@@ -80,6 +81,7 @@ public class ButtonManager : MonoBehaviour
         if (currentLine < store.speech.Count) {
             StartCoroutine(ShowText(store.speech[currentLine]));
             currentLine++;
+
         }
         else {
             tablet.SetActive(true);
@@ -143,6 +145,7 @@ public class ButtonManager : MonoBehaviour
 
     private void ExitCity() {
         ContractManager.Instance.InitNewContracts();
+
         openStorePromt.SetActive(false);
         foreach (GameObject x in openMenu) {
             x.SetActive(false);

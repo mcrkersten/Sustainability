@@ -1,34 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class missionManager : MonoBehaviour
+public class MissionManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    string[] mission1;
-    Contract contract;
-    ContractManager contractManager;
+    public GameObject mainMissionBoard;
+    public TextMeshProUGUI bubbleText;
+    public int currentMission;
+    public MainMission[] mainMissions;
 
     private void Start()
     {
-        contractManager = ContractManager.Instance;
-        //contract = BuildStartMission();
+        mainMissionBoard.SetActive(true);
     }
 
-    //private Contract BuildStartMission()
-    //{
-    //    Contract tempContract = Instantiate(contractBasis);
-    //    tempContract.name = "Contract: " + currentContract;
+    public void OnBubblePress()
+    {
 
-    //    For NonMainMissions.
-    //    existingContracts.Add(tempContract);
+    }
 
-    //    Set Pramaters
-    //    tempContract.contractNumber = currentContract++;
-    //    tempContract.personsToCollect = Random.Range(1, 4);
-    //    tempContract.contractReward = tempContract.personsToCollect * 100;
-    //    tempContract.SetInAvailible();
+    private void InitListners()
+    {
+        Ship.OnEnterCity += EnterCity;
+    }
 
-    //    return tempContract;
-    //}
+    private void EnterCity(Store store)
+    {
+        if(mainMissions[currentMission].targetStore == store)
+        {
+            CompleteMission();
+        }
+    }
+
+    private void CompleteMission()
+    {
+
+    }
 }
+

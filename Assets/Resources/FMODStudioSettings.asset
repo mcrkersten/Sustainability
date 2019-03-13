@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: 
+  sourceProjectPath: Assets\Art\FmodProject\Overworld FMOD\Spashte.fspro
+  SourceProjectPathUnformatted: Assets\Art\FmodProject\Overworld FMOD\Spashte.fspro
+  SourceBankPathUnformatted: Assets\Art\FmodProject\Overworld FMOD\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -34,18 +34,20 @@ MonoBehaviour:
   - Platform: 1
     Value: 1
   - Platform: 2
-    Value: 0
+    Value: 1
   OverlaySettings:
   - Platform: 1
     Value: 1
   - Platform: 2
-    Value: 0
+    Value: 1
   LoggingSettings:
   - Platform: 1
     Value: 1
   - Platform: 2
     Value: 0
-  BankDirectorySettings: []
+  BankDirectorySettings:
+  - Platform: 2
+    Value: Desktop
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024
@@ -57,5 +59,6 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master Bank
   Banks: []

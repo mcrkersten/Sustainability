@@ -43,7 +43,7 @@ public class Ship : MonoBehaviour
     public Slider uiSlider;
     public Slider storeUiSlider;
     public int currentShip;
-
+    public Store currentStore;
     public delegate void EnterCity(Store store);
     public static event EnterCity OnEnterCity;
 

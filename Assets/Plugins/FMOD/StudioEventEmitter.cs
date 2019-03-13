@@ -15,6 +15,8 @@ namespace FMODUnity
         public bool AllowFadeout = true;
         public bool TriggerOnce = false;
         public bool Preload = false;
+        [Header("Who am I?")]
+        [SerializeField]
         public ParamRef[] Params = new ParamRef[0];
         public bool OverrideAttenuation = false;
         public float OverrideMinDistance = -1.0f;
@@ -212,11 +214,13 @@ namespace FMODUnity
                     }
                 }
             }
-
-            foreach(var param in Params)
+            
+            foreach (var param in Params)
             {
+                
                 instance.setParameterValue(param.Name, param.Value);
             }
+            print(Params.Length);
 
             if (is3D && OverrideAttenuation)
             {
