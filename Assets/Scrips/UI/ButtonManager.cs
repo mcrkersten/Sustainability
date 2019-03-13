@@ -22,12 +22,14 @@ public class ButtonManager : MonoBehaviour
     public PreviewModel previewModel;
     public GameObject[] storeFrames;
     private int reFuelPrice;
+    private int currentLine = 0;
 
     public delegate void RefuelShip();
     public static event RefuelShip OnRefuelShip;
 
     public delegate void BuyItemEvent(GameObject item, bool isShipStore);
     public static event BuyItemEvent OnItemBuy;
+
 
     private void Start()
     {
@@ -54,6 +56,9 @@ public class ButtonManager : MonoBehaviour
         c.storeSlogan.text = store.storeSlogan;
         c.storeName.text = store.storeName;
         c.unitFuelPrice.text = "Per Unit: " + store.fuelCostPerUnit.ToString() + ",-";
+        c.shopKeeperName.text = store.clerkName;
+        c.speechText.text = store.speech[0];
+        currentLine = 0;
 
         for (int i = 0; i < c.textColor.Length; i++) {
             c.textColor[i].color = store.storeColor;
@@ -63,6 +68,20 @@ public class ButtonManager : MonoBehaviour
         }
         UpdateStore();
     }
+
+    public void NextLineOfText() {
+        if (currentLine < store.speech.Count) {
+            StartCoroutine(ShowText(store.speech[currentLine]));
+            currentLine++;
+        }
+        else {
+            tablet.SetActive(true);
+            speechBubble.SetActive(false);
+            store.visited = true;
+        }
+    }
+
+
 
     private void UpdateStore() {
         previewModel = PreviewModel.Instance;
@@ -102,7 +121,10 @@ public class ButtonManager : MonoBehaviour
         {
             tablet.SetActive(false);
             storePage.SetActive(true);
+            openMenu.Add(storePage);
             speechBubble.SetActive(true);
+            StartCoroutine(ShowText(store.speech[currentLine]));
+            currentLine++;
         }
         else
         {
@@ -193,5 +215,14 @@ public class ButtonManager : MonoBehaviour
             }
         }
         UpdateStore();
+    }
+
+    IEnumerator ShowText(string text) {
+        string currentText = "";
+        for (int i = 0; i <= text.Length; i++) {
+            currentText = text.Substring(0, i);
+            c.speechText.text = currentText;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

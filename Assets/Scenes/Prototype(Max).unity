@@ -155,17 +155,17 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.041623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 76.03356
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18561287
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.982623
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -205,12 +205,12 @@ PrefabInstance:
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: field of view
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: far clip plane
-      value: 6000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -458,6 +458,7 @@ MonoBehaviour:
   storeColor: {r: 0.039215688, g: 0.7411765, b: 0.8901961, a: 1}
   storeName: Fuel Specialist
   storeSlogan: Make your ship go further
+  clerkName: 
   storeNumber: 0
   fuelCostPerUnit: 1
   isShipStore: 0
@@ -1448,10 +1449,16 @@ MonoBehaviour:
   storeColor: {r: 0.34117648, g: 0.39607844, b: 0.45490196, a: 1}
   storeName: Ship Specialist
   storeSlogan: Carry in style
+  clerkName: Oswald
   storeNumber: 1
   fuelCostPerUnit: 2
   isShipStore: 1
-  speech: []
+  speech:
+  - "Oi! What\u2019s this little shrimp doing in my shop?! Or you\u2019re a person?
+    HA! I used to be as tiny as you when I was 7 years old..."
+  - ' Just kidding I was badass from the moment i was born! Anyways, you want something
+    to boost that crappy flying garbage can of yours?'
+  - I got everything you need right here.
 --- !u!1 &1436706199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,46 +2632,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374364860366181043, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374364860366181043, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 536505924930152287, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 536505924930152287, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3764244291490481752, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3764244291490481752, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5250261712276841768, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5250261712276841768, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264bb6c29f5f6c8439f896ae6a07f4b7, type: 3}
