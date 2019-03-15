@@ -35,7 +35,6 @@ public class CreditSystem : MonoBehaviour
     public Text inStoreCreditUiAmount;
 
     public void Update() {
-        inFlightUiCreditAmount.text = credits.ToString();
         inStoreCreditUiAmount.text = credits.ToString();
     }
 }

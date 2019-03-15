@@ -11,11 +11,7 @@ public class DeliverContracts : MonoBehaviour
             if(c.colectedPersons == c.personsToCollect)
             {
                 CreditSystem.Instance.credits += c.contractReward;
-                for(int i = 0; i < ContractManager.Instance.portUI.portrets.Length; i++)
-                {
-                    ContractManager.Instance.portUI.portrets[i].sprite = ContractManager.Instance.portrets[3];
-                }
-                Destroy(c);
+                c.DestroyContract(false);
             }
         }
     }

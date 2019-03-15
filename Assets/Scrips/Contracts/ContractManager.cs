@@ -27,9 +27,6 @@ public class ContractManager : MonoBehaviour
         }
     }
 
-    public int portretManager = 0;
-    public Sprite[] portrets;
-    public Portrets portUI;
     public RefugeeSpawner refSpawner;
     public Contract contractBasis;
     public GameObject[] uiContractElements;
@@ -41,9 +38,12 @@ public class ContractManager : MonoBehaviour
     public List<Contract> currentContracts = new List<Contract>();
     public List<Person> passangers = new List<Person>();
 
+    private Mission[] sideMissions;
+
     private void Start()
     {
-      BackgroundMusicManager bm =  BackgroundMusicManager.GetInstance();
+        sideMissions = Resources.LoadAll<Mission>("SideMissions");
+        BackgroundMusicManager bm =  BackgroundMusicManager.GetInstance();
         bm.PlayMusic("Moon Overworld");
     }
 
@@ -59,7 +59,9 @@ public class ContractManager : MonoBehaviour
 
         //Set Pramaters
         tempContract.contractNumber = currentContract++;
-        tempContract.personsToCollect = Random.Range(1, 4);
+
+        tempContract.currentSideMission = Instantiate(sideMissions[Random.Range(0, sideMissions.Length)]);
+        tempContract.personsToCollect = tempContract.currentSideMission.persons;
         tempContract.contractReward = tempContract.personsToCollect * 100;
         tempContract.SetInAvailible();
     }
@@ -86,23 +88,13 @@ public class ContractManager : MonoBehaviour
         {
             foreach(Contract c in existingContracts)
             {
-                Destroy(c);
+                c.DestroyContract(false);
             }
             existingContracts.Clear();
         }
         for(int i = 0; i < 4; i++)
         {
             CreateContact();
-        }
-    }
-
-    public void KickRefugee(int number) {
-        if(passangers[number] != null) {
-            passangers[number].contract.CreateRefugeesOnPosition(Ship.Instance.gameObject, passangers[number]);
-            portUI.portrets[number].sprite = portrets[3];
-            passangers[number].contract.colectedPersons--;
-            passangers.Remove(passangers[number]);
-            Ship.Instance.currentPersonsOnShip--;
         }
     }
 

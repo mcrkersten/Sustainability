@@ -16,6 +16,5 @@ public class Person : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         col = this.GetComponent<Collider>();
         col.isTrigger = true;
-        portret = ContractManager.Instance.portrets[Random.Range(0, ContractManager.Instance.portrets.Length -1)];
     }
 }

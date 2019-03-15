@@ -7,7 +7,7 @@ public class Contract : ScriptableObject
 {
     ContractManager contractManager;
     public int maxContracts;
-    public bool done;
+    public bool done = false;
     public string contractor;
     public int contractNumber;
     public int personsToCollect;
@@ -15,6 +15,7 @@ public class Contract : ScriptableObject
     public int contractReward;
     public GameObject refugee;
     public Store store;
+    public string storeName;
 
     public GameObject contractPosition;
 
@@ -35,18 +36,20 @@ public class Contract : ScriptableObject
     public ContractCardProgress progressUI;
 
     public ContractCardProgress selfProgressUI;
+    public Mission currentSideMission;
 
-   // public GameObject ui;
+    // public GameObject ui;
 
     public void Awake() {
-        contractManager = ContractManager.Instance;
+        contractManager = ContractManager.Instance;     
     }
 
+    //For menu
     public void SetInAvailible()
     {
-        //Get random tile to spawn refugees on
-        int random = Random.Range(0, contractManager.refSpawner.tiles.Count);
-        contractPosition = contractManager.refSpawner.tiles[Random.Range(0, contractManager.refSpawner.tiles.Count)];
+        //Get random tile from mission to spawn refugees on
+        contractPosition = contractManager.refSpawner.tiles[currentSideMission.missionTile];
+
 
         //Instantiate UI prefab, selfInAvailableContractScreen
         selfInAvailableContractScreen = Instantiate(availableContractPrefab, contractManager.uiContractElements[0].transform);
@@ -69,9 +72,20 @@ public class Contract : ScriptableObject
         availableUI.button.onClick.AddListener(delegate { SetInProgress(); });
     }
 
+    //Spawns refugees
     public void SetInProgress()
-    {   if(contractManager.currentContracts.Count < maxContracts)
+    {
+        if (contractManager.currentContracts.Count < maxContracts)
         {
+            currentSideMission.targetStore = Ship.Instance.currentStore.gameObject.name;
+            storeName = currentSideMission.targetStore;
+
+            MissionManager.Instance.sideMission = this.currentSideMission;
+            MissionManager.Instance.sideContract = this;
+            MissionManager.Instance.mainMissionBoard.SetActive(true);
+            MissionManager.Instance.OnBubblePress();
+            ButtonManager.Instance.CloseOpenMissionBoard();
+
             selfInAvailableContractScreen = Instantiate(progressContractPrefab, contractManager.uiContractElements[1].transform);
             selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 1000, selfInAvailableContractScreen.transform.position.z);
             selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((contractManager.currectPositionInProgress++ - 1) * 87), 0));
@@ -128,7 +142,6 @@ public class Contract : ScriptableObject
         r.transform.localPosition = new Vector3(randomXpos,-.5f, randomZpos);
         r.transform.eulerAngles = new Vector3(0, Random.Range(0, 360), 0);
         r.GetComponent<Person>().contract = this;
-        r.GetComponent<Person>().portret = contractManager.portrets[0];
     }
 
     public void CreateRefugeesOnPosition(GameObject pos, Person p) {
@@ -141,21 +154,13 @@ public class Contract : ScriptableObject
         p.gameObject.SetActive(true);
     }
 
-    public void OnDestroy()
-    {
-        contractManager.portretManager = 0;
+    public void DestroyContract(bool mainMission) {
         Ship.Instance.currentPersonsOnShip = 0;
         Destroy(selfInActiveContractScreen);
         Destroy(selfInAvailableContractScreen);
-        contractManager.currectPositionInProgress--;
-        Destroy(this);
-    }
-
-    public void ResetPicture()
-    {
-        for (int i = 0; i < contractManager.portUI.portrets.Length; i++)
-        {
-            contractManager.portUI.portrets[i].sprite = contractManager.portrets[3];
+        if (!mainMission) {
+            contractManager.currectPositionInProgress--;
         }
+        Destroy(this);
     }
 }

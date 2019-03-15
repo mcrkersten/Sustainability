@@ -71,14 +71,14 @@ public class Ship : MonoBehaviour
                 {
                     //Person is a part of the contract.
                     c.colectedPersons++;
-                    ContractManager.Instance.portUI.portrets[currentPersonsOnShip].sprite = p.portret;
                     currentPersonsOnShip++;
-                    ContractManager.Instance.portretManager++;
                     //Contract is done if all persons are collected
                     if (c.personsToCollect == c.colectedPersons)
                     {
-                        canDrop = true;
-                        c.done = true;
+                        //canDrop = true;
+                        //c.done = true;
+                        MissionManager.Instance.mainMissionBoard.SetActive(true);
+                        MissionManager.Instance.OnBubblePress();
                     }
                     ContractManager.Instance.passangers.Add(p);
                     p.gameObject.SetActive(false);
@@ -107,8 +107,6 @@ public class Ship : MonoBehaviour
     private void Start() {
         InitListners();
         maxFuel = baseFuel;
-
-        uiSlider.maxValue = maxFuel;
         storeUiSlider.maxValue = maxFuel;
     }
 
@@ -118,7 +116,6 @@ public class Ship : MonoBehaviour
     }
 
     private void Update() {
-        uiSlider.value = currentFuel;
         storeUiSlider.value = currentFuel;
     }
 

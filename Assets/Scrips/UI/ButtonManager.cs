@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    private static ButtonManager instance = null;
+    public static ButtonManager Instance
+    {
+        get {
+            if (instance == null) {
+                // This is where the magic happens.
+                instance = FindObjectOfType(typeof(ButtonManager)) as ButtonManager;
+            }
+            return instance;
+        }
+    }
+
     private CanvasColors c;
     public Color ownedColor;
     public GameObject openStorePromt;
@@ -20,7 +32,8 @@ public class ButtonManager : MonoBehaviour
     public GameObject speechBubbleMission;
     public GameObject missionPage;
 
-    private List<GameObject> openMenu = new List<GameObject>();
+
+    public List<GameObject> openMenu = new List<GameObject>();
     private int itemSelected = 0;
     private int storeNumber;
     private Store store;
@@ -54,7 +67,7 @@ public class ButtonManager : MonoBehaviour
         Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
         Ship.Instance.currentStore = s;
         store = s; 
-        openStorePromt.SetActive(true);
+        //openStorePromt.SetActive(true);
         c = this.gameObject.GetComponent<CanvasColors>();
         
         storeNumber = store.storeNumber;
@@ -87,6 +100,17 @@ public class ButtonManager : MonoBehaviour
             tablet.SetActive(true);
             speechBubble.SetActive(false);
             store.visited = true;
+        }
+    }
+
+    public void CloseOpenMissionBoard() {
+        foreach(GameObject i in openMenu) {
+            if (i.activeSelf) {
+                i.SetActive(false);
+            }
+            else {
+                i.SetActive(true);
+            }
         }
     }
 
