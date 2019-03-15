@@ -25,7 +25,7 @@ public class MissionManager : MonoBehaviour
 
     public Image portret;
     public int currentMissionNumber = 0;
-    public Mission[] mainMissions;
+    private Mission[] mainMissions;
     public Mission currentMainMission;
 
     public Mission sideMission;
@@ -41,6 +41,7 @@ public class MissionManager : MonoBehaviour
 
     private void Awake() {
         InitListners();
+        mainMissions = Resources.LoadAll<Mission>("MainMissions");
         mainMissionBoard.SetActive(true);
         currentMainMission = mainMissions[currentMissionNumber];
         OnBubblePress();

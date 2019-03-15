@@ -37,7 +37,6 @@ public class ContractManager : MonoBehaviour
     public List<Contract> existingContracts = new List<Contract>();
     public List<Contract> currentContracts = new List<Contract>();
     public List<Person> passangers = new List<Person>();
-
     private Mission[] sideMissions;
 
     private void Start()
