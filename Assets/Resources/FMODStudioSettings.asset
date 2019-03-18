@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets\Art\FmodProject\Overworld FMOD\Spashte.fspro
-  SourceProjectPathUnformatted: Assets\Art\FmodProject\Overworld FMOD\Spashte.fspro
-  SourceBankPathUnformatted: Assets\Art\FmodProject\Overworld FMOD\Build
+  sourceProjectPath: Assets\Art\FmodProject\FMOD\Spashte.fspro
+  SourceProjectPathUnformatted: Assets\Art\FmodProject\FMOD\Spashte.fspro
+  SourceBankPathUnformatted: Assets\Art\FmodProject\FMOD\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

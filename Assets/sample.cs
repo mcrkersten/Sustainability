@@ -7,7 +7,8 @@ namespace FMODUnity
 {
     public class sample : MonoBehaviour
     {
-        float valueThing = 0;
+        public Rigidbody rigidbody;
+        float speed = 0;
         [FMODUnity.EventRef]
         public string eventTemp = "event:/Overworld music";
         public float curve;
@@ -18,18 +19,14 @@ namespace FMODUnity
         void Start()
         {
             test = FMODUnity.RuntimeManager.CreateInstance(eventTemp);
-            test.getParameter("level of night", out pTest);
+            test.getParameter("Speed", out pTest);
             test.start();
         }
 
-        void OnTriggerStay(Collider other)
-        {
-            print("weHaveEntered");
-            valueThing += .002f;
-            print(test.isValid());
-            pTest.setValue(valueThing);
-            emitter.SetParameter("level of night", valueThing);
-
+        private void Update() {
+            print(rigidbody.velocity.magnitude / 10);
+            speed = rigidbody.velocity.magnitude /10;
+            pTest.setValue(speed);
         }
     }
 }
