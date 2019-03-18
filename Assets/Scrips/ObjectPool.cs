@@ -33,9 +33,10 @@ public class ObjectPool : MonoBehaviour
         distX = Mathf.Abs(this.gameObject.transform.position.x - ship.gameObject.transform.position.x);
         distZ = Mathf.Abs(this.gameObject.transform.position.z - ship.gameObject.transform.position.z);
 
+        //NOTE: 400/800 hardcoded, change to size dependant
         if(distX > 100 && ship.gameObject.transform.position.x > this.gameObject.transform.position.x) {
             foreach(GameObject g in verticals.rows[stepsOnX].objects) {
-                g.transform.position = new Vector3((g.transform.position.x + quadSize) + 400, 0, g.transform.position.z);
+                g.transform.position = new Vector3((g.transform.position.x + quadSize) + 800, 0, g.transform.position.z);
             }
             this.gameObject.transform.position = new Vector3(this.transform.position.x + quadSize, this.transform.position.y, this.transform.position.z);
             stepsOnX++;
@@ -52,7 +53,7 @@ public class ObjectPool : MonoBehaviour
             }
 
             foreach (GameObject g in verticals.rows[stepsOnX].objects) {
-                g.transform.position = new Vector3((g.transform.position.x - quadSize) - 400, 0, g.transform.position.z);
+                g.transform.position = new Vector3((g.transform.position.x - quadSize) - 800, 0, g.transform.position.z);
             }
             this.gameObject.transform.position = new Vector3(this.transform.position.x - quadSize, this.transform.position.y, this.transform.position.z);
         }
