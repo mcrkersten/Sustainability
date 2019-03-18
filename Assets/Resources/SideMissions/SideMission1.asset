@@ -12,17 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
   m_Name: SideMission1
   m_EditorClassIdentifier: 
-  persons: 2
+  persons: 1
   firstMission: 0
   sideMission: 1
   missionStartDialog:
-  - Ples safe me
-  - Oh ples
+  - " Oh hey! I\u2019m so happy to finally see someone! My name is Henry. My wife
+    and I were flying around to search for a nice little cottage to spend the upcoming
+    holidays in. My wife likes her livingspace big, probably so that her ego can fit
+    in while I like them simple and clean."
+  - "After a while we got into a fight and that\u2019s when she said she couldn\u2019t
+    take it anymore and so she pressed the emergency eject button and launched me
+    into space. Basically that\u2019s how I ended up here. Man, I sure wish I\u2019d
+    be back home in Lumen right now.\r\n"
   missionPickupDialog:
-  - thenk ye so muss
+  - Thank you!
   missionEndDialog:
-  - Now eat dirt
-  targetStore: 
-  missionTile: 38
-  personName: Greg
-  portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
+  - Thank you!
+  targetStore: LumenStore
+  missionTile: 12
+  personName: Henry
+  portret: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}

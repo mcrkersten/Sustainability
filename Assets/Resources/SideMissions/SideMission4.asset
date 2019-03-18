@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
+  m_Name: SideMission4
+  m_EditorClassIdentifier: 
+  persons: 2
+  firstMission: 0
+  sideMission: 1
+  missionStartDialog:
+  - "... My mom says I can\u2019t talk to strangers but I was so bored until you showed
+    up. I don\u2019t know where my teacher is. She took us out here on a field trip
+    to see all cities. We came from Flora and already saw Lumen. From my seat I saw
+    the earth. It looks soooo pretty. \r"
+  - "My mom says that the earth is the most pretty planet and we have to take good
+    care of it because it\u2019s where all the people used to live. I wanted to catch
+    the earth and bring it home so we can take care of it so I ran out there but I
+    couldn\u2019t get close enough and now I\u2019m lost. Can you bring me back to
+    where my teacher went?"
+  missionPickupDialog:
+  - Thank you!
+  missionEndDialog:
+  - Thank you!
+  targetStore: CapitalStore
+  missionTile: 19
+  personName: Jessie
+  portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}

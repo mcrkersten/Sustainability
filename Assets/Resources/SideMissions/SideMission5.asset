@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
+  m_Name: SideMission5
+  m_EditorClassIdentifier: 
+  persons: 2
+  firstMission: 0
+  sideMission: 1
+  missionStartDialog:
+  - "Oh good day to you! Good thing I see you here, I\u2019ve been a bit lost. You
+    see, my older brother makes these musical instruments out of space trash. Seeing
+    the earth and what people are doing to it made him want to live a sustainable
+    life so we moved away from Lumen. "
+  - "Life was good but now that he is ill and can\u2019t walk, I have to help him.
+    Unfortunately though, I am getting older too. My eyes are getting weary and I
+    keep getting lost out here. I found enough space trash for him to make one final
+    instrument. Can you bring me back to him? If you do so I\u2019ll board your ship
+    and reward you with a copy of his work."
+  missionPickupDialog:
+  - Thank you!
+  missionEndDialog:
+  - Thank you!
+  targetStore: FloraStore
+  missionTile: 38
+  personName: Walter
+  portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
