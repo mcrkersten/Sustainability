@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 114588031999482110}
   - {fileID: 114279842120886086}
   - {fileID: 114830068953674260}
+  - {fileID: 114662632139928120}
 --- !u!114 &114123098993976884
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -29,16 +30,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   mode:
     overrideState: 1
-    value: 0
+    value: 1
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 1, g: 1, b: 1, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -85,10 +86,10 @@ MonoBehaviour:
     value: 0.174
   size:
     overrideState: 1
-    value: 1
+    value: 2.03
   lumContrib:
     overrideState: 1
-    value: 0.8
+    value: 0
 --- !u!114 &114588031999482110
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -110,10 +111,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.6
+    value: 0.35
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.11590299, g: 0, b: 0.20754719, a: 1}
   ambientOnly:
     overrideState: 1
     value: 1
@@ -128,16 +129,50 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 1
+    value: 3.73
   directLightingStrength:
     overrideState: 0
     value: 0
   radius:
-    overrideState: 0
+    overrideState: 1
     value: 0.25
   quality:
     overrideState: 0
     value: 2
+--- !u!114 &114662632139928120
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 0
+    value: 0
+  intensityX:
+    overrideState: 0
+    value: 1
+  intensityY:
+    overrideState: 0
+    value: 1
+  centerX:
+    overrideState: 0
+    value: 0
+  centerY:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
 --- !u!114 &114830068953674260
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -159,7 +194,7 @@ MonoBehaviour:
     value: 9.3
   threshold:
     overrideState: 1
-    value: 1
+    value: 1.1
   softKnee:
     overrideState: 1
     value: 0.5
@@ -168,10 +203,10 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 1
-    value: 6.67
+    value: 6.5
   anamorphicRatio:
     overrideState: 1
-    value: 1
+    value: -0.6
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
