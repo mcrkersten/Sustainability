@@ -30,6 +30,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you!
   targetStore: LumenStore
-  missionTile: 19
+  missionTile: 104
   personName: Aletta
   portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}

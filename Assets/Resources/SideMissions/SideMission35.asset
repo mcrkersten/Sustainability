@@ -29,6 +29,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you!
   targetStore: FloraStore
-  missionTile: 38
+  missionTile: 121
   personName: Greg
   portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
