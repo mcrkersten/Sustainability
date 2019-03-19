@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{0eb92790-c7b6-4c65-9e39-cc0824067350}">
         <property name="assetPath">
-            <value>02b_Engine_loop.wav</value>
+            <value>SFX Eninge/02b_Engine_loop.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

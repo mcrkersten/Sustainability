@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{e022aaf6-53d4-49c9-951b-b3daada6285a}">
         <property name="assetPath">
-            <value>01_Engine_hover.wav</value>
+            <value>SFX Eninge/01_Engine_hover.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

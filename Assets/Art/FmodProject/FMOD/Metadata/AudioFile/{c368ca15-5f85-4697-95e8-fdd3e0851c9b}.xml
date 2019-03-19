@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{c368ca15-5f85-4697-95e8-fdd3e0851c9b}">
         <property name="assetPath">
-            <value>Dark tail.mp3</value>
+            <value>Overworld/Dark tail.mp3</value>
         </property>
         <property name="frequencyInKHz">
             <value>48</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{2e27d103-9c13-48fd-aa6c-5d32e7c0d2a8}">
         <property name="assetPath">
-            <value>Day - Moonpad.wav</value>
+            <value>Overworld/Day - Moonpad.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

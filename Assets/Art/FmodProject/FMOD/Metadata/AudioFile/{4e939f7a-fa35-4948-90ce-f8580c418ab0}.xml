@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{4e939f7a-fa35-4948-90ce-f8580c418ab0}">
         <property name="assetPath">
-            <value>Day - Oboe.wav</value>
+            <value>Overworld/Day - Oboe.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

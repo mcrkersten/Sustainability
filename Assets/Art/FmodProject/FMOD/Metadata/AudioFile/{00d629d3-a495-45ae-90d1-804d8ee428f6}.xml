@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{00d629d3-a495-45ae-90d1-804d8ee428f6}">
         <property name="assetPath">
-            <value>Moon basetrack.wav</value>
+            <value>Overworld/Moon basetrack.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>
