@@ -38,6 +38,7 @@ public class MissionManager : MonoBehaviour
 
     [HideInInspector]
     private int missionsDone;
+    public int minimalSideMissionsForMainMission;
 
     private void Awake() {
         InitListners();
@@ -198,6 +199,7 @@ public class MissionManager : MonoBehaviour
         currentContract.DestroyContract(true);
         currentContract = null;
         currentMainMission = null;
+        currentMissionNumber++;
     }
 
     private void EndSideMission() {
@@ -212,6 +214,13 @@ public class MissionManager : MonoBehaviour
         missionsDone++;
         sideContract = null;
         sideMission = null;
+
+        if(missionsDone == minimalSideMissionsForMainMission) {
+            mainMissionBoard.SetActive(true);
+            currentMainMission = mainMissions[currentMissionNumber];
+            missionsDone = 0;
+            OnBubblePress();
+        }
     }
 
     private void EnterCity(Store store)
