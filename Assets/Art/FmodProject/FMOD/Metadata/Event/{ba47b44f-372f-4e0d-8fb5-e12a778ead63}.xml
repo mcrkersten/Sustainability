@@ -260,6 +260,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{6320aca3-fbe8-4972-8c99-dbdd38e67259}">
+        <property name="volume">
+            <value>-10</value>
+        </property>
         <property name="name">
             <value>Hover</value>
         </property>
@@ -335,6 +338,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{69a3fdc1-ee3e-420c-a6e8-d66ee09425d1}">
+        <property name="volume">
+            <value>-9.40000057</value>
+        </property>
         <property name="name">
             <value>Fly</value>
         </property>
@@ -415,6 +421,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{545f85bd-aad7-4287-95c7-12397d7c515d}">
+        <property name="volume">
+            <value>-10</value>
+        </property>
         <property name="name">
             <value>Boost</value>
         </property>
