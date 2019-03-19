@@ -52,7 +52,7 @@ Shader "Custom/CurvedWorldTransparant" {
 		   void surf(Input IN, inout SurfaceOutput o) {
 			   half4 c = tex2D(_MainTex, IN.uv_MainTex);
 			   o.Albedo = c.rgb;
-			   o.Alpha = _Transparency;
+			   o.Alpha = c.a;
 		   }
 		   ENDCG
 		}
