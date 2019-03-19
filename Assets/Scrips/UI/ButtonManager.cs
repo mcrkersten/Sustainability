@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    private CanvasColors c;
+    public CanvasColors c;
     public Color ownedColor;
     public GameObject openStorePromt;
     public GameObject activeContracts;
@@ -68,7 +68,7 @@ public class ButtonManager : MonoBehaviour
         Ship.Instance.currentStore = s;
         store = s; 
         //openStorePromt.SetActive(true);
-        c = this.gameObject.GetComponent<CanvasColors>();
+        //c = this.gameObject.GetComponent<CanvasColors>();
         
         storeNumber = store.storeNumber;
         c.clerk.sprite = store.clerk;
