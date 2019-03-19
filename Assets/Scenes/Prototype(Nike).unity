@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 37f224fdf6e41f94ebac4e2ebcb19257, type: 2}
   m_Sun: {fileID: 2040267089}
-  m_IndirectSpecularColor: {r: 0.08293111, g: 0.014817831, b: 0.102064036, a: 1}
+  m_IndirectSpecularColor: {r: 0.07900525, g: 0.013825724, b: 0.09759369, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10378,22 +10378,22 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 30.21061
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.010489
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -62.140007
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.18561287
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -10408,12 +10408,12 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.982623
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -10433,12 +10433,12 @@ PrefabInstance:
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: far clip plane
-      value: 5000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672677, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -10771,12 +10771,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
+  starterMission: 0
   clerk: {fileID: 21300000, guid: f9eb86bc492e26a4e9af97da336bcf11, type: 3}
   clerkGlow: {fileID: 21300000, guid: 3c299a95dfe7754428dce7f166392b95, type: 3}
   storeSymbol: {fileID: 21300000, guid: f9f66a9c1686f88449fbd5e602763e5a, type: 3}
   storeColor: {r: 0.039215688, g: 0.7411765, b: 0.8901961, a: 1}
   storeName: Fuel Specialist
   storeSlogan: Make your ship go further
+  clerkName: 
   storeNumber: 0
   fuelCostPerUnit: 1
   isShipStore: 0
@@ -10812,7 +10814,7 @@ Transform:
   - {fileID: 1042704250}
   - {fileID: 634033659}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &130005094
 PrefabInstance:
@@ -15966,7 +15968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &329584081
 MonoBehaviour:
@@ -16031,7 +16033,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &352059185
 PrefabInstance:
@@ -40149,7 +40151,7 @@ Transform:
   - {fileID: 829546043}
   - {fileID: 1385677060}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658642674 stripped
 GameObject:
@@ -41293,18 +41295,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6890051258340233265}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1111838346 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1111838346, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8923699623742321538}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57bede29956563340b95efd40672181b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1120003622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3811836438224927576, guid: 4844cf08a1850544ea3161282d7feac5,
@@ -41578,13 +41568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb53bb67c8b09548adb4c86ae241118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portretManager: 0
-  portrets:
-  - {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
-  - {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
-  - {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}
-  - {fileID: 21300000, guid: 918a5ccd9fcef1442a585954d6bae408, type: 3}
-  portUI: {fileID: 1111838346}
   refSpawner: {fileID: 1227371590}
   contractBasis: {fileID: 11400000, guid: 4a6165fae2ca66b49b2f5ac9ac202f58, type: 2}
   uiContractElements:
@@ -41720,7 +41703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: 500
   fuelCost: 100
-  inFlightUiCreditAmount: {fileID: 3398412533346648378}
+  inFlightUiCreditAmount: {fileID: 0}
   inStoreCreditUiAmount: {fileID: 1234394752}
 --- !u!114 &1227371592
 MonoBehaviour:
@@ -41734,6 +41717,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3568497a3312d84ca0d422eaa7bc96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMissionBoard: {fileID: 0}
+  bubbleText: {fileID: 0}
+  personName: {fileID: 0}
+  portret: {fileID: 0}
+  currentMissionNumber: 0
+  currentMainMission: {fileID: 0}
+  sideMission: {fileID: 0}
+  sideContract: {fileID: 0}
 --- !u!114 &1234394752 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6181643154274161482, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
@@ -41819,7 +41810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 142.04199, y: -183.362, z: -158.662}
 --- !u!1 &1274017039
 GameObject:
@@ -47206,7 +47197,7 @@ Transform:
   - {fileID: 1436706200}
   - {fileID: 522987539}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1429090775
 MonoBehaviour:
@@ -47221,12 +47212,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
+  starterMission: 0
   clerk: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
   clerkGlow: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
   storeSymbol: {fileID: 21300000, guid: 918a5ccd9fcef1442a585954d6bae408, type: 3}
   storeColor: {r: 0.34117648, g: 0.39607844, b: 0.45490196, a: 1}
   storeName: Ship Specialist
   storeSlogan: Carry in style
+  clerkName: 
   storeNumber: 1
   fuelCostPerUnit: 2
   isShipStore: 1
@@ -47464,7 +47457,7 @@ PrefabInstance:
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
@@ -47485,7 +47478,7 @@ PrefabInstance:
         type: 3}
       propertyPath: uiSlider
       value: 
-      objectReference: {fileID: 2075490683}
+      objectReference: {fileID: 0}
     - target: {fileID: 1204433067881007575, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: storeUiSlider
@@ -47519,7 +47512,7 @@ PrefabInstance:
     - target: {fileID: 7543244150749788563, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47015128
+      value: 0.9404068
       objectReference: {fileID: 0}
     - target: {fileID: 8776449765695006461, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
@@ -48869,7 +48862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 120.091995, y: -0.000015258789, z: -0.000015258789}
 --- !u!1 &2044153826
 GameObject:
@@ -48998,18 +48991,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068199194}
   m_Mesh: {fileID: 4300006, guid: a17900e56779a714bbf7f1931ffa3647, type: 3}
---- !u!114 &2075490683 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6299605662803129652, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8923699623742321538}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2080883032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 617965902269971063, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
@@ -53809,6 +53790,63 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6890051258340233265}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2120973474
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1914326815257160, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_Name
+      value: cityA
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.942173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.519814
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.49277
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527129782824326, guid: e9480d4f883e260418c66790feb8595a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9480d4f883e260418c66790feb8595a, type: 3}
 --- !u!1001 &40762838084367653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53864,7 +53902,7 @@ PrefabInstance:
     - target: {fileID: 6068922668420063530, guid: b065490a1d7d10541a3b03bccc4fc318,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6068922668420063530, guid: b065490a1d7d10541a3b03bccc4fc318,
         type: 3}
@@ -54838,18 +54876,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b065490a1d7d10541a3b03bccc4fc318, type: 3}
---- !u!114 &3398412533346648378 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3398412533346648378, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8923699623742321538}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6890051258340233265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54905,7 +54931,7 @@ PrefabInstance:
     - target: {fileID: 6890051258460321760, guid: 4844cf08a1850544ea3161282d7feac5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6890051258460321760, guid: 4844cf08a1850544ea3161282d7feac5,
         type: 3}
@@ -55932,7 +55958,7 @@ PrefabInstance:
     - target: {fileID: 8923699624961676138, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8923699624961676138, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
         type: 3}
