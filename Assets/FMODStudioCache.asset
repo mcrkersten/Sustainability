@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114596874403608444}
+<<<<<<< HEAD
   - {fileID: 114682303638214384}
+=======
+  - {fileID: 114790571996690588}
+>>>>>>> dialogue
   EditorEvents:
   - {fileID: 114733229860974754}
   - {fileID: 114428621126807278}
@@ -29,6 +33,7 @@ MonoBehaviour:
   - {fileID: 114771213952584878}
   MasterBanks:
   - {fileID: 114530180703441738}
+<<<<<<< HEAD
   - {fileID: 114015475851869650}
   - {fileID: 114786938019761796}
   - {fileID: 114682303638214384}
@@ -73,6 +78,15 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114066635554174100
+=======
+  - {fileID: 114465731840775996}
+  - {fileID: 114790571996690588}
+  StringsBanks:
+  - {fileID: 114596874403608444}
+  stringsBankWriteTime: 636885918322954572
+  cacheVersion: 3
+--- !u!114 &114110043211747484
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,10 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Speed
   Min: 0
   Max: 2
   Default: 0
+=======
+  Name: Fuel
+  Min: 0
+  Max: 100
+  Default: 100
+>>>>>>> dialogue
 --- !u!114 &114123634429391444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +157,11 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114226043708320334
+=======
+--- !u!114 &114239349140461440
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,6 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -182,6 +208,15 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3912
+=======
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 2
+  Default: 0
+>>>>>>> dialogue
 --- !u!114 &114259449613234250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +335,11 @@ MonoBehaviour:
   - Name: Desktop
     Value: 15588896
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &114398313386711960
+=======
+--- !u!114 &114377765903056926
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,12 +370,21 @@ MonoBehaviour:
   Path: event:/Sound Effects/Engine
   guid: 4fb447ba2f370d4e8fb5e12a778ead63
   Banks:
+<<<<<<< HEAD
   - {fileID: 114682303638214384}
+=======
+  - {fileID: 114790571996690588}
+>>>>>>> dialogue
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: 114631452948388566}
+=======
+  - {fileID: 114110043211747484}
+  - {fileID: 114239349140461440}
+>>>>>>> dialogue
   MinDistance: 0
   MaxDistance: 0
   Length: 14957
@@ -364,6 +412,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 330000
+--- !u!114 &114465731840775996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Catnip's not sure if deletable\Willemien\Desktop\SCHOOLIE SCHOOL JAAR 2\PROJECT
+    CONTEXT II 2019\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636885420328360142
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 15883680
+  Exists: 0
 --- !u!114 &114487135768997864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,6 +473,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 15883680
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114542272164675806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +497,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2280
+=======
+>>>>>>> dialogue
 --- !u!114 &114569516636254718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.strings.bank
+<<<<<<< HEAD
   lastModified: 636886014171172024
   LoadResult: 0
   FileSizes:
@@ -554,12 +627,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\HKU\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.bank
   lastModified: 636886014170922161
+=======
+  lastModified: 636885918322954572
+>>>>>>> dialogue
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 23194400
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &114723881746788570
+=======
+--- !u!114 &114627757674977586
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -590,11 +670,16 @@ MonoBehaviour:
   Path: event:/Music/Overworld music
   guid: 4b29980cd4120141a991fc18f6b4912a
   Banks:
+<<<<<<< HEAD
   - {fileID: 114682303638214384}
+=======
+  - {fileID: 114790571996690588}
+>>>>>>> dialogue
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: 114030312891090632}
   MinDistance: 0
   MaxDistance: 0
@@ -623,6 +708,13 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 2280
 --- !u!114 &114786938019761796
+=======
+  - {fileID: 114867086011757800}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 330000
+--- !u!114 &114790571996690588
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -634,6 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: D:\Repository\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
     Bank.bank
   lastModified: 636886051396250989
@@ -642,6 +735,16 @@ MonoBehaviour:
   - Name: Desktop
     Value: 23194400
   Exists: 0
+=======
+  Path: D:\[HKU] project context 2\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636885918322914662
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 15883680
+  Exists: 1
+>>>>>>> dialogue
 --- !u!114 &114818927665388982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,6 +781,38 @@ MonoBehaviour:
   - Name: Desktop
     Value: 15588896
   Exists: 0
+--- !u!114 &114867086011757800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114887534115028162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fuel
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114930997724034110
 MonoBehaviour:
   m_ObjectHideFlags: 0

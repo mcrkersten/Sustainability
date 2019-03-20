@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
+  m_Name: SideMission3
+  m_EditorClassIdentifier: 
+  persons: 2
+  firstMission: 0
+  sideMission: 1
+  missionStartDialog:
+  - "Oh hello dear, did they send you to pick me up? I came out here because I\u2019ve
+    lost a data chip which contains all my work. You see I am a writer and I have
+    been spending hours, days and months even to write my book. It\u2019s about the
+    overview effect."
+  - "To gain inspiration I\u2019ve visited my hometown but it was so dark there, it
+    took me ages to find the data! When I found it I was thrilled! Thrilled and a
+    bit lost \u2026 but here you are! To reward you for saving me I\u2019ll give you
+    my favorite song which was also on the drive, maybe it inspires you too. Can you
+    bring me back to my hometown?"
+  missionPickupDialog:
+  - Thank you!
+  missionEndDialog:
+  - Thank you!
+  targetStore: LumenStore
+  missionTile: 104
+  personName: Aletta
+  portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}

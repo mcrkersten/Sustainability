@@ -16,13 +16,18 @@ MonoBehaviour:
   firstMission: 0
   sideMission: 1
   missionStartDialog:
-  - Ples safe me
-  - Oh ples
+  - "Yo! It took you forever to get to me! I have places to be you know, my fans in
+    the city of blue are waiting\u2026 Your people were supposed to show up hours
+    ago. Do you have any idea who I even am?! I\u2019m a famous and amazing musician
+    and I demand to be treated like that. "
+  - 'If you bring me home in that stupid garbage machine of yours, I will educate
+    you and give you a copy of my music so you can listen to some quality music you
+    uncultured swine. '
   missionPickupDialog:
-  - thenk ye so muss
+  - Thank you!
   missionEndDialog:
-  - Now eat dirt
-  targetStore: 
-  missionTile: 19
-  personName: Jessie
+  - Thank you!
+  targetStore: CapitalStore
+  missionTile: 79
+  personName: Misu
   portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}
