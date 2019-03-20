@@ -48,7 +48,9 @@ public class Contract : ScriptableObject
     public void SetInAvailible()
     {
         //Get random tile from mission to spawn refugees on
-        contractPosition = contractManager.refSpawner.tiles[currentSideMission.missionTile];
+        if(currentSideMission != null) {
+            contractPosition = contractManager.refSpawner.tiles[currentSideMission.missionTile];
+        }
 
 
         //Instantiate UI prefab, selfInAvailableContractScreen

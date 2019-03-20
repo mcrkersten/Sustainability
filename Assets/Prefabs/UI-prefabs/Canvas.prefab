@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refSpawner: {fileID: 1227371590}
-  contractBasis: {fileID: 11400000, guid: 4a6165fae2ca66b49b2f5ac9ac202f58, type: 2}
+  contractBasis: {fileID: 0}
   uiContractElements:
   - {fileID: 6523103072627137756}
   - {fileID: 8012661647545258240}
@@ -217,7 +217,7 @@ MonoBehaviour:
   currentMainMission: {fileID: 0}
   sideMission: {fileID: 0}
   sideContract: {fileID: 0}
-  minimalSideMissionsForMainMission: 0
+  minimalSideMissionsForMainMission: 2
 --- !u!1 &1280755538
 GameObject:
   m_ObjectHideFlags: 0

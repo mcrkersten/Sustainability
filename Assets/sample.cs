@@ -24,7 +24,6 @@ namespace FMODUnity
         }
 
         private void Update() {
-            print(rigidbody.velocity.magnitude / 10);
             speed = rigidbody.velocity.magnitude /10;
             pTest.setValue(speed);
         }
