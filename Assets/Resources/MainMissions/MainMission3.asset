@@ -24,7 +24,8 @@ MonoBehaviour:
     are not at all concerned about durability or the state of the moon\u2026 "
   - "these moneygrubbers first treat the earth like trash and then go on to do the
     same to the moon. I\u2019m supposed to be subjective about it all but I can tell
-    my secrets to you, can\u2019t I? Let\u2019s go find Lumen."
+    my secrets to you, can\u2019t I? "
+  - "Let\u2019s go find Lumen."
   missionPickupDialog:
   - Alright
   missionEndDialog:
