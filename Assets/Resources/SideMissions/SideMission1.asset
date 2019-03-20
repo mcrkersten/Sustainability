@@ -29,6 +29,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you!
   targetStore: LumenStore
-  missionTile: 1
+  missionTile: 8
   personName: Henry
   portret: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}

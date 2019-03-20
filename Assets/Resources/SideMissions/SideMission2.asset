@@ -28,6 +28,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you!
   targetStore: CapitalStore
-  missionTile: 79
+  missionTile: 9
   personName: Misu
   portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}
