@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{6e40bcfd-5593-483c-b147-18b175536c3e}">
         <property name="assetPath">
-            <value>Dialogue_Long_Female_Neutral.mp3</value>
+            <value>Overige SFX/Dialogue_Long_Female_Neutral.mp3</value>
         </property>
         <property name="frequencyInKHz">
             <value>48</value>
