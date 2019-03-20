@@ -19,7 +19,8 @@ MonoBehaviour:
   - '*ring ring .... ring ring ... ring ring*'
   - "Hey it\u2019s Nancy speaking. My research went great, it\u2019s good to be back
     out in the field. I can see that the soil has been practically unharmed since
-    the last time I came there to check. Can you pick me up at Flora?\r\n"
+    the last time I came there to check. "
+  - "Can you pick me up at Flora?\r\n"
   missionPickupDialog:
   - Alright
   missionEndDialog:

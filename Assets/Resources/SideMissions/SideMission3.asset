@@ -22,9 +22,9 @@ MonoBehaviour:
     overview effect."
   - "To gain inspiration I\u2019ve visited my hometown but it was so dark there, it
     took me ages to find the data! When I found it I was thrilled! Thrilled and a
-    bit lost \u2026 but here you are! To reward you for saving me I\u2019ll give you
-    my favorite song which was also on the drive, maybe it inspires you too. Can you
-    bring me back to my hometown?"
+    bit lost \u2026 but here you are! "
+  - "To reward you for saving me I\u2019ll give you my favorite song which was also
+    on the drive, maybe it inspires you too. Can you bring me back to my hometown?"
   missionPickupDialog:
   - Thank you!
   missionEndDialog:
