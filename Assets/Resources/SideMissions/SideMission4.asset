@@ -21,10 +21,10 @@ MonoBehaviour:
     to see all cities. We came from Flora and already saw Lumen. From my seat I saw
     the earth. It looks soooo pretty. \r"
   - "My mom says that the earth is the most pretty planet and we have to take good
-    care of it because it\u2019s where all the people used to live. I wanted to catch
-    the earth and bring it home so we can take care of it so I ran out there but I
-    couldn\u2019t get close enough and now I\u2019m lost. Can you bring me back to
-    where my teacher went?"
+    care of it because it\u2019s where all the people used to live. "
+  - "I wanted to catch the earth and bring it home so we can take care of it so I
+    ran out there but I couldn\u2019t get close enough and now I\u2019m lost. Can
+    you bring me back to where my teacher went?"
   missionPickupDialog:
   - Thank you!
   missionEndDialog:

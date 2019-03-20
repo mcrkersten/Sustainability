@@ -24,8 +24,40 @@ MonoBehaviour:
   - {fileID: 114790571996690588}
   StringsBanks:
   - {fileID: 114596874403608444}
-  stringsBankWriteTime: 636885918322954572
+  stringsBankWriteTime: 636886832314843500
   cacheVersion: 3
+--- !u!114 &114034467437573610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114077641889367620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114110043211747484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +246,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114110043211747484}
-  - {fileID: 114239349140461440}
+  - {fileID: 114459016931600518}
+  - {fileID: 114034467437573610}
   MinDistance: 0
   MaxDistance: 0
   Length: 14957
@@ -243,6 +275,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 330000
+--- !u!114 &114459016931600518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fuel
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114465731840775996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636885918322954572
+  lastModified: 636886832314843500
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -391,7 +439,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114867086011757800}
+  - {fileID: 114077641889367620}
   MinDistance: 0
   MaxDistance: 0
   Length: 330000
@@ -409,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\[HKU] project context 2\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636885918322914662
+  lastModified: 636886832314783653
   LoadResult: 0
   FileSizes:
   - Name: Desktop
