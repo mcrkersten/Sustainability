@@ -217,6 +217,7 @@ MonoBehaviour:
   currentMainMission: {fileID: 0}
   sideMission: {fileID: 0}
   sideContract: {fileID: 0}
+  minimalSideMissionsForMainMission: 0
 --- !u!1 &1280755538
 GameObject:
   m_ObjectHideFlags: 0
@@ -7504,7 +7505,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Oi! What\u2019s this little shrimp doing in my shop?! Or you\u2019re a
-    person? HA! I used to be as tiny as you when I was 7 years old... "
+    person? HA! I used to be as tiny as you when I was 7 years oldperson? HA! I used
+    to be as tiny as you when I was 7 years old... person? HA! I used to be as tiny
+    as you when I was 7 years old... years o"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24ff224b8c0f6e8498cda3c0f1e68898, type: 2}
   m_sharedMaterial: {fileID: 21579163607249778, guid: 24ff224b8c0f6e8498cda3c0f1e68898,
@@ -7571,15 +7574,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -239.12262, w: 14.103186}
+  m_margin: {x: 0, y: -3.4651222, z: -239.12262, w: 6.182911}
   m_textInfo:
     textComponent: {fileID: 8587728713411983965}
-    characterCount: 127
+    characterCount: 262
     spriteCount: 0
-    spaceCount: 28
-    wordCount: 28
+    spaceCount: 60
+    wordCount: 61
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 2
   m_havePropertiesChanged: 0
@@ -10260,22 +10263,22 @@ PrefabInstance:
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3927718120689139177, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
-        type: 3}
-      propertyPath: m_textInfo.textComponent
-      value: 
-      objectReference: {fileID: 6794502628672116203}
-    - target: {fileID: 3927718120689139177, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8442975540166170526, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
         type: 3}
       propertyPath: m_textInfo.textComponent
       value: 
       objectReference: {fileID: 2153735965709270940}
     - target: {fileID: 8442975540166170526, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927718120689139177, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 6794502628672116203}
+    - target: {fileID: 3927718120689139177, guid: a3f8d4c5f27f7ab44a129540d315f5bb,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
