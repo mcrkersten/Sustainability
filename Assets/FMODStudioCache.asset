@@ -31,10 +31,49 @@ MonoBehaviour:
   - {fileID: 114978547573699754}
   - {fileID: 114766954015649126}
   StringsBanks:
+<<<<<<< HEAD
   - {fileID: 114485636640655184}
   stringsBankWriteTime: 636886014171172024
   cacheVersion: 3
 --- !u!114 &114103910897663196
+=======
+  - {fileID: 114596874403608444}
+  stringsBankWriteTime: 636886832314843500
+  cacheVersion: 3
+--- !u!114 &114034467437573610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114077641889367620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114110043211747484
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,12 +261,63 @@ MonoBehaviour:
   - {fileID: 114766954015649126}
   IsStream: 0
   Is3D: 0
+<<<<<<< HEAD
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 2280
 --- !u!114 &114434180749898230
+=======
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114459016931600518}
+  - {fileID: 114034467437573610}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14957
+--- !u!114 &114438472023931718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld music
+  guid: 4b29980cd4120141a991fc18f6b4912a
+  Banks:
+  - {fileID: 114367512451198010}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114569516636254718}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 330000
+--- !u!114 &114459016931600518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fuel
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114465731840775996
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/Sound Effects/Fuel warning
   guid: 66f0d0ddfef5d1468c3e0469adcaf7df
   Banks:
@@ -325,6 +416,16 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 3360
 --- !u!114 &114723403493383708
+=======
+  Path: Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636886832314843500
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 794
+  Exists: 1
+--- !u!114 &114627757674977586
+>>>>>>> dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,6 +489,11 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 114330137824933870}
+<<<<<<< HEAD
+  - {fileID: 114348488253207660}
+=======
+  - {fileID: 114077641889367620}
+>>>>>>> dialogue
   MinDistance: 0
   MaxDistance: 0
   Length: 330000
@@ -403,7 +509,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: D:\RepositoryD\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
+=======
+  Path: D:\[HKU] project context 2\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636886832314783653
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 15883680
+  Exists: 1
+--- !u!114 &114818927665388982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114857558769525938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Repository\Sustainability\Assets\Art\FmodProject\Overworld FMOD\Build\Desktop\Master
+>>>>>>> dialogue
     Bank.bank
   lastModified: 636886276459732507
   LoadResult: 0

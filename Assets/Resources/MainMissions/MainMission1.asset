@@ -25,16 +25,16 @@ MonoBehaviour:
     basis. To get a new contract, fly to the embassy."
   - ' Here you can accept all the contracts that show up. The contracts tell you to
     pick people up, you have to decide to which of the three cities you will bring
-    them'
-  - " If you bring the people to their preferred city, you will get a bonus. Oh, and
+    them.'
+  - "If you bring the people to their preferred city, you will get a bonus. Oh, and
     don\u2019t forget to get fuel; you\u2019ll see how much you got left on the battery
     on your spaceship."
   - "If you get stranded without, you will have to be fueled in the fields. It\u2019ll
     cost you extra.\r"
   - But enough about your job, I was hoping you can take me to my first destination;
     Flora. I want to gather some soil samples to see how the moon is doing after all
-    this mining,
-  - " that\u2019s my job here you see. The people of Flora strive to live a sustainable
+    this mining.
+  - "That\u2019s my job here you see. The people of Flora strive to live a sustainable
     life, it\u2019s always great to see how good the moon is doing around there. Let\u2019s
     go!"
   missionPickupDialog:

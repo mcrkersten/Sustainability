@@ -28,6 +28,7 @@ public class ContractManager : MonoBehaviour
     }
 
     public RefugeeSpawner refSpawner;
+    
     public Contract contractBasis;
     public GameObject[] uiContractElements;
     public int currentContract = 0;
@@ -42,7 +43,7 @@ public class ContractManager : MonoBehaviour
     private void Start()
     {
         sideMissions = Resources.LoadAll<Mission>("SideMissions");
-
+        contractBasis = Resources.Load<Contract>("ContractBasis");
         BackgroundMusicManager bm =  BackgroundMusicManager.GetInstance();
         bm.PlayMusic("Moon Overworld");
     }
