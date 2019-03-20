@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
-  m_Name: MainMission2
+  m_Name: MainMission5
   m_EditorClassIdentifier: 
   persons: 1
   firstMission: 1
   sideMission: 0
   missionStartDialog:
-  - '*ring ring .... ring ring ... ring ring*'
-  - "Hey it\u2019s Nancy speaking. My research went great, it\u2019s good to be back
-    out in the field. I can see that the soil has been practically unharmed since
-    the last time I came there to check. Can you pick me up at Flora?\r\n"
+  - "Ah, good to see you again. My research went okay, but the results make me sad\u2026\r\nAt
+    Flora they have been trying so hard to live durable but every step they make the
+    moon go forward, is taken back by the people of Lumen who don\u2019t believe in
+    living a durable life and consequences for the moon\u2019s health."
+  - Oh well ...
+  - "My next destination is the Capital. As my final destination I research the health
+    of the soil around there and that should be the end of both our shifts today.\r\n"
   missionPickupDialog:
   - Alright
   missionEndDialog:

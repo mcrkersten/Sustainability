@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
-  m_Name: MainMission2
+  m_Name: MainMission8
   m_EditorClassIdentifier: 
   persons: 1
   firstMission: 1
   sideMission: 0
   missionStartDialog:
-  - '*ring ring .... ring ring ... ring ring*'
-  - "Hey it\u2019s Nancy speaking. My research went great, it\u2019s good to be back
-    out in the field. I can see that the soil has been practically unharmed since
-    the last time I came there to check. Can you pick me up at Flora?\r\n"
+  - Mission complete!
+  - "This is the end of your training, soldier. We hope to have trained you well and
+    your study as a pilot for a future scenario like this has been fulfilling. For
+    now let\u2019s hope that the world realises durability is the answer to a healthy
+    future generation of people. Good job, see you at the office tomorrow!\r"
   missionPickupDialog:
   - Alright
   missionEndDialog:
