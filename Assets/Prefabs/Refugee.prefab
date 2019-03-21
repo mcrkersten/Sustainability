@@ -43,10 +43,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.15
-  m_Height: 6.59
+  m_Radius: 3.5
+  m_Height: 17.11
   m_Direction: 1
-  m_Center: {x: 0, y: 2.74, z: 0.33}
+  m_Center: {x: 0, y: 6.47, z: 0.33}
 --- !u!114 &5959527010535829758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,14 +116,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 19f8bc66b5a34e045bb58bf716ce91ca, type: 2}
+    - target: {fileID: 11100000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11100000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
       propertyPath: m_WrapMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
+    - target: {fileID: 11100000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9eea0abe34c3f4e4f91e9d00ce930eae, type: 3}
+    - target: {fileID: 13700000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19f8bc66b5a34e045bb58bf716ce91ca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93683e48a1c0b914193151a8d819ff94, type: 3}
 --- !u!4 &8611857189583948176 stripped

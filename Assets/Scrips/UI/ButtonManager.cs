@@ -78,6 +78,7 @@ public class ButtonManager : MonoBehaviour
         c.storeName.text = store.storeName;
         c.unitFuelPrice.text = "Per Unit: " + store.fuelCostPerUnit.ToString() + ",-";
         c.shopKeeperName.text = store.clerkName;
+        store.speech = store.speech.Count > 0 ? store.speech : new List<string>(new string[] { "I DONT HAVE TEXT PLEASE HELP", "help me..." });
         c.speechText.text = store.speech[0];
         currentLine = 0;
 

@@ -65,6 +65,8 @@ public class Ship : MonoBehaviour
         {
             once = true;
             Person p = other.gameObject.GetComponent<Person>();
+            print(p.contract.contractNumber);
+            
             foreach (Contract c in currentContracts)
             {
                 if(c.contractNumber == p.contract.contractNumber && currentPersonsOnShip < maxPersonsOnShip)

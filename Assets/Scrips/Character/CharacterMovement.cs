@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public bool isHorizonControlRotate = true;
     public float rotationSpeed = 50.0f;
-    public float movementSpeed = 50.0f;
+    public float movementSpeed = 300.0f;
     public float limitOfRotationRightCrood;
     public float limitOfRotationLeftCrood;
     public float fuelBurnRate;
@@ -106,6 +106,7 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
+        float fuelUpdate;
 
         Vector3 rotationCoord = new Vector3(0, horizontalAxis * Time.deltaTime * rotationSpeed);
 
@@ -128,15 +129,19 @@ public class CharacterMovement : MonoBehaviour
             ProcessBoostSoundState();
         }
 
-        if(Input.GetAxis("Vertical") != 0 && Input.GetKey(KeyCode.LeftShift) && ship.currentFuel > 0) {
-            rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * (movementSpeed * 5));
-
-            ship.currentFuel -= (fuelBurnRate * 2) * Time.deltaTime;
-        }
-            
-        else if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
-            rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
-            ship.currentFuel -= fuelBurnRate * Time.deltaTime;
+        // Calculate forward speed
+        if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
+            // Hold shift to break, has lower fuel consumption
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
+                fuelUpdate = fuelBurnRate * Time.deltaTime;
+            }
+            else
+            {
+                rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed * 5);
+                fuelUpdate = fuelBurnRate * Time.deltaTime * 10;
+            }
+            ship.currentFuel -= fuelUpdate;
         }
     }
 
