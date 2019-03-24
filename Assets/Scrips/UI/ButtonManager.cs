@@ -64,7 +64,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     private void EnterCity(Store s) {
-        Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
+        Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[Ship.Instance.currentShip].SetActive(true);
         Ship.Instance.currentStore = s;
         store = s; 
         //openStorePromt.SetActive(true);
@@ -176,6 +176,7 @@ public class ButtonManager : MonoBehaviour
             x.SetActive(false);
         }
         openMenu.Clear();
+        itemSelected = 0;
     }
 
     public void ExitMenu(GameObject gameObjectToExit) {
@@ -189,6 +190,15 @@ public class ButtonManager : MonoBehaviour
         gameObjectToOpen.SetActive(true);
         openMenu.Add(gameObjectToOpen);
         ContractManager.Instance.UpdateUIPositionsBigMenu();
+    }
+
+    public void OpenOrCloseMenu(GameObject gameObjectToOpen) {
+        if (gameObjectToOpen.activeSelf) {
+            gameObjectToOpen.SetActive(false);
+        }
+        else {
+            gameObjectToOpen.SetActive(true);
+        }
     }
 
     public void FuelShip() {
@@ -217,6 +227,7 @@ public class ButtonManager : MonoBehaviour
             Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[itemSelected].SetActive(true);
         }
         else {
+
             //if selevted object is on, disable it, else turn it on.
             if (!previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected].activeSelf) {
                 storeFrames[itemSelected].GetComponent<Image>().color = new Color(255, 0, 0);

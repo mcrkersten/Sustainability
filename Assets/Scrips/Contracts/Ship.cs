@@ -34,14 +34,14 @@ public class Ship : MonoBehaviour
     public GameObject currentShipMesh;
     public CharacterMovement characterMovement;
     public GameObject[] shipMeshes;
+    public GameObject lastBought;
 
     //upgradables
     public int maxPersonsOnShip;
     public float currentFuel;
     public float baseFuel;
     public float maxFuel;
-    public Slider uiSlider;
-    public Slider storeUiSlider;
+
     public int currentShip;
     public Store currentStore;
     public delegate void EnterCity(Store store);
@@ -94,8 +94,6 @@ public class Ship : MonoBehaviour
         foreach(FuelUpgrade f in fuel) {
             maxFuel += f.fuelUpgrade;
         }
-        uiSlider.maxValue = maxFuel;
-        storeUiSlider.maxValue = maxFuel;
     }
 
     private void OnTriggerExit(Collider other)
@@ -109,7 +107,6 @@ public class Ship : MonoBehaviour
     private void Start() {
         InitListners();
         maxFuel = baseFuel;
-        storeUiSlider.maxValue = maxFuel;
     }
 
     private void InitListners() {
@@ -117,9 +114,6 @@ public class Ship : MonoBehaviour
         ButtonManager.OnItemBuy += StoreBuy;
     }
 
-    private void Update() {
-        storeUiSlider.value = currentFuel;
-    }
 
     private void Refuel() {
         currentFuel = maxFuel;
@@ -127,13 +121,14 @@ public class Ship : MonoBehaviour
 
     private void StoreBuy(GameObject newObject, bool isShipStore) {
         if (!isShipStore) {
-            GameObject temp = Instantiate(newObject, currentShipMesh.transform);
-            temp.layer = 0;
-            upgrades.Add(temp);
+            Destroy(lastBought);
+            lastBought = Instantiate(newObject, currentShipMesh.transform);
+            lastBought.layer = 0;
+            upgrades.Add(lastBought);
 
             //If the item has a fuelUpgrade
-            if (temp.GetComponent<FuelUpgrade>() != null) {
-                fuel.Add(temp.GetComponent<FuelUpgrade>());
+            if (lastBought.GetComponent<FuelUpgrade>() != null) {
+                fuel.Add(lastBought.GetComponent<FuelUpgrade>());
                 UpdateMaxFuel();
             }
         }
@@ -147,7 +142,7 @@ public class Ship : MonoBehaviour
                 trans.gameObject.layer = 0;
             }
             currentShipMesh.SetActive(true);
-            currentShipMesh.transform.localScale = new Vector3(20, 20, 20);
+            currentShipMesh.transform.localScale = new Vector3(1, 1, 1);
             fuel.Clear();
         }
     }

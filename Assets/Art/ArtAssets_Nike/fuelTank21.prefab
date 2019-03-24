@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7845074873744244893}
   - component: {fileID: 7095602376643330}
   - component: {fileID: 5215724681945151718}
-  m_Layer: 0
+  - component: {fileID: 3518919188772358422}
+  m_Layer: 5
   m_Name: tankLiquidGrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +78,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3518919188772358422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215724681947080228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8916267f514e543a2e5187fa0bcab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &6876411378122648441
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +104,7 @@ GameObject:
   - component: {fileID: 8447894248644808773}
   - component: {fileID: 6812396409329088891}
   - component: {fileID: 6738175702601098452}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tankGlassGrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +181,7 @@ GameObject:
   - component: {fileID: 5577234773135363654}
   - component: {fileID: 7234093010448665517}
   - component: {fileID: 2341797774639551580}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tankLidsGrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +256,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5215724681947445762}
-  m_Layer: 0
+  - component: {fileID: 8377335684721434485}
+  m_Layer: 5
   m_Name: fuelTank21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +271,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8450539787645630525}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -264,3 +281,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8377335684721434485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450539787645630525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768af6248e584eb4cac439d970a06a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightRend: []
+  lightSwitch: 
+  fuelRend: {fileID: 5215724681945151718}
+  tankWobbly: {fileID: 5215724681947080228}
+  fuelAmount: 1

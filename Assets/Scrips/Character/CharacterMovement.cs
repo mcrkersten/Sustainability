@@ -16,6 +16,8 @@ public class CharacterMovement : MonoBehaviour
     public GameObject meshObject;
     private Ship ship;
 
+    public GameObject menu1;
+
     private float rotationDest;
     private float rotationStart;
     private float lerpTime = 0;
@@ -99,8 +101,6 @@ public class CharacterMovement : MonoBehaviour
     {
         ship = Ship.Instance;
         rigidbody = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        stopSoundSmooth = StopSoundSmooth();
     }
 
     void FixedUpdate()
@@ -110,38 +110,37 @@ public class CharacterMovement : MonoBehaviour
 
         Vector3 rotationCoord = new Vector3(0, horizontalAxis * Time.deltaTime * rotationSpeed);
 
-        if (isHorizonControlRotate)
-        {
-            if (horizontalAxis != 0)
-                if (horizontalAxis < 0)
-                {
-                    RotateState = RotateStateCode.Right;
-                }
-                else
-                {
-                    RotateState = RotateStateCode.Left;
-                }
-            else RotateState = RotateStateCode.middle;
+        if (!menu1.activeSelf) {
+            if (isHorizonControlRotate) {
+                if (horizontalAxis != 0)
+                    if (horizontalAxis < 0) {
+                        RotateState = RotateStateCode.Right;
+                    }
+                    else {
+                        RotateState = RotateStateCode.Left;
+                    }
+                else RotateState = RotateStateCode.middle;
 
-            transform.Rotate(rotationCoord);
+                transform.Rotate(rotationCoord);
 
-            ProcessRotateState();
-            ProcessBoostSoundState();
+                ProcessRotateState();
+            }
         }
 
         // Calculate forward speed
-        if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
-            // Hold shift to break, has lower fuel consumption
-            if (Input.GetKey(KeyCode.LeftShift)) {
-                rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
-                fuelUpdate = fuelBurnRate * Time.deltaTime;
+        if (!menu1.activeSelf) {
+            if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
+                // Hold shift to break, has lower fuel consumption
+                if (Input.GetKey(KeyCode.LeftShift)) {
+                    rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
+                    fuelUpdate = fuelBurnRate * Time.deltaTime;
+                }
+                else {
+                    rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed * 5);
+                    fuelUpdate = fuelBurnRate * Time.deltaTime * 10;
+                }
+                ship.currentFuel -= fuelUpdate;
             }
-            else
-            {
-                rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed * 5);
-                fuelUpdate = fuelBurnRate * Time.deltaTime * 10;
-            }
-            ship.currentFuel -= fuelUpdate;
         }
     }
 
@@ -153,50 +152,5 @@ public class CharacterMovement : MonoBehaviour
             meshObject.transform.localEulerAngles = new Vector3(0, 0, rotateAngle);
             lerpTime += Time.deltaTime;
         }
-    }
-
-    void ProcessBoostSoundState()
-    {
-        float VerticalAxis = Input.GetAxis("Vertical");
-        if (BoostSoundState == BoostSoundStateCode.Launching)
-        {
-            if (!audioSource.isPlaying)
-            {
-                BoostSoundState = BoostSoundStateCode.Looping;
-                audioSource.loop = true;
-                audioSource.Play();
-            }
-        }
-        else if (BoostSoundState == BoostSoundStateCode.Looping)
-        {
-            if (VerticalAxis == 0)
-                BoostSoundState = BoostSoundStateCode.Stoped;
-        }
-        else if (BoostSoundState == BoostSoundStateCode.Stoped)
-        {
-            if (audioSource.isPlaying && !isSmoothing) 
-                StartCoroutine(StopSoundSmooth());
-            else if (VerticalAxis != 0)
-            {
-                BoostSoundState = BoostSoundStateCode.Launching;
-                audioSource.loop = false;
-                audioSource.Play();
-            }
-        }
-    }
-
-    IEnumerator StopSoundSmooth()
-    { 
-        isSmoothing = true;
-        while (audioSource.volume > 0.0f && boostSoundState == BoostSoundStateCode.Stoped)
-        {
-            audioSource.volume -= 0.01f;
-            yield return new WaitForFixedUpdate();
-        }
-
-        isSmoothing = false;
-        audioSource.volume = .2f;
-        audioSource.Stop();
-        yield break;
     }
 }

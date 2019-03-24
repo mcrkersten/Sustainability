@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c0dedf817c25c4493c6e03eb4d3696, type: 3}
   m_Name: ContractBasis
   m_EditorClassIdentifier: 
-  maxContracts: 3
+  maxContracts: 1
   done: 0
   contractor: Federation Earth
   contractNumber: 0
@@ -20,6 +20,8 @@ MonoBehaviour:
   colectedPersons: 0
   contractReward: 100
   refugee: {fileID: 7888227609868916810, guid: cf7ad2af3100bbf499e26023c1a5877e, type: 3}
+  store: {fileID: 0}
+  storeName: 
   contractPosition: {fileID: 0}
   progressContractPrefab: {fileID: 1681605257711388460, guid: 2635d5abb1a464e46b21a41e5296ed81,
     type: 3}
@@ -29,3 +31,4 @@ MonoBehaviour:
   availableUI: {fileID: 0}
   progressUI: {fileID: 0}
   selfProgressUI: {fileID: 0}
+  currentSideMission: {fileID: 0}

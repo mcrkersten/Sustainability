@@ -6,6 +6,7 @@ using TMPro;
 
 public class MissionManager : MonoBehaviour
 {
+    private bool isTalking;
     private static MissionManager instance = null;
     public static MissionManager Instance
     {
@@ -18,8 +19,9 @@ public class MissionManager : MonoBehaviour
         }
     }
     private int currentLine = 0;
-    public GameObject mainMissionBoard;
 
+    [Header("MissionBriefing")]
+    public GameObject mainMissionBoard;
     public TextMeshProUGUI bubbleText;
     public TextMeshProUGUI personName;
 
@@ -27,7 +29,6 @@ public class MissionManager : MonoBehaviour
     public int currentMissionNumber = 0;
     private Mission[] mainMissions;
     public Mission currentMainMission;
-
     public Mission sideMission;
 
     private bool missionActive;
@@ -40,12 +41,31 @@ public class MissionManager : MonoBehaviour
     private int missionsDone;
     public int minimalSideMissionsForMainMission;
 
+    [Header("MissionInformationPanel")]
+    public TextMeshProUGUI contractOrigin;
+    public TextMeshProUGUI pickupLocation;
+    public TextMeshProUGUI personsToCollect;
+    public TextMeshProUGUI reward;
+    public GameObject warningIcon;
+    public GameObject informationDisplay;
+    private Coroutine co;
+
     private void Awake() {
         InitListners();
         mainMissions = Resources.LoadAll<Mission>("MainMissions");
         mainMissionBoard.SetActive(true);
         currentMainMission = mainMissions[currentMissionNumber];
         OnBubblePress();
+    }
+
+    private void Update() {
+        if (missionActive) {
+            warningIcon.SetActive(true);
+        }
+        else {
+            warningIcon.SetActive(false);
+            informationDisplay.SetActive(false);
+        }
     }
 
     private void InitListners() {
@@ -79,8 +99,15 @@ public class MissionManager : MonoBehaviour
         UpdatePerson();
         if (!missionActive) {
             if (currentLine < currentMainMission.missionStartDialog.Count) {
-                StartCoroutine(ShowText(currentMainMission.missionStartDialog[currentLine]));
-                currentLine++;
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(currentMainMission.missionStartDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = currentMainMission.missionStartDialog[currentLine];
+                    isTalking = false;
+                    currentLine++;
+                }
             }
             else {
                 currentLine = 0;
@@ -92,8 +119,15 @@ public class MissionManager : MonoBehaviour
         //Center of mission (Pickup)
         else if (missionActive && !currentContract.done) {
             if (currentLine < currentMainMission.missionPickupDialog.Count) {
-                StartCoroutine(ShowText(currentMainMission.missionPickupDialog[currentLine]));
-                currentLine++;
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(currentMainMission.missionPickupDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = currentMainMission.missionPickupDialog[currentLine];
+                    isTalking = false;
+                    currentLine++;
+                }
 
             }
             else {
@@ -105,8 +139,15 @@ public class MissionManager : MonoBehaviour
         //End of mission
         else if (currentContract.done) {
             if (currentLine < currentMainMission.missionEndDialog.Count) {
-                StartCoroutine(ShowText(currentMainMission.missionEndDialog[currentLine]));
-                currentLine++;
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(currentMainMission.missionEndDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = currentMainMission.missionEndDialog[currentLine];
+                    isTalking = false;
+                    currentLine++;
+                }
 
             }
             else {
@@ -128,9 +169,15 @@ public class MissionManager : MonoBehaviour
         UpdatePerson();
         if (!missionActive) {
             if (currentLine < sideMission.missionStartDialog.Count && !sideContract.done) {
-                StartCoroutine(ShowText(sideMission.missionStartDialog[currentLine]));
-                currentLine++;
-
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(sideMission.missionStartDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = sideMission.missionStartDialog[currentLine];
+                    currentLine++;
+                    isTalking = false;
+                }
             }
             else {
                 currentLine = 0;
@@ -144,9 +191,15 @@ public class MissionManager : MonoBehaviour
         //Center of mission (Pickup)
         else if (missionActive && !sideContract.done) {
             if (currentLine < sideMission.missionPickupDialog.Count) {
-                StartCoroutine(ShowText(sideMission.missionPickupDialog[currentLine]));
-                currentLine++;
-
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(sideMission.missionPickupDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = sideMission.missionPickupDialog[currentLine];
+                    currentLine++;
+                    isTalking = false;
+                }
             }
             else {
                 currentLine = 0;
@@ -159,9 +212,15 @@ public class MissionManager : MonoBehaviour
         //End of mission
         else if (sideContract.done) {
             if (currentLine < sideMission.missionEndDialog.Count) {
-                StartCoroutine(ShowText(sideMission.missionEndDialog[currentLine]));
-                currentLine++;
-
+                if (!isTalking) {
+                    co = StartCoroutine(ShowText(sideMission.missionEndDialog[currentLine]));
+                }
+                else {
+                    StopCoroutine(co);
+                    bubbleText.text = sideMission.missionEndDialog[currentLine];
+                    currentLine++;
+                    isTalking = false;
+                }
             }
             else {
                 currentLine = 0;
@@ -184,6 +243,8 @@ public class MissionManager : MonoBehaviour
         currentContract.personsToCollect = currentMainMission.persons;
         currentContract.storeName = currentMainMission.targetStore;
 
+        UpdateMissionInformationPanel(currentMainMission);
+
         if (currentMainMission.firstMission) {
             currentContract.colectedPersons = 1;
             currentContract.done = true;
@@ -192,6 +253,7 @@ public class MissionManager : MonoBehaviour
 
     public void StartSideMission() {
         missionActive = true;
+        UpdateMissionInformationPanel(sideMission);
     }
 
     private void EndMainMission() {
@@ -255,13 +317,28 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    private void UpdateMissionInformationPanel(Mission m) {
+        contractOrigin.text = m.targetStore;
+        pickupLocation.text = "Not set or unknown";
+        personsToCollect.text = m.persons.ToString();
+        if (currentContract != null) {
+            reward.text = currentContract.contractReward.ToString();
+        }
+        if (sideContract != null) {
+            reward.text = sideContract.contractReward.ToString();
+        }
+    }
+
     IEnumerator ShowText(string text) {
+        isTalking = true;
         string currentText = "";
         for (int i = 0; i <= text.Length; i++) {
             currentText = text.Substring(0, i);
             bubbleText.text = currentText;
             yield return new WaitForEndOfFrame();
         }
+        currentLine++;
+        isTalking = false;
     }
 }
 
