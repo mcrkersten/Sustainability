@@ -289,7 +289,7 @@ MonoBehaviour:
   m_ZDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 15
+  m_CameraDistance: 7.75
   m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
   m_DeadZoneDepth: 0
@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 529925841}
   - component: {fileID: 529925843}
   - component: {fileID: 529925844}
+  - component: {fileID: 706310187}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
