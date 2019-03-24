@@ -30,7 +30,7 @@ public class Ship : MonoBehaviour
     }
 
     public List<Contract> currentContracts = new List<Contract>();
-    public int currentPersonsOnShip;
+    private int currentPersonsOnShip;
     public GameObject currentShipMesh;
     public CharacterMovement characterMovement;
     public GameObject[] shipMeshes;
@@ -49,6 +49,12 @@ public class Ship : MonoBehaviour
 
     public delegate void ExitCity();
     public static event ExitCity OnExitCity;
+
+    public delegate void PersonEnterShip(int person, bool onOff);
+    public static event PersonEnterShip OnPersonEnter;
+
+    public delegate void TurnSeatLightsOff();
+    public static event TurnSeatLightsOff OnTurnSeatLightsOff;
 
     [Header("Upgadables")]
     public List<GameObject> upgrades = new List<GameObject>();
@@ -72,8 +78,10 @@ public class Ship : MonoBehaviour
                 if(c.contractNumber == p.contract.contractNumber && currentPersonsOnShip < maxPersonsOnShip)
                 {
                     //Person is a part of the contract.
+                    OnPersonEnter?.Invoke(currentPersonsOnShip, true);
                     c.colectedPersons++;
                     currentPersonsOnShip++;
+
                     //Contract is done if all persons are collected
                     if (c.personsToCollect == c.colectedPersons)
                     {
@@ -145,5 +153,10 @@ public class Ship : MonoBehaviour
             currentShipMesh.transform.localScale = new Vector3(1, 1, 1);
             fuel.Clear();
         }
+    }
+
+    public void ResetSeats() {
+        currentPersonsOnShip = 0;
+        OnTurnSeatLightsOff?.Invoke();
     }
 }

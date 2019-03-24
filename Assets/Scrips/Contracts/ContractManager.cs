@@ -45,7 +45,6 @@ public class ContractManager : MonoBehaviour
         sideMissions = Resources.LoadAll<Mission>("SideMissions");
         contractBasis = Resources.Load<Contract>("ContractBasis");
         BackgroundMusicManager bm =  BackgroundMusicManager.GetInstance();
-        bm.PlayMusic("Moon Overworld");
     }
 
     [ContextMenu("Create Contract")]

@@ -705,9 +705,9 @@ GameObject:
   - component: {fileID: 40762837989087396}
   - component: {fileID: 40762837989087397}
   - component: {fileID: 40762837989087322}
-  - component: {fileID: 40762837989087323}
+  - component: {fileID: 430947033543201080}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: plane + MusicTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,20 +772,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &40762837989087323
-MeshCollider:
+--- !u!65 &430947033543201080
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40762837989087320}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 485.61765, z: 10}
+  m_Center: {x: 0, y: -225.27882, z: 0}
 --- !u!1 &40762838066382321
 GameObject:
   m_ObjectHideFlags: 0
@@ -11387,10 +11386,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e2182d4bd625bca40a79d4605502cb43, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
 --- !u!4 &6266812706147994220 stripped
@@ -12105,10 +12100,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
       propertyPath: m_Name
       value: Block
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
       propertyPath: m_LocalPosition.x

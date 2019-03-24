@@ -157,7 +157,7 @@ public class Contract : ScriptableObject
     }
 
     public void DestroyContract(bool mainMission) {
-        Ship.Instance.currentPersonsOnShip = 0;
+        Ship.Instance.ResetSeats();
         Destroy(selfInActiveContractScreen);
         Destroy(selfInAvailableContractScreen);
         if (!mainMission) {

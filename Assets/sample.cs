@@ -7,7 +7,7 @@ namespace FMODUnity
 {
     public class sample : MonoBehaviour
     {
-        public Rigidbody rigidbody;
+        public Rigidbody RB;
         float speed = 0;
         [FMODUnity.EventRef]
         public string eventTemp = "event:/Overworld music";
@@ -24,7 +24,7 @@ namespace FMODUnity
         }
 
         private void Update() {
-            speed = rigidbody.velocity.magnitude /10;
+            speed = RB.velocity.magnitude /10;
             pTest.setValue(speed);
         }
     }

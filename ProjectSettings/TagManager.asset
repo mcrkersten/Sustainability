@@ -8,6 +8,7 @@ TagManager:
   - Progress
   - City
   - Obstacle
+  - MusicTrigger
   layers:
   - Default
   - TransparentFX
