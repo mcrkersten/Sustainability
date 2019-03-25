@@ -5,23 +5,29 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class CharacterMovement : MonoBehaviour
 {
+
+    private new Rigidbody rigidbody;
+
+    [HideInInspector]
     public bool isHorizonControlRotate = true;
+
+    [Header("Rotation and movement")]
     public float rotationSpeed = 50.0f;
     public float movementSpeed = 300.0f;
+
+    [Header("RotationLimits")]
     public float limitOfRotationRightCrood;
     public float limitOfRotationLeftCrood;
     public float fuelBurnRate;
 
-    private new Rigidbody rigidbody;
+    [Header("Until")]
     public GameObject meshObject;
-    private Ship ship;
-
     public GameObject menu1;
 
+    private Ship ship;
     private float rotationDest;
     private float rotationStart;
     private float lerpTime = 0;
-
     private IEnumerator stopSoundSmooth;
     private bool isSmoothing = false;
 
