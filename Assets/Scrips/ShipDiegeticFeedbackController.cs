@@ -35,7 +35,7 @@ public class ShipDiegeticFeedbackController : MonoBehaviour
 
     public void SetFuelLevel(float fuel)
     {
-        fuelRend.sharedMaterial.SetFloat("_FillAmount", Remap(fuelAmount,0.0f,1.0f, -0.64f, - 1.14f));
+        fuelRend.sharedMaterial.SetFloat("_FillAmount", Remap(fuelAmount, 0, 1.0f, -1.221f, - 2f));
     }
 
 
