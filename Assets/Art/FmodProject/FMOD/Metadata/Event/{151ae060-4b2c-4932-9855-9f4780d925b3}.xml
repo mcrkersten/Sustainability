@@ -158,6 +158,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{b8d9c686-f02e-4ea8-b51b-84c357260c77}">
+        <property name="volume">
+            <value>5.5</value>
+        </property>
         <property name="name">
             <value>Harp</value>
         </property>
@@ -204,7 +207,7 @@
     </object>
     <object class="EventMixerGroup" id="{2fa85460-de31-4fff-8610-a4d630fceea2}">
         <property name="volume">
-            <value>1.20000005</value>
+            <value>5</value>
         </property>
         <property name="name">
             <value>Oboe</value>
@@ -247,6 +250,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{d89db8ef-5746-4cfd-998f-515a62f6b7f7}">
+        <property name="volume">
+            <value>4</value>
+        </property>
         <property name="name">
             <value>Anvils</value>
         </property>
@@ -269,6 +275,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{af86dded-5199-407a-967c-58ebaaec0e00}">
+        <property name="volume">
+            <value>1.5</value>
+        </property>
         <property name="name">
             <value>Crotales</value>
         </property>
@@ -291,6 +300,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{36913803-d2c6-4735-8b7e-83c9f1dd2476}">
+        <property name="volume">
+            <value>9</value>
+        </property>
         <property name="name">
             <value>Glockenspiel</value>
         </property>
@@ -313,6 +325,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{e99039b5-4862-4089-aabd-39d749735ee3}">
+        <property name="volume">
+            <value>6.5</value>
+        </property>
         <property name="name">
             <value>Steel Plates</value>
         </property>
