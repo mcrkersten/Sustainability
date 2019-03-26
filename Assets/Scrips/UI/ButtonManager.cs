@@ -32,7 +32,6 @@ public class ButtonManager : MonoBehaviour
     public GameObject speechBubbleMission;
     public GameObject missionPage;
 
-
     public List<GameObject> openMenu = new List<GameObject>();
     private int itemSelected = 0;
     private int storeNumber;
@@ -202,10 +201,13 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void FuelShip() {
-        if (CreditSystem.Instance.credits > CreditSystem.Instance.fuelCost) {
+        if (CreditSystem.Instance.credits > reFuelPrice) {
             CreditSystem.Instance.credits -= reFuelPrice;
             OnRefuelShip?.Invoke();
             UpdateStore();
+        }
+        else {
+            //TO:DO NOT ENOUGH CREDITS
         }
     }
 

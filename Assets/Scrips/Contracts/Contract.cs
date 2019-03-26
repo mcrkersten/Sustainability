@@ -14,7 +14,6 @@ public class Contract : ScriptableObject
     public int colectedPersons;
     public int contractReward;
     public GameObject refugee;
-    public Store store;
     public string storeName;
 
     public GameObject contractPosition;

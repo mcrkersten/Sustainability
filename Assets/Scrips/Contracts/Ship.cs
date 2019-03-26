@@ -29,6 +29,11 @@ public class Ship : MonoBehaviour
         }
     }
 
+    [Header("Navigation")]
+    public bool showMissionPointer;
+    public GameObject pointers;
+
+
     public List<Contract> currentContracts = new List<Contract>();
     private int currentPersonsOnShip;
     public GameObject currentShipMesh;
@@ -65,6 +70,7 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.CompareTag("City")) {
             OnEnterCity?.Invoke(other.GetComponent<Store>());
+            pointers.SetActive(false);
         }
         //If gameObject has a personClass on it.
         if (other.gameObject.GetComponent<Person>() != null && !once)
@@ -108,6 +114,7 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.CompareTag("City")) {
             OnExitCity?.Invoke();
+            pointers.SetActive(true);
         }
         once = false;
     }

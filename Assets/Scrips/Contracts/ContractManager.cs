@@ -53,7 +53,6 @@ public class ContractManager : MonoBehaviour
     {
         Contract tempContract = Instantiate(contractBasis);
         tempContract.name = "Contract: " + currentContract;
-        tempContract.store = Ship.Instance.currentStore;
         //For NonMainMissions.
         existingContracts.Add(tempContract);
 

@@ -30,6 +30,7 @@ public class MissionManager : MonoBehaviour
     private Mission[] mainMissions;
     public Mission currentMainMission;
     public Mission sideMission;
+    public CityPointer missionPointer;
 
     private bool missionActive;
     private Contract currentContract;
@@ -112,6 +113,10 @@ public class MissionManager : MonoBehaviour
             else {
                 currentLine = 0;
                 StartMainMission();
+                if (Ship.Instance.showMissionPointer) {
+                    missionPointer.gameObject.transform.parent.gameObject.SetActive(true);
+                }
+                missionPointer.target = currentContract.contractPosition;
                 mainMissionBoard.SetActive(false);
             }
         }
@@ -132,6 +137,7 @@ public class MissionManager : MonoBehaviour
             }
             else {
                 currentLine = 0;
+                missionPointer.target = GameObject.Find(currentContract.contractor);
                 mainMissionBoard.SetActive(false);
             }
         }
@@ -154,6 +160,7 @@ public class MissionManager : MonoBehaviour
                 currentLine = 0;
                 EndMainMission();
                 mainMissionBoard.SetActive(false);
+                missionPointer.gameObject.transform.parent.gameObject.SetActive(false);
                 ButtonManager.Instance.openMenu.Add(ButtonManager.Instance.openStorePromt);
                 ButtonManager.Instance.openStorePromt.SetActive(true);
             }
@@ -184,6 +191,10 @@ public class MissionManager : MonoBehaviour
                 ButtonManager.Instance.CloseOpenMissionBoard();
                 mainMissionBoard.SetActive(false);
                 StartSideMission();
+                if (Ship.Instance.showMissionPointer) {
+                    missionPointer.gameObject.transform.parent.gameObject.SetActive(true);
+                }
+                missionPointer.target = sideContract.contractPosition;
                 return;
             }
         }
@@ -203,6 +214,8 @@ public class MissionManager : MonoBehaviour
             }
             else {
                 currentLine = 0;
+                string t = sideContract.storeName;
+                missionPointer.target = GameObject.Find(t);
                 mainMissionBoard.SetActive(false);
                 sideContract.done = true;
                 return;
@@ -228,6 +241,7 @@ public class MissionManager : MonoBehaviour
                 mainMissionBoard.SetActive(false);
                 ButtonManager.Instance.openMenu.Add(ButtonManager.Instance.openStorePromt);
                 ButtonManager.Instance.openStorePromt.SetActive(true);
+                missionPointer.gameObject.transform.parent.gameObject.SetActive(false);
                 return;
             }
         }
@@ -248,6 +262,7 @@ public class MissionManager : MonoBehaviour
         if (currentMainMission.firstMission) {
             currentContract.colectedPersons = 1;
             currentContract.done = true;
+            currentContract.contractPosition = GameObject.Find("city[The Capital]");
         }
     }
 
@@ -287,7 +302,6 @@ public class MissionManager : MonoBehaviour
 
     private void EnterCity(Store store)
     {
-        print(store.gameObject.name);
         if(currentContract != null) {
             if (store.gameObject.name == currentMainMission.targetStore && currentContract.done == true) {
                 mainMissionBoard.SetActive(true);

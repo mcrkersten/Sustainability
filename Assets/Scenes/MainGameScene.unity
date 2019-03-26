@@ -11627,6 +11627,15 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1316807410436869222, guid: 264bb6c29f5f6c8439f896ae6a07f4b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227371592, guid: 264bb6c29f5f6c8439f896ae6a07f4b7, type: 3}
+      propertyPath: missionPointer
+      value: 
+      objectReference: {fileID: 513086523}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264bb6c29f5f6c8439f896ae6a07f4b7, type: 3}
 --- !u!1 &510655224 stripped
@@ -11635,6 +11644,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 510655223}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &513086523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 513086523, guid: 1998d7299a4f3e145b39261b88b68b0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2008320063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef02aff2d5ff3434db7538a41353fd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531856099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 40762837551236803, guid: b065490a1d7d10541a3b03bccc4fc318,
@@ -20312,7 +20333,7 @@ PrefabInstance:
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
@@ -20369,21 +20390,33 @@ PrefabInstance:
       propertyPath: menu1
       value: 
       objectReference: {fileID: 2147260536}
+    - target: {fileID: 7543244149666397078, guid: 1998d7299a4f3e145b39261b88b68b0c,
+        type: 3}
+      propertyPath: maxAngle
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9090367719046331201, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_Size.x
+      value: 2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7555472171962244993, guid: 1998d7299a4f3e145b39261b88b68b0c,
-        type: 3}
-      propertyPath: hoverForce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7555472171962244993, guid: 1998d7299a4f3e145b39261b88b68b0c,
-        type: 3}
-      propertyPath: character
+    - target: {fileID: 513086523, guid: 1998d7299a4f3e145b39261b88b68b0c, type: 3}
+      propertyPath: target
       value: 
-      objectReference: {fileID: 2037118230}
+      objectReference: {fileID: 3436410}
+    - target: {fileID: 873227489, guid: 1998d7299a4f3e145b39261b88b68b0c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1157742308}
+    - target: {fileID: 317061432, guid: 1998d7299a4f3e145b39261b88b68b0c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 466598915}
+    - target: {fileID: 8671674392360157615, guid: 1998d7299a4f3e145b39261b88b68b0c,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 3436410}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1998d7299a4f3e145b39261b88b68b0c, type: 3}
 --- !u!1 &2024134950 stripped
@@ -20466,18 +20499,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300008, guid: 04d85c9c1a0707144b787e25f9e4c66f, type: 3}
---- !u!114 &2037118230 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7543244149666397078, guid: 1998d7299a4f3e145b39261b88b68b0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2008320063}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdc47c68c4bcbd4d9d81cc7754224ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2040267088
 GameObject:
   m_ObjectHideFlags: 0
@@ -25661,6 +25682,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: MusicTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 430947033543201080, guid: b065490a1d7d10541a3b03bccc4fc318,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.40569457
+      objectReference: {fileID: 0}
+    - target: {fileID: 430947033543201080, guid: b065490a1d7d10541a3b03bccc4fc318,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 2.7299957
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b065490a1d7d10541a3b03bccc4fc318, type: 3}
