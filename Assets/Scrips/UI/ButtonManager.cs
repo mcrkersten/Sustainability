@@ -27,6 +27,8 @@ public class ButtonManager : MonoBehaviour
     public GameObject tablet;
     public GameObject speechBubble;
     public GameObject storePage;
+    public GameObject InsufficientFunds;
+    public GameObject SuccesItemBought;
 
     [Header("MissionPromt")]
     public GameObject speechBubbleMission;
@@ -66,8 +68,6 @@ public class ButtonManager : MonoBehaviour
         Ship.Instance.gameObject.GetComponent<PreviewModel>().shipPreviews[Ship.Instance.currentShip].SetActive(true);
         Ship.Instance.currentStore = s;
         store = s; 
-        //openStorePromt.SetActive(true);
-        //c = this.gameObject.GetComponent<CanvasColors>();
         
         storeNumber = store.storeNumber;
         c.clerk.sprite = store.clerk;
@@ -80,6 +80,8 @@ public class ButtonManager : MonoBehaviour
         store.speech = store.speech.Count > 0 ? store.speech : new List<string>(new string[] { "I DONT HAVE TEXT PLEASE HELP", "help me..." });
         c.speechText.text = store.speech[0];
         currentLine = 0;
+        SuccesItemBought.SetActive(false);
+        InsufficientFunds.SetActive(false);
 
         for (int i = 0; i < c.textColor.Length; i++) {
             c.textColor[i].color = store.storeColor;
@@ -121,6 +123,7 @@ public class ButtonManager : MonoBehaviour
         float cost = Ship.Instance.maxFuel - Ship.Instance.currentFuel;
         reFuelPrice = Mathf.RoundToInt((store.fuelCostPerUnit * cost));
         c.fuelCost.text = "Total: " + reFuelPrice.ToString()+",-";
+        c.credits.text = CreditSystem.Instance.credits.ToString();
         for (int i = 0; i < storeFrames.Length; i++) {
             storeFrames[i].SetActive(false);
         }
@@ -169,7 +172,8 @@ public class ButtonManager : MonoBehaviour
 
     private void ExitCity() {
         ContractManager.Instance.InitNewContracts();
-
+        InsufficientFunds.SetActive(false);
+        SuccesItemBought.SetActive(false);
         openStorePromt.SetActive(false);
         foreach (GameObject x in openMenu) {
             x.SetActive(false);
@@ -254,12 +258,34 @@ public class ButtonManager : MonoBehaviour
         if (!previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected]) {
             if (store.isShipStore) {
                 Ship.Instance.currentShipMesh.SetActive(false);
-                OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], true);
-                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+                if (CreditSystem.Instance.credits > previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].price[itemSelected]) {
+                    OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], true);
+                    previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+                    InsufficientFunds.SetActive(false);
+                    SuccesItemBought.SetActive(true);
+                    CreditSystem.Instance.credits -= previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].price[itemSelected];
+                    UpdateStore();
+                }
+                else {
+                    //TO:DO NOT ENOUGH CREDITS
+                    InsufficientFunds.SetActive(true);
+                    SuccesItemBought.SetActive(false);
+                }
             }
             else {
-                OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], false);
-                previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+                if (CreditSystem.Instance.credits > previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].price[itemSelected]) {
+                    OnItemBuy(previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].buyableParts[itemSelected], false);
+                    previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].bought[itemSelected] = true;
+                    InsufficientFunds.SetActive(false);
+                    SuccesItemBought.SetActive(true);
+                    CreditSystem.Instance.credits -= previewModel.shipPreviews[Ship.Instance.currentShip].GetComponent<ShipParts>().stores.stores[store.storeNumber].price[itemSelected];
+                    UpdateStore();
+                }
+                else {
+                    //TO:DO NOT ENOUGH CREDITS
+                    InsufficientFunds.SetActive(true);
+                    SuccesItemBought.SetActive(false);
+                }
             }
         }
         UpdateStore();
