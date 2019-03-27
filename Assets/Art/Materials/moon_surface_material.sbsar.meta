@@ -5,9 +5,6 @@ ScriptedImporter:
     2100000: New_Graph
     2800000: New_Graph - baseColor
     2800002: New_Graph - normal
-    2800004: New_Graph - metallic
-    2800006: New_Graph - height
-    2800008: New_Graph - ambientOcclusion
     11400000: sbsar
     11400002: graph0
   externalObjects: {}
@@ -23,8 +20,8 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://New_Graph\" label=\"\" >\n </sbspreset>\n"
-    shaderName: Standard
-    outputNames: baseColor,normal,metallic,height,ambientOcclusion
+    shaderName: Custom/CurvedWorld
+    outputNames: baseColor,normal
     texturePackingList: []
     textureParameters:
     - textureName: New_Graph - roughness
