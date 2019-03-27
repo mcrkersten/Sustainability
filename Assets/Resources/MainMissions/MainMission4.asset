@@ -17,12 +17,27 @@ MonoBehaviour:
   sideMission: 0
   missionStartDialog:
   - '*ring ring .... ring ring ... ring ring*'
-  - Hey, missed me? I'd like you to pick me up from Lumen. My research here is done.
-    Things aren't looking too good...
+  - "Even the soil at the Capital got significantly worse\u2026 All these people.
+    They first nearly destroy the earth and now they go on to the moon. They have
+    been given the gift of a second chance and even here they suck the life out of
+    everything. \r"
+  - "I\u2019ve been thinking \u2026 let\u2019s nuke it. "
+  - "No seriously just listen. Let\u2019s destroy all life here but still keep the
+    moon itself intact. I\u2019ve been working on a biochemical weapon which simulates
+    the effects of a nuclear weapon without harming the moon, I want you to find my
+    final ingredients so that i can make it happen."
+  - "I\u2019ve hidden some moon sprouts for the common people here but you should
+    be able to them. Together we can live happily ever after and save the moon. After
+    you\u2019ve found my sprouts, come find me somewhere around the Capital. See you
+    in a bit!"
   missionPickupDialog:
-  - Alright
+  - 'There you are, have you got all my things? '
+  - So easy to mailpulate. So pure and innocent. Yet. Just a taxi driver on steroids.
+  - 'It''s all over now. '
+  - MUHAHAHA
   missionEndDialog:
-  - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
+  - 
+  - 
   targetStore: TestCity
   missionTile: 0
   personName: Nancy

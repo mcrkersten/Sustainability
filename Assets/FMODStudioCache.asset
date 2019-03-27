@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 114790571996690588}
   StringsBanks:
   - {fileID: 114596874403608444}
-  stringsBankWriteTime: 636885420328420128
+  stringsBankWriteTime: 636893070574177307
   cacheVersion: 3
 --- !u!114 &114034467437573610
 MonoBehaviour:
@@ -170,6 +170,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114317286620997542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fuel
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114325389639526598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +201,7 @@ MonoBehaviour:
   Path: D:\Catnip's not sure if deletable\Willemien\Desktop\SCHOOLIE SCHOOL JAAR 2\PROJECT
     CONTEXT II 2019\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636885420328360142
+  lastModified: 636893070574097340
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -283,8 +299,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114722971606384760}
-  - {fileID: 114181464158535468}
+  - {fileID: 114317286620997542}
+  - {fileID: 114548601754862124}
   MinDistance: 0
   MaxDistance: 0
   Length: 14957
@@ -389,6 +405,22 @@ MonoBehaviour:
   - Name: Desktop
     Value: 15883680
   Exists: 0
+--- !u!114 &114548601754862124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114569516636254718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636885420328420128
+  lastModified: 636893070574177307
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -508,10 +540,26 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114578213043307334}
+  - {fileID: 114770439828675038}
   MinDistance: 0
   MaxDistance: 0
   Length: 330000
+--- !u!114 &114770439828675038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114790571996690588
 MonoBehaviour:
   m_ObjectHideFlags: 0
