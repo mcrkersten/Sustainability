@@ -16,14 +16,19 @@ MonoBehaviour:
   firstMission: 1
   sideMission: 0
   missionStartDialog:
-  - 'This is the end of your training, soldier. We hope to have trained you well and
-    your study as a pilot for a future scenario like this has been fulfilling. '
-  - "For now let\u2019s hope that the world realises durability is the answer to a
-    healthy future generation of people. Good job, see you at the office tomorrow!"
+  - "Let\u2019s destroy all life here but still keep the moon itself intact. I\u2019ve
+    been working on a biochemical weapon which simulates the effects of a nuclear
+    weapon without harming the moon, I want you to find my final ingredients so that
+    i can make it happen.\r\n"
+  - "I\u2019ve hidden some moon sprouts for the common people here but you should
+    be able to them. Together we can live happily ever after and save the moon. Go
+    find them and pick them up for me."
   missionPickupDialog:
-  - 
+  - "I see you don\u2019t just do a good job at flying spaceships. you\u2019re pretty
+    good at finding things too! Which is good because it kind of is your job here.
+    I want you to bring me back to the Capital so that I can set things up for detonation."
   missionEndDialog:
-  - 
+  - Say goodbye to the world as you know it kid. Things are about to change forever!
   targetStore: TestCity
   missionTile: 0
   personName: Nancy
