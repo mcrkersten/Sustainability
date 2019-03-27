@@ -175,7 +175,7 @@
             <destination>{33d6292c-618f-4e53-9b20-315b3bdf57a5}</destination>
         </relationship>
         <relationship name="modules">
-            <destination>{7b7df20a-69c4-48f6-8545-6c3fbf128f36}</destination>
+            <destination>{61e573f8-f557-4ad0-a251-fbdac0babfe4}</destination>
         </relationship>
         <relationship name="mixerGroup">
             <destination>{ebd494fd-6956-47d3-b92a-2cd74e43cced}</destination>
@@ -184,7 +184,6 @@
     <object class="Timeline" id="{f583ea4f-d448-44ad-af5a-822ca38157cd}">
         <relationship name="modules">
             <destination>{0682f8db-63c3-4118-bb60-50b264b39d6d}</destination>
-            <destination>{7b7df20a-69c4-48f6-8545-6c3fbf128f36}</destination>
             <destination>{34002a05-6c87-4294-9e89-dde641b305f0}</destination>
             <destination>{051e4804-4d2f-4d05-9bcb-f8d05070d597}</destination>
             <destination>{bd8c4b2a-6ef7-4649-916f-8c105859da3f}</destination>
@@ -200,6 +199,7 @@
             <destination>{a5bf1c08-013d-4eef-98bf-fcea52c92fc3}</destination>
             <destination>{4e94a2dc-4116-4f81-9779-a75b54da603d}</destination>
             <destination>{f28fdc37-adf0-456d-a078-cae3f1e238f9}</destination>
+            <destination>{61e573f8-f557-4ad0-a251-fbdac0babfe4}</destination>
         </relationship>
         <relationship name="markers">
             <destination>{a53bd53b-c3fa-4361-a51c-cd85c12b2fdd}</destination>
@@ -612,15 +612,18 @@
             <destination>{839ffb77-a5bb-4a9c-a5ab-4f9357d9d0fe}</destination>
         </relationship>
     </object>
-    <object class="SingleSound" id="{7b7df20a-69c4-48f6-8545-6c3fbf128f36}">
+    <object class="SingleSound" id="{61e573f8-f557-4ad0-a251-fbdac0babfe4}">
         <property name="start">
             <value>164.96781410679282</value>
         </property>
         <property name="length">
-            <value>13.056000000000019</value>
+            <value>6.4607483932072114</value>
+        </property>
+        <property name="timelockedOffset">
+            <value>164.96781410679282</value>
         </property>
         <relationship name="audioFile">
-            <destination>{c368ca15-5f85-4697-95e8-fdd3e0851c9b}</destination>
+            <destination>{40f1e7d2-a64d-4ab0-86b0-2510ac024ca0}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{ebd494fd-6956-47d3-b92a-2cd74e43cced}">
