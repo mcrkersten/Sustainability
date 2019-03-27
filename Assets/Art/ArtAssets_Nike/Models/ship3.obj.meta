@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 5d25d71f34bb61d448a01bd8a2d5fbe8
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: glassGrp
+    100002: light2_10_topShellGrp
+    100004: light2_11_topShellGrp
+    100006: light2_12_topShellGrp
+    100008: light2_6_mainShellGrp
+    100010: light2_7_topShellGrp
+    100012: light2_8_topShellGrp
+    100014: light2_9_topShellGrp
+    100016: mainShellGrp
+    100018: noseGrp
+    100020: //RootNode
+    100022: topShellGrp
+    100024: vanGrp
+    100026: wingsGrp
+    400000: glassGrp
+    400002: light2_10_topShellGrp
+    400004: light2_11_topShellGrp
+    400006: light2_12_topShellGrp
+    400008: light2_6_mainShellGrp
+    400010: light2_7_topShellGrp
+    400012: light2_8_topShellGrp
+    400014: light2_9_topShellGrp
+    400016: mainShellGrp
+    400018: noseGrp
+    400020: //RootNode
+    400022: topShellGrp
+    400024: vanGrp
+    400026: wingsGrp
+    2100000: glassGrpMat
+    2100002: light2_10_topShellGrpMat
+    2100004: light2_11_topShellGrpMat
+    2100006: light2_12_topShellGrpMat
+    2100008: light2_6_mainShellGrpMat
+    2100010: light2_7_topShellGrpMat
+    2100012: light2_8_topShellGrpMat
+    2100014: light2_9_topShellGrpMat
+    2100016: mainShellGrpMat
+    2100018: noseGrpMat
+    2100020: topShellGrpMat
+    2100022: vanGrpMat
+    2100024: wingsGrpMat
+    2300000: glassGrp
+    2300002: light2_10_topShellGrp
+    2300004: light2_11_topShellGrp
+    2300006: light2_12_topShellGrp
+    2300008: light2_6_mainShellGrp
+    2300010: light2_7_topShellGrp
+    2300012: light2_8_topShellGrp
+    2300014: light2_9_topShellGrp
+    2300016: mainShellGrp
+    2300018: noseGrp
+    2300020: topShellGrp
+    2300022: vanGrp
+    2300024: wingsGrp
+    3300000: glassGrp
+    3300002: light2_10_topShellGrp
+    3300004: light2_11_topShellGrp
+    3300006: light2_12_topShellGrp
+    3300008: light2_6_mainShellGrp
+    3300010: light2_7_topShellGrp
+    3300012: light2_8_topShellGrp
+    3300014: light2_9_topShellGrp
+    3300016: mainShellGrp
+    3300018: noseGrp
+    3300020: topShellGrp
+    3300022: vanGrp
+    3300024: wingsGrp
+    4300000: glassGrp
+    4300002: light2_10_topShellGrp
+    4300004: light2_11_topShellGrp
+    4300006: light2_12_topShellGrp
+    4300008: light2_6_mainShellGrp
+    4300010: light2_7_topShellGrp
+    4300012: light2_8_topShellGrp
+    4300014: light2_9_topShellGrp
+    4300016: mainShellGrp
+    4300018: noseGrp
+    4300020: topShellGrp
+    4300022: vanGrp
+    4300024: wingsGrp
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
