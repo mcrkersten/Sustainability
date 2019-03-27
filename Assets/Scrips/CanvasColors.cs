@@ -11,7 +11,7 @@ public class CanvasColors : MonoBehaviour
     public Image[] imageColor;
     public Color[] colors;
     public Image clerk, clerkGlow, storeSymbol;
-    public Text storeName, storeSlogan, fuelCost, unitFuelPrice;
+    public Text storeName, storeSlogan, fuelCost, unitFuelPrice, credits;
     public Text[] storePrices;
     public TextMeshProUGUI speechText, shopKeeperName;
 

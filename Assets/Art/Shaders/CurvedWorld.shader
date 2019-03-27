@@ -5,6 +5,7 @@ Shader "Custom/CurvedWorld" {
 	Properties{
 		// Diffuse texture
 		_MainTex("Base (RGB)", 2D) = "white" {}
+		_BumpMap("Bumpmap", 2D) = "bump" {}
 	// Degree of curvature
 	_Curvature("Curvature", Float) = 0.001
 	}
@@ -25,7 +26,10 @@ Shader "Custom/CurvedWorld" {
 		// requires only a single set of UV texture mapping coordinates
 		struct Input {
 			float2 uv_MainTex;
+			float2 uv_BumpMap;
 		};
+
+		sampler2D _BumpMap;
 
 		// This is where the curvature is applied
 		void vert(inout appdata_full v)
@@ -50,6 +54,7 @@ Shader "Custom/CurvedWorld" {
 			half4 c = tex2D(_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb;
 			o.Alpha = c.a;
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 		}
 		ENDCG
 	}

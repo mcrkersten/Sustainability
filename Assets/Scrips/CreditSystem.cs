@@ -29,8 +29,6 @@ public class CreditSystem : MonoBehaviour
 
     public int credits;
 
-    public int fuelCost;
-
     public Text inFlightUiCreditAmount;
     public Text inStoreCreditUiAmount;
 

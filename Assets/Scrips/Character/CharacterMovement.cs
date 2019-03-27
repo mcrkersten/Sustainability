@@ -5,23 +5,29 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class CharacterMovement : MonoBehaviour
 {
-    public bool isHorizonControlRotate = true;
-    public float rotationSpeed = 50.0f;
-    public float movementSpeed = 300.0f;
-    public float limitOfRotationRightCrood;
-    public float limitOfRotationLeftCrood;
-    public float fuelBurnRate;
 
     private new Rigidbody rigidbody;
-    public GameObject meshObject;
-    private Ship ship;
 
+    [HideInInspector]
+    public bool isHorizonControlRotate = true;
+
+    [Header("Rotation and movement")]
+    public float rotationSpeed = 50.0f;
+    public float movementSpeed = 300.0f;
+
+    [Header("RotationLimits")]
+    private float limitOfRotationCrood = 60;
+    public float maxAngle;
+    public float fuelBurnRate;
+
+    [Header("Until")]
+    public GameObject meshObject;
     public GameObject menu1;
 
+    private Ship ship;
     private float rotationDest;
     private float rotationStart;
     private float lerpTime = 0;
-
     private IEnumerator stopSoundSmooth;
     private bool isSmoothing = false;
 
@@ -89,8 +95,8 @@ public class CharacterMovement : MonoBehaviour
 
         switch(destState)
         {
-            case RotateStateCode.Left:   rotationDest = limitOfRotationLeftCrood;   break;
-            case RotateStateCode.Right:  rotationDest = limitOfRotationRightCrood;   break;
+            case RotateStateCode.Left:   rotationDest = -rigidbody.velocity.magnitude*2;   break;
+            case RotateStateCode.Right:  rotationDest = rigidbody.velocity.magnitude*2;   break;
             case RotateStateCode.middle: rotationDest = 0; break;
         }
         rotateState = destState;
@@ -114,6 +120,7 @@ public class CharacterMovement : MonoBehaviour
             if (isHorizonControlRotate) {
                 if (horizontalAxis != 0)
                     if (horizontalAxis < 0) {
+
                         RotateState = RotateStateCode.Right;
                     }
                     else {
@@ -132,12 +139,12 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetAxis("Vertical") != 0 && ship.currentFuel > 0) {
                 // Hold shift to break, has lower fuel consumption
                 if (Input.GetKey(KeyCode.LeftShift)) {
-                    rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
-                    fuelUpdate = fuelBurnRate * Time.deltaTime;
-                }
-                else {
                     rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed * 5);
                     fuelUpdate = fuelBurnRate * Time.deltaTime * 10;
+                }
+                else {
+                    rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
+                    fuelUpdate = fuelBurnRate * Time.deltaTime;
                 }
                 ship.currentFuel -= fuelUpdate;
             }

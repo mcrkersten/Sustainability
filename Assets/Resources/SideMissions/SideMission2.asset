@@ -15,7 +15,17 @@ MonoBehaviour:
   persons: 2
   firstMission: 0
   sideMission: 1
+  flora: 1
+  lumen: 0
+  capital: 0
+  missionCity: 010000
+  played: 0
   missionStartDialog:
+  - "Hello? Anyone there? My taxi driver decided to have a heart attack while driving
+    me to my next show, he\u2019s so selfish"
+  - "The ambulance came to pick him up but I\u2019m left alone out here, can anyone
+    pick me up asap?"
+  missionPickupDialog:
   - "Yo! It took you forever to get to me! I have places to be you know, my fans in
     the city of blue are waiting\u2026 Your people were supposed to show up hours
     ago. "
@@ -24,10 +34,8 @@ MonoBehaviour:
   - 'If you bring me home in that stupid garbage machine of yours, I will educate
     you and give you a copy of my music so you can listen to some quality music you
     uncultured swine. '
-  missionPickupDialog:
-  - Thank you!
   missionEndDialog:
-  - Thank you!
+  - Thanks, gotta go! My servants will contact you later
   targetStore: CapitalStore
   missionTile: 9
   personName: Misu

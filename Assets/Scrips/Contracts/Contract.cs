@@ -14,7 +14,6 @@ public class Contract : ScriptableObject
     public int colectedPersons;
     public int contractReward;
     public GameObject refugee;
-    public Store store;
     public string storeName;
 
     public GameObject contractPosition;
@@ -79,6 +78,7 @@ public class Contract : ScriptableObject
     {
         if (contractManager.currentContracts.Count < maxContracts)
         {
+            currentSideMission.played = true;
             currentSideMission.targetStore = Ship.Instance.currentStore.gameObject.name;
             storeName = currentSideMission.targetStore;
 

@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission5
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - "Ah, good to see you again. My research went okay, but the results make me sad\u2026"
   - "At Flora they have been trying so hard to live durable but every step they make

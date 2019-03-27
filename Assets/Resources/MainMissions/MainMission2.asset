@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission2
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - '*ring ring .... ring ring ... ring ring*'
   - "Hey it\u2019s Nancy speaking. My research went great, it\u2019s good to be back
@@ -25,7 +30,7 @@ MonoBehaviour:
   - Alright
   missionEndDialog:
   - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
-  targetStore: city[Flora]
+  targetStore: city[Lumen]
   missionTile: 1
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}

@@ -15,7 +15,16 @@ MonoBehaviour:
   persons: 2
   firstMission: 0
   sideMission: 1
+  flora: 0
+  lumen: 0
+  capital: 1
+  missionCity: 000001
+  played: 0
   missionStartDialog:
+  - 'Oh hello? Is this thing working? .... '
+  - '*tap tap'
+  - Hello, this is Walter speaking, I am lost. Can someone come and find me?
+  missionPickupDialog:
   - "Oh good day to you! Good thing I see you here, I\u2019ve been a bit lost. You
     see, my older brother makes these musical instruments out of space trash. "
   - 'Seeing the earth and what people are doing to it made him want to live a sustainable
@@ -24,12 +33,9 @@ MonoBehaviour:
     Unfortunately though, I am getting older too. My eyes are getting weary and I
     keep getting lost out here. I found enough space trash for him to make one final
     instrument. "
-  - "Can you bring me back to him? If you do so I\u2019ll board your ship and reward
-    you with a copy of his work."
-  missionPickupDialog:
-  - Thank you!
+  - "Can you bring me back to him? If you do so I\u2019ll board your ship."
   missionEndDialog:
-  - Thank you!
+  - Thank you kind stranger, hope you have a good day!
   targetStore: FloraStore
   missionTile: 12
   personName: Walter
