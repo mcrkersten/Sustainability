@@ -27,10 +27,16 @@ MonoBehaviour:
     the last time I came there to check. "
   - "Can you pick me up at Flora?\r\n"
   missionPickupDialog:
-  - Alright
+  - "Ah, thank you for picking me up. Did you have a good shift? My next destination
+    is Lumen. Lumen tends to be a dark place, the people there are not at all concerned
+    about durability or the state of the moon\u2026 "
+  - "These moneygrubbers first treat the earth like trash and then go on to do the
+    same to the moon. I\u2019m supposed to be subjective about it all but I can tell
+    my secrets to you, can\u2019t I? Let\u2019s go find Lumen. "
   missionEndDialog:
-  - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
-  targetStore: city[Lumen]
-  missionTile: 1
+  - "Thank you for dropping me off. I\u2019ll be thinking about you. I\u2019ll call
+    you when I need you to get me out of this stinkhole."
+  targetStore: TestCity
+  missionTile: 0
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}

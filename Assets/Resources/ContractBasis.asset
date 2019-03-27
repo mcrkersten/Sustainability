@@ -20,7 +20,7 @@ MonoBehaviour:
   colectedPersons: 0
   contractReward: 100
   refugee: {fileID: 7888227609868916810, guid: cf7ad2af3100bbf499e26023c1a5877e, type: 3}
-  store: {fileID: 0}
+  seed: {fileID: 7888227609868916810, guid: d3e718c60d05c0f4bbde5660c58c9f5d, type: 3}
   storeName: 
   contractPosition: {fileID: 0}
   progressContractPrefab: {fileID: 1681605257711388460, guid: 2635d5abb1a464e46b21a41e5296ed81,
@@ -32,3 +32,4 @@ MonoBehaviour:
   progressUI: {fileID: 0}
   selfProgressUI: {fileID: 0}
   currentSideMission: {fileID: 0}
+  currentMainMission: {fileID: 0}

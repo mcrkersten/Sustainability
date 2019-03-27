@@ -22,13 +22,17 @@ MonoBehaviour:
   played: 0
   missionStartDialog:
   - '*ring ring .... ring ring ... ring ring*'
-  - Hey, missed me? I'd like you to pick me up from Lumen. My research here is done.
-    Things aren't looking too good...
+  - "Even the soil at the Capital got significantly worse\u2026 All these people.
+    They first nearly destroy the earth and now they go on to the moon. They have
+    been given the gift of a second chance and even here they suck the life out of
+    everything. \r"
+  - "I\u2019ve been thinking \u2026 let\u2019s nuke it. I'll tell you more about that
+    when you get here and pick me up."
   missionPickupDialog:
-  - Alright
+  - Oh hello. Good to see you. I've got a lot to discuss with you.
   missionEndDialog:
-  - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
-  targetStore: city[Lumen]
-  missionTile: 3
+  - 
+  targetStore: TestCity
+  missionTile: 0
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}
