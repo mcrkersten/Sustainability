@@ -16,18 +16,20 @@ MonoBehaviour:
   firstMission: 0
   sideMission: 1
   missionStartDialog:
+  - "Hello, Aletta here. I\u2019d like someone to come and pick me up."
+  - "I\u2019m on a mission and I need to go back home..."
+  missionPickupDialog:
   - "Oh hello dear, did they send you to pick me up? I came out here because I\u2019ve
     lost a data chip which contains all my work. You see I am a writer and I have
     been spending hours, days and months even to write my book. "
-  - "It\u2019s about the overview effect... To gain inspiration I\u2019ve visited
-    my hometown but it was so dark there, it took me ages to find the data! When I
-    found it I was thrilled! Thrilled and a bit lost \u2026 but here you are! "
-  - "To reward you for saving me I\u2019ll give you my favorite song which was also
-    on the drive, maybe it inspires you too. Can you bring me back to my hometown?"
-  missionPickupDialog:
-  - Thank you!
+  - "It\u2019s about the overview effect. To gain inspiration I\u2019ve visited my
+    hometown but it was so dark there, it took me ages to find the data! When I found
+    it I was thrilled! Thrilled and a bit lost \u2026 "
+  - But here you are! Can you bring me back to my hometown?
   missionEndDialog:
-  - Thank you!
+  - 'Thank you so much, do some research about the Overview effect and educate yourself
+    on the matter. Teach your kids when you grow old and spread the message. '
+  - Goodbye!
   targetStore: LumenStore
   missionTile: 10
   personName: Aletta

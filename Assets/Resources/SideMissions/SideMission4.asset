@@ -16,19 +16,23 @@ MonoBehaviour:
   firstMission: 0
   sideMission: 1
   missionStartDialog:
+  - "Hello? This is Kindergarten teacher Emily connecting through one of my student\u2019s
+    contact chips."
+  - "I lost one of my children, it\u2019s my first week on the job and I lost one!!!
+    Can you send someone out there to check and see if she\u2019s around? I\u2019m
+    so worried...\r"
+  missionPickupDialog:
   - "... My mom says I can\u2019t talk to strangers but I was so bored until you showed
     up. I don\u2019t know where my teacher is. She took us out here on a field trip
     to see all cities. We came from Flora and already saw Lumen. "
-  - "From my seat I saw the earth. It looks soooo pretty. \rMy mom says that the earth
+  - "From my seat I saw the earth. It looks soooo pretty.  My mom says that the earth
     is the most pretty planet and we have to take good care of it because it\u2019s
     where all the people used to live. "
   - "I wanted to catch the earth and bring it home so we can take care of it so I
     ran out there but I couldn\u2019t get close enough and now I\u2019m lost. Can
     you bring me back to where my teacher went?"
-  missionPickupDialog:
-  - Thank you!
   missionEndDialog:
-  - Thank you!
+  - Home! Thank you so much, bye bye
   targetStore: CapitalStore
   missionTile: 11
   personName: Jessie
