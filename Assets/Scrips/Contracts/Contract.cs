@@ -78,6 +78,7 @@ public class Contract : ScriptableObject
     {
         if (contractManager.currentContracts.Count < maxContracts)
         {
+            currentSideMission.played = true;
             currentSideMission.targetStore = Ship.Instance.currentStore.gameObject.name;
             storeName = currentSideMission.targetStore;
 

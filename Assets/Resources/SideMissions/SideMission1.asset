@@ -15,6 +15,11 @@ MonoBehaviour:
   persons: 1
   firstMission: 0
   sideMission: 1
+  flora: 1
+  lumen: 0
+  capital: 0
+  missionCity: 010000
+  played: 0
   missionStartDialog:
   - "Oh hey, I had a little accident out there. I sort of got ejected from my ship\u2026"
   - "Can you maybe come and find me? I\u2019d sure appreciate that!"

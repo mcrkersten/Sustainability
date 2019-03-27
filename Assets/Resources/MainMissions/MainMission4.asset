@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission4
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - '*ring ring .... ring ring ... ring ring*'
   - Hey, missed me? I'd like you to pick me up from Lumen. My research here is done.
