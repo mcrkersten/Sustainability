@@ -89,6 +89,7 @@ public class ButtonManager : MonoBehaviour
         for (int i = 0; i < c.imageColor.Length; i++) {
             c.imageColor[i].color = store.storeColor;
         }
+        ContractManager.Instance.InitNewContracts();
         UpdateStore();
     }
 
@@ -171,7 +172,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     private void ExitCity() {
-        ContractManager.Instance.InitNewContracts();
+        //ContractManager.Instance.InitNewContracts();
         InsufficientFunds.SetActive(false);
         SuccesItemBought.SetActive(false);
         openStorePromt.SetActive(false);

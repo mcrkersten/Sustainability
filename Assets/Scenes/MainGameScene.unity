@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 37f224fdf6e41f94ebac4e2ebcb19257, type: 2}
   m_Sun: {fileID: 2040267089}
-  m_IndirectSpecularColor: {r: 0.08301016, g: 0.014838221, b: 0.10215404, a: 1}
+  m_IndirectSpecularColor: {r: 0.006257563, g: 0.0009553401, b: 0.008602655, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -835,7 +835,7 @@ MonoBehaviour:
   storeName: Gsa
   storeSlogan: We're stocked!
   clerkName: Carlos
-  storeNumber: 0
+  storeNumber: 3
   fuelCostPerUnit: 2
   isShipStore: 0
   speech:
@@ -11202,7 +11202,7 @@ MonoBehaviour:
   storeName: Oswald, Oz
   storeSlogan: IndexOutofRange
   clerkName: CheckListSizeBeforeUsingindex0?
-  storeNumber: 2
+  storeNumber: 1
   fuelCostPerUnit: 3
   isShipStore: 0
   speech:
@@ -13141,7 +13141,7 @@ MonoBehaviour:
   storeName: Daisy's
   storeSlogan: We're in for a treat
   clerkName: Evelyn (and her dog Daisy)
-  storeNumber: 1
+  storeNumber: 0
   fuelCostPerUnit: 1
   isShipStore: 1
   speech:
@@ -19962,17 +19962,17 @@ PrefabInstance:
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.7
+      value: -101.8
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.174292
+      value: 14.174289
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -47.777004
+      value: -219.57701
       objectReference: {fileID: 0}
     - target: {fileID: 7322068571560672676, guid: fd4679b677a2d9846be2467877f0c165,
         type: 3}
@@ -20105,7 +20105,7 @@ PrefabInstance:
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.7
+      value: -101.8
       objectReference: {fileID: 0}
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
@@ -20115,7 +20115,7 @@ PrefabInstance:
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.2
+      value: -207
       objectReference: {fileID: 0}
     - target: {fileID: 7543244149666397079, guid: 1998d7299a4f3e145b39261b88b68b0c,
         type: 3}
@@ -20190,6 +20190,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3436410}
+    - target: {fileID: 7543244150749788563, guid: 1998d7299a4f3e145b39261b88b68b0c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.449526
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543244150749788563, guid: 1998d7299a4f3e145b39261b88b68b0c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.384674
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1998d7299a4f3e145b39261b88b68b0c, type: 3}
 --- !u!1 &2024134950 stripped

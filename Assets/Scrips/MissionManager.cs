@@ -262,7 +262,7 @@ public class MissionManager : MonoBehaviour
         if (currentMainMission.firstMission) {
             currentContract.colectedPersons = 1;
             currentContract.done = true;
-            currentContract.contractPosition = GameObject.Find("city[The Capital]");
+            currentContract.contractPosition = GameObject.Find("city[Flora]");
         }
     }
 

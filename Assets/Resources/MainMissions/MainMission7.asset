@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission7
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - 'There you are, have you got all my things? '
   - "HAHAHAHA it\u2019s all over in a few seconds"

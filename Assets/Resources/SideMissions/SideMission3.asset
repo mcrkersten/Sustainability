@@ -15,6 +15,11 @@ MonoBehaviour:
   persons: 2
   firstMission: 0
   sideMission: 1
+  flora: 0
+  lumen: 1
+  capital: 0
+  missionCity: 000100
+  played: 0
   missionStartDialog:
   - "Hello, Aletta here. I\u2019d like someone to come and pick me up."
   - "I\u2019m on a mission and I need to go back home..."

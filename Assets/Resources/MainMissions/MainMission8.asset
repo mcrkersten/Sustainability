@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission8
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - Mission complete!
   - 'This is the end of your training, soldier. We hope to have trained you well and

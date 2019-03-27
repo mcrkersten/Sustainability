@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: MainMission3
   m_EditorClassIdentifier: 
   persons: 1
-  firstMission: 1
+  firstMission: 0
   sideMission: 0
+  flora: 0
+  lumen: 0
+  capital: 0
+  missionCity: 000000
+  played: 0
   missionStartDialog:
   - "Ah, thank you for picking me up. Did you have a good shift? I\u2019ve been told
     you encountered Misu, and that she has gifted you a song. "

@@ -15,6 +15,11 @@ MonoBehaviour:
   persons: 2
   firstMission: 0
   sideMission: 1
+  flora: 0
+  lumen: 0
+  capital: 1
+  missionCity: 000001
+  played: 0
   missionStartDialog:
   - 'Oh hello? Is this thing working? .... '
   - '*tap tap'

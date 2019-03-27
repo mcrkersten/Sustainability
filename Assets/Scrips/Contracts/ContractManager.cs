@@ -49,20 +49,32 @@ public class ContractManager : MonoBehaviour
 
     [ContextMenu("Create Contract")]
     //Function creates contracts
-    public void CreateContact()
+    public void CreateContacts()
     {
-        Contract tempContract = Instantiate(contractBasis);
-        tempContract.name = "Contract: " + currentContract;
-        //For NonMainMissions.
-        existingContracts.Add(tempContract);
 
-        //Set Pramaters
-        tempContract.contractNumber = currentContract++;
+        if (Ship.Instance.currentStore != null) {
+            int number = Ship.Instance.currentStore.storeNumber;
 
-        tempContract.currentSideMission = Instantiate(sideMissions[Random.Range(0, sideMissions.Length)]);
-        tempContract.personsToCollect = tempContract.currentSideMission.persons;
-        tempContract.contractReward = tempContract.personsToCollect * 100;
-        tempContract.SetInAvailible();
+            foreach (Mission m in sideMissions) {
+                if (m.missionCity[number] == true && !m.played) {
+
+                    Contract tempContract = Instantiate(contractBasis);
+                    tempContract.name = "Contract: " + currentContract;
+                    //For NonMainMissions.
+                    existingContracts.Add(tempContract);
+
+                    //Set Pramaters
+                    tempContract.contractNumber = currentContract++;
+                    tempContract.currentSideMission = Instantiate(sideMissions[Random.Range(0, sideMissions.Length)]);
+                    tempContract.personsToCollect = tempContract.currentSideMission.persons;
+                    tempContract.contractReward = tempContract.personsToCollect * 100;
+                    tempContract.SetInAvailible();
+                }
+            }
+        }
+        else {
+            print("missing ship");
+        }
     }
 
     public void Update()
@@ -81,9 +93,9 @@ public class ContractManager : MonoBehaviour
         }
     }
 
-    public void InitNewContracts()
+    public void InitNewContracts()  
     {
-        if(existingContracts.Count > 1)
+        if(existingContracts.Count >= 1)
         {
             foreach(Contract c in existingContracts)
             {
@@ -91,10 +103,7 @@ public class ContractManager : MonoBehaviour
             }
             existingContracts.Clear();
         }
-        for(int i = 0; i < 4; i++)
-        {
-            CreateContact();
-        }
+        CreateContacts();
     }
 
     public void UpdateUIPositionsBigMenu() {
