@@ -57,7 +57,6 @@ public class ContractManager : MonoBehaviour
     //Function creates contracts
     public void CreateContacts()
     {
-
         if (Ship.Instance.currentStore != null) {
             int number = Ship.Instance.currentStore.storeNumber;
 

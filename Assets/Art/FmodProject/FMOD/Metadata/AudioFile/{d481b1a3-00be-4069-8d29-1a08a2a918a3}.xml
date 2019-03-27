@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d481b1a3-00be-4069-8d29-1a08a2a918a3}">
+        <property name="assetPath">
+            <value>Final Mission/Synthpad.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>92.571354166666666</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f6b52416-6e68-44b5-a191-db644ff0ecd0}</destination>
+        </relationship>
+    </object>
+</objects>

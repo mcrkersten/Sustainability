@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{65728dcc-4b78-4a96-af86-f3474eab19a7}">
+        <property name="assetPath">
+            <value>Final Mission/Piano.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>94.285645833333334</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f6b52416-6e68-44b5-a191-db644ff0ecd0}</destination>
+        </relationship>
+    </object>
+</objects>
