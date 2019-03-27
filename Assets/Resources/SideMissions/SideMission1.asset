@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   persons: 1
   firstMission: 0
+  lastMission: 0
   sideMission: 1
   flora: 1
   lumen: 0
   capital: 0
   missionCity: 010000
-  played: 0
+  played: 1
   missionStartDialog:
   - "Oh hey, I had a little accident out there. I sort of got ejected from my ship\u2026"
   - "Can you maybe come and find me? I\u2019d sure appreciate that!"
@@ -37,7 +38,7 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you so much kid, I'll go make my sugarbear some dinner, it helps ease her
     nerves.
-  targetStore: LumenStore
-  missionTile: 8
+  targetStore: city[Flora]
+  missionTile: 5
   personName: Henry
   portret: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}

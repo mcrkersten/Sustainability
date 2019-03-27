@@ -21,11 +21,9 @@ MonoBehaviour:
   missionCity: 000001
   played: 0
   missionStartDialog:
-  - "Hello? This is Kindergarten teacher Emily connecting through one of my student\u2019s
-    contact chips."
-  - "I lost one of my children, it\u2019s my first week on the job and I lost one!!!
-    Can you send someone out there to check and see if she\u2019s around? I\u2019m
-    so worried...\r"
+  - 'This is an automated message. '
+  - 'Kindergarten student Emily Mosfed of age 7 earth years was traveling with her
+    class towards the Capital has been missing since this morning. '
   missionPickupDialog:
   - "... My mom says I can\u2019t talk to strangers but I was so bored until you showed
     up. I don\u2019t know where my teacher is. She took us out here on a field trip

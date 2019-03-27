@@ -6,14 +6,18 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "MainMission", menuName = "MainMission", order = 1)]
 public class Mission : ScriptableObject
 {
-    public int persons = 1;
+
+    [Header("Main Mission Settings")]
     public bool firstMission;
-    public bool sideMission;
+    public bool startOfLastMission;
+    public bool lastMission;
 
     [Header("For SideMissions Only: Mission City")]
+    public bool sideMission;
     public bool flora;
     public bool lumen;
     public bool capital;
+    public int persons = 1;
 
     [HideInInspector]
     public List<bool> missionCity = new List<bool>();

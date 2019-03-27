@@ -13,7 +13,10 @@ public class Contract : ScriptableObject
     public int personsToCollect;
     public int colectedPersons;
     public int contractReward;
+
     public GameObject refugee;
+    public GameObject seed;
+
     public string storeName;
 
     public GameObject contractPosition;
@@ -36,6 +39,7 @@ public class Contract : ScriptableObject
 
     public ContractCardProgress selfProgressUI;
     public Mission currentSideMission;
+    public Mission currentMainMission;
 
     // public GameObject ui;
 
@@ -76,50 +80,60 @@ public class Contract : ScriptableObject
     //Spawns refugees
     public void SetInProgress()
     {
-        if (contractManager.currentContracts.Count < maxContracts)
-        {
-            currentSideMission.played = true;
-            currentSideMission.targetStore = Ship.Instance.currentStore.gameObject.name;
-            storeName = currentSideMission.targetStore;
+        if (currentSideMission != null) {
+            if (contractManager.currentContracts.Count < maxContracts) {
+                currentSideMission.played = true;
+                currentSideMission.targetStore = Ship.Instance.currentStore.gameObject.name;
+                storeName = currentSideMission.targetStore;
 
-            MissionManager.Instance.sideMission = this.currentSideMission;
-            MissionManager.Instance.sideContract = this;
-            MissionManager.Instance.mainMissionBoard.SetActive(true);
-            MissionManager.Instance.OnBubblePress();
-            ButtonManager.Instance.CloseOpenMissionBoard();
+                if (currentSideMission != null) {
+                    MissionManager.Instance.sideMission = this.currentSideMission;
+                    MissionManager.Instance.sideContract = this;
+                    MissionManager.Instance.mainMissionBoard.SetActive(true);
+                    MissionManager.Instance.OnBubblePress();
+                    ButtonManager.Instance.CloseOpenMissionBoard();
+                }
 
-            selfInAvailableContractScreen = Instantiate(progressContractPrefab, contractManager.uiContractElements[1].transform);
-            selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 1000, selfInAvailableContractScreen.transform.position.z);
-            selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((contractManager.currectPositionInProgress++ - 1) * 87), 0));
-            progressUI = selfInAvailableContractScreen.GetComponent<ContractCardProgress>();
 
-            //Set variables in ContractCardAvailable script that is on selfInAvailableContractScreen gameObject
-            progressUI.c = this;
-            progressUI.rewardAmount.text = contractReward.ToString();
-            progressUI.contractor.text = contractor;
+                selfInAvailableContractScreen = Instantiate(progressContractPrefab, contractManager.uiContractElements[1].transform);
+                selfInAvailableContractScreen.transform.position = new Vector3(selfInAvailableContractScreen.transform.position.x, 1000, selfInAvailableContractScreen.transform.position.z);
+                selfInAvailableContractScreen.transform.Translate(new Vector3(0, -((contractManager.currectPositionInProgress++ - 1) * 87), 0));
+                progressUI = selfInAvailableContractScreen.GetComponent<ContractCardProgress>();
 
-            if (personsToCollect > 1) {
-                progressUI.peopleToCollect.text = personsToCollect.ToString() + " people";
+                //Set variables in ContractCardAvailable script that is on selfInAvailableContractScreen gameObject
+                progressUI.c = this;
+                progressUI.rewardAmount.text = contractReward.ToString();
+                progressUI.contractor.text = contractor;
+
+                if (personsToCollect > 1) {
+                    progressUI.peopleToCollect.text = personsToCollect.ToString() + " people";
+                }
+                else {
+                    progressUI.peopleToCollect.text = personsToCollect.ToString() + " person";
+                }
+
+
+
+                //Remove contract form available contracts
+                contractManager.currectPosition--;
+                contractManager.existingContracts.Remove(this);
+
+                Destroy(availableUI.gameObject);
+
+                //Set contract in to "inprogress" in the Contract manager 
+                contractManager.currentContracts.Add(progressUI.c);
+                SetInProgressScreenOnly(selfInAvailableContractScreen);
             }
-            else {
-                progressUI.peopleToCollect.text = personsToCollect.ToString() + " person";
-            }
-
-            Ship.Instance.currentContracts.Add(this);
-
-            //Remove contract form available contracts
-            contractManager.currectPosition--;
-            contractManager.existingContracts.Remove(this);
-            for (int q = 0; q < personsToCollect; q++)
-            {
-                CreateRefugees();
-            }
-            Destroy(availableUI.gameObject);
-
-            //Set contract in to "inprogress" in the Contract manager 
-            contractManager.currentContracts.Add(progressUI.c);
-            SetInProgressScreenOnly(selfInAvailableContractScreen);
         }
+
+        else if (currentMainMission != null) {
+                contractPosition = contractManager.refSpawner.tiles[currentMainMission.missionTile];
+        }
+
+        for (int q = 0; q < personsToCollect; q++) {
+            CreateRefugees();
+        }
+        Ship.Instance.currentContracts.Add(this);
         ContractManager.Instance.UpdateUIPositionsBigMenu();
     }
 
@@ -137,7 +151,17 @@ public class Contract : ScriptableObject
 
     private void CreateRefugees()
     {
-        GameObject r = Instantiate(refugee, contractPosition.transform);
+        GameObject r;
+        if (currentSideMission != null) {
+            r = Instantiate(refugee, contractPosition.transform);
+        }
+        else if(currentMainMission.lastMission){
+            r = Instantiate(seed, contractPosition.transform);
+        }
+        else {
+            r = Instantiate(refugee, contractPosition.transform);
+        }
+
         float size = 24;
         float randomXpos = Random.Range(-size, size);
         float randomZpos = Random.Range(-size, size);

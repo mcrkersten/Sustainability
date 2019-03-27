@@ -33,14 +33,10 @@ public class MissionManager : MonoBehaviour
     public CityPointer missionPointer;
 
     private bool missionActive;
-    private Contract currentContract;
+    private Contract mainContract;
 
     [HideInInspector]
     public Contract sideContract;
-
-    [HideInInspector]
-    private int missionsDone;
-    public int minimalSideMissionsForMainMission;
 
     [Header("MissionInformationPanel")]
     public TextMeshProUGUI contractOrigin;
@@ -114,15 +110,15 @@ public class MissionManager : MonoBehaviour
                 currentLine = 0;
                 StartMainMission();
                 if (Ship.Instance.showMissionPointer) {
+                    missionPointer.target = mainContract.contractPosition;
                     missionPointer.gameObject.transform.parent.gameObject.SetActive(true);
                 }
-                missionPointer.target = currentContract.contractPosition;
                 mainMissionBoard.SetActive(false);
             }
         }
 
         //Center of mission (Pickup)
-        else if (missionActive && !currentContract.done) {
+        else if (missionActive && !mainContract.done) {
             if (currentLine < currentMainMission.missionPickupDialog.Count) {
                 if (!isTalking) {
                     co = StartCoroutine(ShowText(currentMainMission.missionPickupDialog[currentLine]));
@@ -133,17 +129,29 @@ public class MissionManager : MonoBehaviour
                     isTalking = false;
                     currentLine++;
                 }
+                return;
+            }
+            if (currentMainMission.startOfLastMission) {
+                currentLine = 0;
+                EndMainMission();
+                mainMissionBoard.SetActive(false);
+                missionPointer.gameObject.transform.parent.gameObject.SetActive(false);
+
+                currentMainMission = mainMissions[currentMissionNumber];
+                mainMissionBoard.SetActive(true);
+                OnBubblePress();
 
             }
             else {
                 currentLine = 0;
-                missionPointer.target = GameObject.Find(currentContract.contractor);
+                missionPointer.target = GameObject.Find(currentMainMission.targetStore);
+                mainContract.done = true;
                 mainMissionBoard.SetActive(false);
             }
         }
 
         //End of mission
-        else if (currentContract.done) {
+        else if (mainContract.done) {
             if (currentLine < currentMainMission.missionEndDialog.Count) {
                 if (!isTalking) {
                     co = StartCoroutine(ShowText(currentMainMission.missionEndDialog[currentLine]));
@@ -155,6 +163,9 @@ public class MissionManager : MonoBehaviour
                     currentLine++;
                 }
 
+            }
+            if (currentMainMission.lastMission) {
+                ExecuteSelfDestruct();
             }
             else {
                 currentLine = 0;
@@ -237,10 +248,8 @@ public class MissionManager : MonoBehaviour
             }
             else {
                 currentLine = 0;
-                EndSideMission();
                 mainMissionBoard.SetActive(false);
-                ButtonManager.Instance.openMenu.Add(ButtonManager.Instance.openStorePromt);
-                ButtonManager.Instance.openStorePromt.SetActive(true);
+                EndSideMission();
                 missionPointer.gameObject.transform.parent.gameObject.SetActive(false);
                 return;
             }
@@ -253,28 +262,32 @@ public class MissionManager : MonoBehaviour
 
     private void StartMainMission() {
         missionActive = true;
-        currentContract = Instantiate(ContractManager.Instance.contractBasis);
-        currentContract.personsToCollect = currentMainMission.persons;
-        currentContract.storeName = currentMainMission.targetStore;
+        mainContract = Instantiate(ContractManager.Instance.contractBasis);
+        mainContract.personsToCollect = currentMainMission.persons;
+        mainContract.storeName = currentMainMission.targetStore;
+        mainContract.currentMainMission = currentMainMission;
 
         UpdateMissionInformationPanel(currentMainMission);
 
         if (currentMainMission.firstMission) {
-            currentContract.colectedPersons = 1;
-            currentContract.done = true;
-            currentContract.contractPosition = GameObject.Find("city[Flora]");
+            mainContract.colectedPersons = 1;
+            mainContract.done = true;
+            mainContract.contractPosition = GameObject.Find("city[Flora]");
+            return;
         }
+        mainContract.SetInProgress();
     }
 
     public void StartSideMission() {
         missionActive = true;
         UpdateMissionInformationPanel(sideMission);
+        sideMission.played = true;
     }
 
     private void EndMainMission() {
         missionActive = false;
-        currentContract.DestroyContract(true);
-        currentContract = null;
+        mainContract.DestroyContract(true);
+        mainContract = null;
         currentMainMission = null;
         currentMissionNumber++;
     }
@@ -285,25 +298,31 @@ public class MissionManager : MonoBehaviour
         foreach (Contract c in ContractManager.Instance.currentContracts) {
             if (c.colectedPersons == c.personsToCollect) {
                 CreditSystem.Instance.credits += c.contractReward;
+                ContractManager.Instance.passangers.Clear();
                 c.DestroyContract(false);
             }
         }
-        missionsDone++;
         sideContract = null;
         sideMission = null;
 
-        if(missionsDone == minimalSideMissionsForMainMission) {
-            mainMissionBoard.SetActive(true);
+
+        if(ContractManager.Instance.existingContracts.Count == 0) {
+            print("Zero");
             currentMainMission = mainMissions[currentMissionNumber];
-            missionsDone = 0;
+            mainMissionBoard.SetActive(true);
             OnBubblePress();
+        }
+        else {
+            ButtonManager.Instance.openMenu.Add(ButtonManager.Instance.openStorePromt);
+            ButtonManager.Instance.openStorePromt.SetActive(true);
         }
     }
 
     private void EnterCity(Store store)
     {
-        if(currentContract != null) {
-            if (store.gameObject.name == currentMainMission.targetStore && currentContract.done == true) {
+        ContractManager.Instance.InitNewContracts();
+        if (mainContract != null) {
+            if (store.gameObject.name == currentMainMission.targetStore && mainContract.done == true) {
                 mainMissionBoard.SetActive(true);
                 OnBubblePress();
                 return;
@@ -335,8 +354,8 @@ public class MissionManager : MonoBehaviour
         contractOrigin.text = m.targetStore;
         pickupLocation.text = "Not set or unknown";
         personsToCollect.text = m.persons.ToString();
-        if (currentContract != null) {
-            reward.text = currentContract.contractReward.ToString();
+        if (mainContract != null) {
+            reward.text = mainContract.contractReward.ToString();
         }
         if (sideContract != null) {
             reward.text = sideContract.contractReward.ToString();
@@ -353,6 +372,10 @@ public class MissionManager : MonoBehaviour
         }
         currentLine++;
         isTalking = false;
+    }
+
+    private void ExecuteSelfDestruct() {
+
     }
 }
 

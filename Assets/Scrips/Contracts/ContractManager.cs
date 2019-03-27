@@ -31,10 +31,16 @@ public class ContractManager : MonoBehaviour
     
     public Contract contractBasis;
     public GameObject[] uiContractElements;
+
+    [HideInInspector]
     public int currentContract = 0;
+    [HideInInspector]
     public int currectPosition = 0;
+    [HideInInspector]
     public int currectPositionInProgress = 0;
+    [HideInInspector]
     public int currentPositionInActiveContracts = 0;
+
     public List<Contract> existingContracts = new List<Contract>();
     public List<Contract> currentContracts = new List<Contract>();
     public List<Person> passangers = new List<Person>();
@@ -65,7 +71,7 @@ public class ContractManager : MonoBehaviour
 
                     //Set Pramaters
                     tempContract.contractNumber = currentContract++;
-                    tempContract.currentSideMission = Instantiate(sideMissions[Random.Range(0, sideMissions.Length)]);
+                    tempContract.currentSideMission = m;
                     tempContract.personsToCollect = tempContract.currentSideMission.persons;
                     tempContract.contractReward = tempContract.personsToCollect * 100;
                     tempContract.SetInAvailible();

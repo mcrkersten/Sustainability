@@ -21,21 +21,21 @@ MonoBehaviour:
   missionCity: 000000
   played: 0
   missionStartDialog:
-  - "Ah, thank you for picking me up. Did you have a good shift? I\u2019ve been told
-    you encountered Misu, and that she has gifted you a song. "
-  - Did you know you can put it in your radio? Press M for music to switch radio songs.
-    Come on, give it a try.
-  - "My next destination is Lumen. Lumen tends to be a dark place, the people there
-    are not at all concerned about durability or the state of the moon\u2026 "
-  - "these moneygrubbers first treat the earth like trash and then go on to do the
-    same to the moon. I\u2019m supposed to be subjective about it all but I can tell
-    my secrets to you, can\u2019t I? "
-  - "Let\u2019s go find Lumen."
+  - '*ring ring .... ring ring ... ring ring*'
+  - "Hey, missed me? I\u2019d like you to pick me up at Lumen. I\u2019m done with
+    my scamples. "
   missionPickupDialog:
-  - Alright
+  - "Ah, good to see you again. My research went okay, but the results make me sad\u2026"
+  - "At Flora they have been trying so hard to live durable but every step they make
+    the moon go forward, is taken back by the people of Lumen who don\u2019t believe
+    in living a durable life and consequences for the moon\u2019s health. "
+  - "Oh well \u2026 "
+  - 'My next destination is the Capital. As my final destination I research the health
+    of the soil around there and that should be the end of both our shifts today. '
   missionEndDialog:
-  - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
-  targetStore: city[Flora]
-  missionTile: 2
+  - Ah it's good to be back at the capital. The place where everything started.
+  - Will call you if I need you!
+  targetStore: TestCity
+  missionTile: 0
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}
