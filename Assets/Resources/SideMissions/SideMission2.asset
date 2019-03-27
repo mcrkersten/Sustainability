@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
+  m_Name: SideMission2
+  m_EditorClassIdentifier: 
+  firstMission: 0
+  startOfLastMission: 0
+  lastMission: 0
+  sideMission: 1
+  flora: 1
+  lumen: 0
+  capital: 0
+  persons: 2
+  missionCity: 010000
+  played: 0
+  missionStartDialog:
+  - "Hello? Anyone there? My taxi driver decided to have a heart attack while driving
+    me to my next show, he\u2019s so selfish"
+  - "The ambulance came to pick him up but I\u2019m left alone out here, can anyone
+    pick me up asap?"
+  missionPickupDialog:
+  - "Yo! It took you forever to get to me! I have places to be you know, my fans in
+    the city of blue are waiting\u2026 Your people were supposed to show up hours
+    ago. "
+  - "Do you have any idea who I even am?! I\u2019m a famous and amazing musician and
+    I demand to be treated like that. "
+  - 'If you bring me home in that stupid garbage machine of yours, I will educate
+    you and give you a copy of my music so you can listen to some quality music you
+    uncultured swine. '
+  missionEndDialog:
+  - Thanks, gotta go! My servants will contact you later
+  targetStore: city[Flora]
+  missionTile: 9
+  personName: Misu
+  portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}
