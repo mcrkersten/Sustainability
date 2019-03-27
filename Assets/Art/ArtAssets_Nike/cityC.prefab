@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 875914542681835613}
   - component: {fileID: 7661341357336127724}
   - component: {fileID: 5291574398849625905}
+  - component: {fileID: 8436777905910141648}
   m_Layer: 0
   m_Name: mainGrp
   m_TagString: Untagged
@@ -346,6 +347,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8436777905910141648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4436812849433679045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: 8fa576b77f15ad544b5fdaf5d094e4e5, type: 3}
 --- !u!1001 &2641342213144484874
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 280995250780020595}
   - component: {fileID: 1781784917307267727}
   - component: {fileID: 1672495973571516584}
+  - component: {fileID: 6847785605061852740}
   m_Layer: 0
   m_Name: mainGrp
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6847785605061852740
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94688941176003056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: a2368f22a08400342a0a6f22fd2db56e, type: 3}
 --- !u!1 &2833036864222624617
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824744733}
   m_Layer: 0
-  m_Name: cityB 1
+  m_Name: cityB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
