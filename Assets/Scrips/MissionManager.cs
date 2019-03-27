@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MissionManager : MonoBehaviour
 {
@@ -162,15 +163,17 @@ public class MissionManager : MonoBehaviour
                     isTalking = false;
                     currentLine++;
                 }
-
+                return;
             }
             if (currentMainMission.lastMission) {
                 ExecuteSelfDestruct();
             }
+
             else {
                 currentLine = 0;
                 EndMainMission();
                 mainMissionBoard.SetActive(false);
+
                 missionPointer.gameObject.transform.parent.gameObject.SetActive(false);
                 ButtonManager.Instance.openMenu.Add(ButtonManager.Instance.openStorePromt);
                 ButtonManager.Instance.openStorePromt.SetActive(true);
@@ -321,6 +324,7 @@ public class MissionManager : MonoBehaviour
     private void EnterCity(Store store)
     {
         ContractManager.Instance.InitNewContracts();
+
         if (mainContract != null) {
             if (store.gameObject.name == currentMainMission.targetStore && mainContract.done == true) {
                 mainMissionBoard.SetActive(true);
@@ -375,7 +379,7 @@ public class MissionManager : MonoBehaviour
     }
 
     private void ExecuteSelfDestruct() {
-
+        SceneManager.LoadScene(1);
     }
 }
 

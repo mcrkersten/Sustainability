@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
   m_Name: MainMission2
   m_EditorClassIdentifier: 
-  persons: 1
   firstMission: 0
+  startOfLastMission: 0
+  lastMission: 0
   sideMission: 0
   flora: 0
   lumen: 0
   capital: 0
+  persons: 1
   missionCity: 000000
   played: 0
   missionStartDialog:
@@ -36,7 +38,7 @@ MonoBehaviour:
   missionEndDialog:
   - "Thank you for dropping me off. I\u2019ll be thinking about you. I\u2019ll call
     you when I need you to get me out of this stinkhole."
-  targetStore: TestCity
+  targetStore: city[Lumen]
   missionTile: 0
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}

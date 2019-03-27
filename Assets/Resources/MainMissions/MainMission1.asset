@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
   m_Name: MainMission1
   m_EditorClassIdentifier: 
-  persons: 1
   firstMission: 1
+  startOfLastMission: 0
+  lastMission: 0
   sideMission: 0
   flora: 0
   lumen: 0
   capital: 0
+  persons: 1
   missionCity: 000000
   played: 0
   missionStartDialog:
-  - '*ring ring .... ring ring ... ring ring*'
   - "Hello stranger, you\u2019re that new pilot they hired last week right? it\u2019s
     nice to meet you."
   - "My name is nancy, it\u2019s nice to meet you. Since James retired I\u2019ve been
     forced to slack on my research. Please pick me up so we can get to work, the soil
     doesn\u2019t check itself around here!\r"
-  missionPickupDialog:
   - "There you are! I\u2019ve been asked to tell you about the system here. You work
     on a contract basis. To get a new contract, fly to any city. Here you can see
     who your client is"
-  - 'The contracts tell you to pick people up, you have listen to the people carefully
+  - The contracts tell you to pick people up, you have listen to the people carefully
     to discover where they want to be taken. If you bring the people to their preferred
-    city, you will get a bonus. '
+    city, you will get a bonus.
   - "Oh, and don\u2019t forget to get fuel; you\u2019ll see how much you got left
     on the battery on your spaceship. If you get stranded without, you will have to
     be fueled in the fields. It\u2019ll cost you extra. "
@@ -42,6 +42,7 @@ MonoBehaviour:
     this mining, that\u2019s my job here you see."
   - "The people of Flora strive to live a sustainable life, it\u2019s always great
     to see how good the moon is doing around there. Let\u2019s go! "
+  missionPickupDialog: []
   missionEndDialog:
   - Thank you, I will get to work now. I will call you in a bit! Go do some missions!
   targetStore: city[Flora]

@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114322504809614126}
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   EditorEvents:
   - {fileID: 114591954466913896}
   - {fileID: 114857046269869172}
@@ -41,7 +45,11 @@ MonoBehaviour:
   - {fileID: 114801063819007414}
   StringsBanks:
   - {fileID: 114322504809614126}
+<<<<<<< Updated upstream
   stringsBankWriteTime: 636893229762094656
+=======
+  stringsBankWriteTime: 636893071244481655
+>>>>>>> Stashed changes
   cacheVersion: 3
 --- !u!114 &114002072941787372
 MonoBehaviour:
@@ -78,7 +86,11 @@ MonoBehaviour:
   Path: event:/Music/Lumen
   guid: 60e01a152c4b324998559f4780d925b3
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -117,7 +129,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_male_long
   guid: c4b213403415134293db7c4c46483cdd
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -140,12 +156,20 @@ MonoBehaviour:
   Path: event:/Music/Final Mission
   guid: 9c95d6791f73f4429ae744c710eacc44
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 114949467160758998}
+=======
+  - {fileID: 114686880260608404}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 186857
@@ -184,7 +208,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Explosion
   guid: fef9748e707b1044b8d0ace2efb875c2
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -277,7 +305,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_male_medium
   guid: 5ebd8c3fa6b99e449ef7e0e851e6bd72
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -314,7 +346,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Art\FmodProject\FMOD\Build\Desktop\Master Bank.strings.bank
+<<<<<<< Updated upstream
   lastModified: 636893229762094656
+=======
+  lastModified: 636893071244481655
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -368,6 +404,26 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
+--- !u!114 &114440209759989118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\RepositoryD\Sustainability\Assets\Art\FmodProject\FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636893182012574916
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 36139680
+  Exists: 1
 --- !u!114 &114451568955520274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +456,22 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114549309248691256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: level of night
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114591954466913896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +487,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_female_long
   guid: 10615eab1308cd49bf92955e3c053a61
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -486,7 +562,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Fuel warning
   guid: 66f0d0ddfef5d1468c3e0469adcaf7df
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -509,12 +589,20 @@ MonoBehaviour:
   Path: event:/Sound Effects/Engine
   guid: 4fb447ba2f370d4e8fb5e12a778ead63
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 114600896966067118}
+=======
+  - {fileID: 114850315807989644}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -533,7 +621,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_female_medium
   guid: e5c9635e962c6f49a6c1a9af876d97d5
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -576,12 +668,20 @@ MonoBehaviour:
   Path: event:/Music/Overworld music
   guid: 4b29980cd4120141a991fc18f6b4912a
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 114802917204774056}
+=======
+  - {fileID: 114549309248691256}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 330000
@@ -632,7 +732,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_female_short
   guid: 6bb6aab49d87ec45a19999d80b965b3d
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -640,6 +744,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2280
+--- !u!114 &114686880260608404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114688081210081474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +791,11 @@ MonoBehaviour:
   Path: event:/Music/Flora
   guid: cf059090fd1e3545a90924cacbda003f
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -694,7 +818,11 @@ MonoBehaviour:
   Path: event:/Music/Title Theme
   guid: b70d56a248ec154abfa457faa3842303
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -738,6 +866,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 36139680
   Exists: 0
+<<<<<<< Updated upstream
 --- !u!114 &114802917204774056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,6 +883,8 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+=======
+>>>>>>> Stashed changes
 --- !u!114 &114809904538575106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +900,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Start
   guid: 14fb66b79b4d1f418700fef93c354532
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -808,7 +943,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Dialogue_male_short
   guid: bdf16d3234d56746bce071f4e25ffdee
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -831,7 +970,11 @@ MonoBehaviour:
   Path: event:/Music/Simulation Room
   guid: fc8306bb0504ed4dbb78d3afb2ea8408
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -839,6 +982,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 88000
+--- !u!114 &114850315807989644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114850687034662836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,7 +1029,11 @@ MonoBehaviour:
   Path: event:/Music/The Capital
   guid: 29dd29315deb8a46a49e6c05c5662f6a
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -893,7 +1056,11 @@ MonoBehaviour:
   Path: event:/Sound Effects/Menu Sound
   guid: f74cadbd8aa37a459e7d07946c4d6a6b
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114653463816844234}
+=======
+  - {fileID: 114440209759989118}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

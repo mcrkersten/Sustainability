@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
   m_Name: SideMission5
   m_EditorClassIdentifier: 
-  persons: 2
   firstMission: 0
+  startOfLastMission: 0
+  lastMission: 0
   sideMission: 1
   flora: 0
   lumen: 0
   capital: 1
+  persons: 2
   missionCity: 000001
   played: 0
   missionStartDialog:

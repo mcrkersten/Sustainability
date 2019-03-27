@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c8b2bce745d84f95023b460ff5fca, type: 3}
   m_Name: MainMission5
   m_EditorClassIdentifier: 
-  persons: 1
   firstMission: 0
+  startOfLastMission: 0
+  lastMission: 1
   sideMission: 0
   flora: 0
   lumen: 0
   capital: 0
+  persons: 1
   missionCity: 000000
   played: 0
   missionStartDialog:
@@ -34,7 +36,7 @@ MonoBehaviour:
     I want you to bring me back to the Capital so that I can set things up for detonation."
   missionEndDialog:
   - Say goodbye to the world as you know it kid. Things are about to change forever!
-  targetStore: TestCity
-  missionTile: 0
+  targetStore: city[The Capital]
+  missionTile: 3
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}

@@ -69,6 +69,7 @@ public class Ship : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("City")) {
+            currentStore = other.GetComponent<Store>();
             OnEnterCity?.Invoke(other.GetComponent<Store>());
             pointers.SetActive(false);
         }
@@ -81,6 +82,9 @@ public class Ship : MonoBehaviour
             
             foreach (Contract c in currentContracts)
             {
+                if (c == null) {
+                    continue;
+                }
                 if(c.contractNumber == p.contract.contractNumber && currentPersonsOnShip < maxPersonsOnShip)
                 {
                     //Person is a part of the contract.
