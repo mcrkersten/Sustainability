@@ -379,7 +379,7 @@ public class MissionManager : MonoBehaviour
     }
 
     private void ExecuteSelfDestruct() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
 

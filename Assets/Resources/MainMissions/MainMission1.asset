@@ -26,16 +26,15 @@ MonoBehaviour:
   - "Hello stranger, you\u2019re that new pilot they hired last week right? it\u2019s
     nice to meet you."
   - "My name is nancy, it\u2019s nice to meet you. Since James retired I\u2019ve been
-    forced to slack on my research. Please pick me up so we can get to work, the soil
-    doesn\u2019t check itself around here!\r"
-  - "There you are! I\u2019ve been asked to tell you about the system here. You work
-    on a contract basis. To get a new contract, fly to any city. Here you can see
-    who your client is"
+    forced to slack on my research sadly, but now you are here!"
+  - "I\u2019ve been asked to tell you about the system here. You work on a contract
+    basis. To get a new contract, fly to any city. Here you can see who your client
+    is"
   - The contracts tell you to pick people up, you have listen to the people carefully
-    to discover where they want to be taken. If you bring the people to their preferred
+    to discover where they want to be taken. If you bring the people to the right
     city, you will get a bonus.
   - "Oh, and don\u2019t forget to get fuel; you\u2019ll see how much you got left
-    on the battery on your spaceship. If you get stranded without, you will have to
+    on the tanks on your spaceship. If you get stranded without, you will have to
     be fueled in the fields. It\u2019ll cost you extra. "
   - "But enough about your job, I was hoping you can take me to my first destination;
     Flora. I want to gather some soil samples to see how the moon is doing after all
