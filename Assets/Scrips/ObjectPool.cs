@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public Material skybox;
-    public int quadSize;
+    public float quadSize;
     public PointList verticals = new PointList();
     public PointList horizontals = new PointList();
     private Ship ship;
@@ -36,16 +36,19 @@ public class ObjectPool : MonoBehaviour
         //NOTE: 400/800 hardcoded, change to size dependant
         if(distX > 100 && ship.gameObject.transform.position.x > this.gameObject.transform.position.x) {
             foreach(GameObject g in verticals.rows[stepsOnX].objects) {
-                g.transform.position = new Vector3((g.transform.position.x + quadSize) + 800, 0, g.transform.position.z);
+
+                g.transform.position = new Vector3((g.transform.position.x + (quadSize * 9)), 0, g.transform.position.z);
             }
+
             this.gameObject.transform.position = new Vector3(this.transform.position.x + quadSize, this.transform.position.y, this.transform.position.z);
             stepsOnX++;
             if(stepsOnX == verticals.rows.Count) {
                 stepsOnX = 0;
             }
         }
-        else if(distX > 100 && ship.gameObject.transform.position.x < this.gameObject.transform.position.x) {
-            if(stepsOnX <= 0) {
+
+        else if (distX > 100 && ship.gameObject.transform.position.x < this.gameObject.transform.position.x) {
+            if (stepsOnX <= 0) {
                 stepsOnX = verticals.rows.Count - 1;
             }
             else {
@@ -53,35 +56,36 @@ public class ObjectPool : MonoBehaviour
             }
 
             foreach (GameObject g in verticals.rows[stepsOnX].objects) {
-                g.transform.position = new Vector3((g.transform.position.x - quadSize) - 800, 0, g.transform.position.z);
+                g.transform.position = new Vector3((g.transform.position.x - (quadSize * 9)), 0, g.transform.position.z);
             }
             this.gameObject.transform.position = new Vector3(this.transform.position.x - quadSize, this.transform.position.y, this.transform.position.z);
         }
 
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         if (distZ > 100 && ship.gameObject.transform.position.z > this.gameObject.transform.position.z) {
             foreach (GameObject g in horizontals.rows[stepsOnZ].objects) {
-                g.transform.position = new Vector3(g.transform.position.x, 0, (g.transform.position.z + quadSize) + 400);
+                g.transform.position = new Vector3(g.transform.position.x, 0, (g.transform.position.z + (quadSize * 4)));
             }
             this.gameObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + quadSize);
             stepsOnZ++;
-            if (stepsOnZ == verticals.rows.Count) {
+            if (stepsOnZ == horizontals.rows.Count) {
                 stepsOnZ = 0;
             }
         }
 
         else if (distZ > 100 && ship.gameObject.transform.position.z < this.gameObject.transform.position.z) {
             if (stepsOnZ <= 0) {
-                stepsOnZ = verticals.rows.Count - 1;
+                stepsOnZ = horizontals.rows.Count - 1;
             }
             else {
                 stepsOnZ--;
             }
 
             foreach (GameObject g in horizontals.rows[stepsOnZ].objects) {
-                g.transform.position = new Vector3(g.transform.position.x, 0, (g.transform.position.z - quadSize) - 400);
+                g.transform.position = new Vector3(g.transform.position.x, 0, (g.transform.position.z - (quadSize * 4)));
             }
             this.gameObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - quadSize);
         }
