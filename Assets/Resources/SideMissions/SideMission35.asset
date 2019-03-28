@@ -38,4 +38,4 @@ MonoBehaviour:
   targetStore: city[The Capital]
   missionTile: 6
   personName: Greg
-  portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
+  portret: {fileID: 21300000, guid: 0f212a1840f34c947a546f238585ce0c, type: 3}

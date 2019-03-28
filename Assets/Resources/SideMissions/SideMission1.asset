@@ -21,7 +21,7 @@ MonoBehaviour:
   capital: 0
   persons: 1
   missionCity: 010000
-  played: 1
+  played: 0
   missionStartDialog:
   - "Oh hey, I had a little accident out there. I sort of got ejected from my ship\u2026"
   - "Can you maybe come and find me? I\u2019d sure appreciate that!"
@@ -42,4 +42,4 @@ MonoBehaviour:
   targetStore: city[Flora]
   missionTile: 5
   personName: Henry
-  portret: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
+  portret: {fileID: 21300000, guid: 1e67d5c9548a0ea4c914b17fe991c700, type: 3}

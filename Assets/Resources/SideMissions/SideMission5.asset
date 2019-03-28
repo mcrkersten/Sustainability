@@ -41,4 +41,4 @@ MonoBehaviour:
   targetStore: FloraStore
   missionTile: 5
   personName: Walter
-  portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
+  portret: {fileID: 21300000, guid: 8d576297df2f94b45b991fb89bdc1d61, type: 3}

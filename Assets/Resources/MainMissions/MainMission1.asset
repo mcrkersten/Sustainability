@@ -47,4 +47,4 @@ MonoBehaviour:
   targetStore: city[Flora]
   missionTile: 0
   personName: Nancy
-  portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}
+  portret: {fileID: 21300000, guid: 84a37c03b8513b3439e53f3a2b59b542, type: 3}

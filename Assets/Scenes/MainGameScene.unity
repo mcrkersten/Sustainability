@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
-  clerk: {fileID: 21300000, guid: 734d976f6097a9147973964ab00dcb43, type: 3}
-  clerkGlow: {fileID: 21300000, guid: 2750e4c3e16f1c141b5b75bec73f9b85, type: 3}
+  clerk: {fileID: 21300000, guid: 803fad45e507dbe4eb3eb3e6c58b25d1, type: 3}
+  clerkGlow: {fileID: 0}
   storeSymbol: {fileID: 21300000, guid: f9f66a9c1686f88449fbd5e602763e5a, type: 3}
   storeColor: {r: 1, g: 0.68598413, b: 0, a: 1}
   storeName: Gsa
@@ -15353,8 +15353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
-  clerk: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}
-  clerkGlow: {fileID: 21300000, guid: 3c299a95dfe7754428dce7f166392b95, type: 3}
+  clerk: {fileID: 21300000, guid: 471fe09d38747a74abd05a62628881bd, type: 3}
+  clerkGlow: {fileID: 0}
   storeSymbol: {fileID: 21300000, guid: b47cd70749332be44a5a109e8d45d689, type: 3}
   storeColor: {r: 1, g: 0, b: 0.6883826, a: 1}
   storeName: Oswald, Oz
@@ -23121,8 +23121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visited: 0
-  clerk: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
-  clerkGlow: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}
+  clerk: {fileID: 21300000, guid: 4a3b2a692ae33d0458b9b4c687fa7963, type: 3}
+  clerkGlow: {fileID: 0}
   storeSymbol: {fileID: 21300000, guid: 34f512cdef6b3f94d8f99abf7eb7f84c, type: 3}
   storeColor: {r: 0.0141509175, g: 0.84818107, b: 1, a: 1}
   storeName: Daisy's
