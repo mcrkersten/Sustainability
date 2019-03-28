@@ -39,6 +39,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thank you kind stranger, hope you have a good day!
   targetStore: FloraStore
-  missionTile: 12
+  missionTile: 5
   personName: Walter
   portret: {fileID: 21300000, guid: a5bd511f63850f6498019ea283df2d29, type: 3}

@@ -37,6 +37,6 @@ MonoBehaviour:
   missionEndDialog:
   - Say goodbye to the world as you know it kid. Things are about to change forever!
   targetStore: city[The Capital]
-  missionTile: 3
+  missionTile: 0
   personName: Nancy
   portret: {fileID: 21300000, guid: 2d0a5c80bbb91684fbfa6ee08825b363, type: 3}

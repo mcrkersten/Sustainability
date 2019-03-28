@@ -39,6 +39,6 @@ MonoBehaviour:
   missionEndDialog:
   - Home! Thank you so much, bye bye
   targetStore: city[The Capital]
-  missionTile: 11
+  missionTile: 4
   personName: Jessie
   portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}

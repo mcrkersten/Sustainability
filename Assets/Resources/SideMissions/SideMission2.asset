@@ -39,6 +39,6 @@ MonoBehaviour:
   missionEndDialog:
   - Thanks, gotta go! My servants will contact you later
   targetStore: city[Flora]
-  missionTile: 9
+  missionTile: 2
   personName: Misu
   portret: {fileID: 21300000, guid: 5410e266662e11d41bc9bfe5dcce267a, type: 3}

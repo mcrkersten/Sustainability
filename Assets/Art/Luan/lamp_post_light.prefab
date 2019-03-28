@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6778165827832853571}
   - component: {fileID: 133342674299745062}
   m_Layer: 0
-  m_Name: lamp_post
+  m_Name: lamp_post_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20910096114530094}
-  m_LocalRotation: {x: -0, y: 0.7043296, z: -0, w: 0.7098731}
+  m_LocalRotation: {x: 0, y: 0.70433074, z: 0, w: 0.70987195}
   m_LocalPosition: {x: 1.56, y: -0.09000003, z: 5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -121,7 +121,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.97264, b: 0.6933962, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 13.05
   m_SpotAngle: 47.9606
   m_CookieSize: 10
   m_Shadows:
